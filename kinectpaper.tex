@@ -2,8 +2,26 @@
 \documentclass[manuscript, review, screen]{acmart}
 %\setcitestyle{super,sort&compress}
 \citestyle{acmauthoryear}
-%\usepackage{booktabs} % For formal tables
-%\usepackage[ruled]{algorithm2e} % For algorithms
+\usepackage{graphicx}
+\usepackage{amsmath, amsthm, amssymb}
+\usepackage{amsfonts}
+\usepackage{tabularx}
+\usepackage{multirow}
+%\usepackage{booktabs}
+\usepackage[printonlyused]{acronym}
+\usepackage{paralist}
+\usepackage{enumitem}
+\usepackage{subcaption} 
+\usepackage[ruled]{algorithm2e}
+%\usepackage{algorithmic}
+
+\setlist{nolistsep}
+
+\newacro{PGCE}{Postgraduate Certificate of Education}
+\newacro{UTToF}{User Tracking Time-of-Flight}
+
+\newcommand{\tickYes}{\checkmark}
+\newcommand{\crossNo}{$\times$}
 
 % Metadata Information
 % \acmJournal{TOCHI}
@@ -28,7 +46,8 @@
 % Document starts
 \begin{document}
 % Title portion
-\title{Kinect Paper TBC}
+\title{Controlling Classroom Technology with Upper-Body Gestures
+  {\emph{and}} Improving Upper-Body Gesture Controls for Teacher Use}
 
 \author{James McNaughton}
 %\orcid{}
@@ -50,10 +69,33 @@
 \email{tcrick@cardiffmet.ac.uk}
 
 
-\renewcommand\shortauthors{McNaughton, J. et al.}
+\renewcommand\shortauthors{McNaughton, J. and Crick, T.}
 
 \begin{abstract}
-Abtract here...
+{\emph{Abstract 1:}} There is a growing need to give teachers the ability to remotely control computer interfaces in the classroom.
+Existing techniques such as control through fixed interfaces, mobile devices or voice commands have a number of short comings.
+The use of upper-body gestures to allow teachers to control classroom interfaces as an alternative is considered.
+For this alternative control technique a set of gestures which are intuitive to teachers must be identified.
+Focus groups were used to discover which gestures are intuitively performed for specific actions relating to controlling classroom interfaces.
+This paper details the gestures observed and details their implementation into a classroom control system.
+The results of a controlled study using the implemented gesture system indicate that upper-body gesture controls are quicker than alternative technologies.
+However, the use of the Kinect in the gesture system's current implementation yields too high of an error rate for the results to be conclusive.
+
+{\emph{Abstract 2:}} As computers become more prevalent in classrooms, the need for systems which allow teachers to effectively control them increases.
+An open-air gesture based control system using the Microsoft Kinect was created which allowed teachers to control instances of the SynergyNet framework in classrooms.
+Despite the open-air gesture controls being quicker and less intrusive on teacher-student interaction than alternative technologies, its use was made unsuitable for use in the classroom due to issues relating to its accuracy and intuitiveness.
+A number of changes were implemented into the system in an attempt to resolve these issues.
+These changes were; the use of multiple Kinects, creation of a point-to-select gesture, improvements to the control sequence and the creation of a more cohesive gesture set.
+A controlled study took place to evaluate whether these changes made the use of open-air gestures a viable method of controlling classroom technology.
+Despite a significant improvement to system's intuitiveness, the Kinect's accuracy was still the cause of a number of problems.
+With the use of a more accurate sensing technology the system would be suitable for controlling classroom technologies.
+%\\
+%\\ 
+% \textbf{RESEARCH HIGHLIGHTS:}\\
+% \textbullet \ A framework for assessing upper-body gestures is presented. \ 
+% \textbullet \ A list of gestures suited for use with the Kinect in a classroom is produced.  \ 
+% \textbullet \ A system which uses the Kinect to allow teachers to control classroom technology is implemented.  \ 
+% \textbullet \ Issues with the Kinect device and gesture set are shown to be problematic.
 \end{abstract}
 
 
@@ -68,14 +110,87 @@ Abtract here...
 % End generated code
 %
 
-
-\keywords{Keywords here}
+\keywords{Kinect, gestures, education, classroom technology, control}
 
 \maketitle
 
-\section{Introduction}
+\section{Introduction}\label{sec:intro}
 
-Test cite~\cite{mcnaughton-et-al:jce2017,mcnaughton-et-al:hcis2017}.
+The uses of technology in the classroom are growing~\cite{Lloyd2011,Robertson2012,Schrum2008}.
+With this growth, the need for teachers to be able to control the deployed technologies increases~\cite{Apple1990,Selwyn2010,Selwyn2011}.
+Without the ability to influence or control classroom technology, teachers may be unable to manage learning interaction or intervene when students start to lose focus on their current task~\cite{Chen2005,Karabenick2011}.
+
+% With technology becoming more prevalent in the classroom~\cite{Lloyd2011,Robertson2012,Schrum2008} the likelihood of there being a number of student-orientated interfaces present in the environment increases.
+% Due to the student-orientated nature of these interfaces teachers may have difficulty in attaining students' attention or assisting them with tasks~\cite{Chen2005,Karabenick2011}.
+% This is because control of these interfaces lies primarily in the hands of the student.
+% There is therefore a need for teachers to have some degree of control over these interfaces~\cite{Apple1990,Selwyn2010,Selwyn2011}.
+
+Many current systems that allow teachers to control technology in the classroom require the use of a teacher-centric interface~\cite{Dagdag2011,Kuhn2005,Vila,Zhou2010}.
+Whether static, where the interface remains stationary during its use, or mobile, where the interface can be carried to new locations during its use, these interfaces require the teacher to momentarily take their attention away from the students.
+This division of attention caused by the distraction of an interface could have a detrimental effect on the quality of a teacher's interaction with their students.
+The disruption in communication between the students and the teacher this causes can be undesirable in many circumstances.
+Therefore, a method of controlling technology in the classroom without breaking this interaction would be beneficial.
+One such possible method is to make use of physical gestures, where a user performs an action which is identified by a monitoring system, to issue commands to technology in the classroom.
+
+The use of gestures, rather than a more standard interface, could allow teachers to issue commands in a more effective manner.
+Time is saved by not requiring the teacher to travel to their control interface.
+Even when there is no travel time, such as when mobile interfaces are used, gestures have the potential to be executed quicker than alternative input and control methods~\cite{Dulberg1999,Moyle2001}.
+Quicker execution of the commands should afford the teacher more time to observe and aid students.
+In addition, physical gestures should be less intrusive on the interaction between students and the teacher. 
+Many interfaces, specifically touch-screen mobile devices such as tablets, do not facilitate eyes-free interaction~\cite{Brewster2003}.
+This means that teachers using a static or mobile interface which utilises a visual output are required to dedicate a portion of their attention to its use.
+This division of attention can interrupt interaction between teachers and students.
+The use of physical gestures should allow teachers to continue interacting with students while issuing commands to a classroom technology's control system.
+
+Teachers in technology enhanced classroom also acquire additional administration responsibilities~\citep{Kuhn2005} such as managing the consequence of faults with the devices used.
+A physical gesture interface may reduce the overheads of such additional responsibilities by allowing teachers to quickly execute administrative tasks from any location in the classroom.
+
+The potential benefits of physical gestures make its implementation into a classroom software framework desirable.
+For a system such as this, a series of gestures must be produced which can be used to execute the various control commands within the framework.
+
+% This paper focuses on SynergyNet~\cite{HatchA.HigginsS&Mercier2009}, a multi-touch framework intended for use in the classroom.
+% The framework is built to support applications designed to be used by students through multi-touch interfaces.
+% The SynergyNet lab, built around the framework's use, consists of a number of multi-touch tabletop surfaces and is arranged to resemble a classroom.
+% The SynergyNet framework allows interaction between the multi-touch interfaces which enables the sharing of materials and the ability to issue commands through a network.
+% The ability for commands to be sent across a network offers the opportunity for control to be remotely exerted over the tabletop interfaces.
+% The SynergyNet framework has been augmented to use upper-body gestures, a subset of open-air gestures, to allow teachers to control classroom interfaces.
+% However, previous studies have identified issues that make its use in the classroom unsuitable~\cite{McNaughton2013a}.
+
+% The gesture controls enable the orchestration of several common-place commands, such as sending or retrieving materials.
+% It is through that issues relating to the SynergyNet framework's upper-body gesture support may be present in similar open-air gesture driven systems.
+% Therefore, any improvements which resolve the issues observed in the SynergyNet framework could be employed in other gesture systems. 
+% These improvements have the potential to benefit any systems with similar technologies, control sequences or gesture sets.
+
+The remainder of this paper is as follows. 
+Section~\ref{sec:related} discusses gesture detection technologies, specifically time-of-flight cameras.
+Section~\ref{sec:classcontrol} considers how the time-of-flight cameras could be used to adapt a classroom-based technology to utilise physical gestures.
+What constitutes an effective gesture is discussed in Section~\ref{sec:gestures}.
+A focus group based study is outlined in Section~\ref{sec:focusgroup} which was carried out to identify intuitive gestures for classroom control commands.
+The results of the study are outlined in Section~\ref{sec:focusgroupresults} and their implications are discussed in Section~\ref{sec:discussion}. 
+Implementation of a user generated set of gestures from observations on the focus group is detailed in Section~\ref{sec:implementation}.
+Section~\ref{sec:evaluation} discusses a study using the implemented physical gesture control system.
+Section~\ref{sec:evaluationresults} presents the results of this study and Section~\ref{sec:evaluationdiscussion} elaborates on the implications of the results.
+Future developments utilising findings from the study and our conclusions are presented in Section~\ref{sec:conclusions}.
+
+% The remainder of this paper is as follows. 
+% Section~\ref{sec:related} discusses the existing control systems used in SynergyNet for issuing commands and current developments in using the Kinect to track open-air gestures.
+% SynergyNet's support for upper-body gestures is discussed in detail in Section~\ref{sec:gestures}.
+% The issues observed in SynergyNet's current gesture control system are outlined in Section~\ref{sec:issues}.
+% Potential solutions used in other works to resolve these issues are discussed Section~\ref{sec:improvements}.
+% Section~\ref{sec:implementation} details how improvements were implemented into the SynergyNet framework to resolve these issues.
+% A user study is then outlined in Section~\ref{sec:study} which was carried out to assess the improved gesture system alongside the existing control technologies.
+% The results of the study are outlined in Section~\ref{sec:results} and their implications are discussed in Section~\ref{sec:discussion}.
+% Future developments utilising findings from the study and our conclusions are presented in Section~\ref{sec:conclusion}.
+
+
+
+
+
+
+
+
+
+
 
 % \begin{acks}
 

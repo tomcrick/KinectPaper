@@ -248,32 +248,33 @@ Due to these reasons, only gestures which utilise the positioning and movement o
 This means that gestures should only make use of upper-body joints and limbs which a \ac{UTToF} camera can track: the torso, wrists, hands, elbows, shoulders, neck and head.
 Therefore, gesture sets 6 and 7 in Figure~\ref{fig:gestureVenn} are shown to be unsuitable for use in the classroom.
 
-% \begin{table}[h]
-% \processtable{Unique physical gesture sets.\label{table:gestures}}{
-% \begin{tabular}{!{\vrule width 1.5pt}c|c|c|c|c!{\vrule width 1.5pt}}
-% \noalign{\hrule height 1.5pt}
-% \textbf{} 			&\textbf{Uses}	&\textbf{Uses}	&\textbf{} 	&\textbf{Visible to}	\\
-% \textbf{Gesture} 	&\textbf{Upper-}	&\textbf{Lower-}	&\textbf{Uses} 	&\textbf{a \ac{UTToF}}	\\
-% \textbf{Set} 		&\textbf{body} 	&\textbf{body} 	&\textbf{Fingers}	&\textbf{camera}			\\
-% \cline{1-5}
-% 1			&\tickYes 				&\crossNo			&\crossNo				&\crossNo			\\
-% \cline{1-5}
-% 2			& \crossNo				&\tickYes 			&\crossNo				&\crossNo			\\
-% \cline{1-5}
-% 3			&\tickYes  				&\tickYes 			&\crossNo				&\crossNo			\\
-% \cline{1-5}
-% 4			&\tickYes  				&\crossNo 			&\tickYes 				&\crossNo			\\
-% \cline{1-5}
-% 5			&\tickYes  				&\tickYes 			&\tickYes 				&\crossNo			\\
-% \cline{1-5}
-% 6			&\crossNo 				&\tickYes 			&\crossNo				&\tickYes 			\\
-% \cline{1-5}
-% 7			&\tickYes  				&\tickYes 			&\crossNo				&\tickYes 			\\
-% \noalign{\hrule height 1.5pt}
-% 8 			&\tickYes  				&\crossNo 			&\crossNo				&\tickYes 			\\
-% \noalign{\hrule height 1.5pt}
-% \end{tabular}}{}
-% \end{table}
+\begin{table}[h]
+\begin{tabular}{!{\vrule width 1.5pt}c|c|c|c|c!{\vrule width 1.5pt}}
+\noalign{\hrule height 1.5pt}
+\textbf{} 			&\textbf{Uses}	&\textbf{Uses}	&\textbf{} 	&\textbf{Visible to}	\\
+\textbf{Gesture} 	&\textbf{Upper-}	&\textbf{Lower-}	&\textbf{Uses} 	&\textbf{a \ac{UTToF}}	\\
+\textbf{Set} 		&\textbf{body} 	&\textbf{body} 	&\textbf{Fingers}	&\textbf{camera}			\\
+\cline{1-5}
+1			&\tickYes 				&\crossNo			&\crossNo				&\crossNo			\\
+\cline{1-5}
+2			& \crossNo				&\tickYes 			&\crossNo				&\crossNo			\\
+\cline{1-5}
+3			&\tickYes  				&\tickYes 			&\crossNo				&\crossNo			\\
+\cline{1-5}
+4			&\tickYes  				&\crossNo 			&\tickYes 				&\crossNo			\\
+\cline{1-5}
+5			&\tickYes  				&\tickYes 			&\tickYes 				&\crossNo			\\
+\cline{1-5}
+6			&\crossNo 				&\tickYes 			&\crossNo				&\tickYes 			\\
+\cline{1-5}
+7			&\tickYes  				&\tickYes 			&\crossNo				&\tickYes 			\\
+\noalign{\hrule height 1.5pt}
+8 			&\tickYes  				&\crossNo 			&\crossNo				&\tickYes 			\\
+\noalign{\hrule height 1.5pt}
+\end{tabular}
+\caption{Unique physical gesture sets.}
+\label{table:gestures}
+\end{table}
 
 As Table~\ref{table:gestures} shows, only gesture set 8 is suitable for use by a teacher in a classroom environment.
 All other gesture sets have been discounted due to their use of lower body limbs or inability to be identified by a \ac{UTToF} camera.
@@ -1023,27 +1024,28 @@ The average time taken to issue a command with the Kinect was 6.5 seconds with a
 \section{Study Discussion 1}
 \label{sec:evaluationdiscussion1}
 
-% \begin{table}[h]
-% \processtable{The usage of the control devices in the study.\label{table:results}}{
-% \begin{tabular}{!{\vrule width 1.5pt}c|c|c|c!{\vrule width 1.5pt}}
-% \noalign{\hrule height 1.5pt}
-% \multicolumn{1}{!{\vrule width 1.5pt}c!{\vrule width 1.5pt}}{\textbf{}}	
-% &\textbf{Number} &\multicolumn{1}{!{\vrule width 1.5pt}c!{\vrule width 1.5pt}}{\textbf{Number}}	 &\textbf{Average Time}\\
-% \multicolumn{1}{!{\vrule width 1.5pt}c!{\vrule width 1.5pt}}{\textbf{}}	
-% &\textbf{of} &\multicolumn{1}{!{\vrule width 1.5pt}c!{\vrule width 1.5pt}}{\textbf{of}}	 &\textbf{to Issue}\\
-% \multicolumn{1}{!{\vrule width 1.5pt}c!{\vrule width 1.5pt}}{\textbf{Device}}	
-% &\textbf{Commands} &\multicolumn{1}{!{\vrule width 1.5pt}c!{\vrule width 1.5pt}}{\textbf{Errors}}	&\textbf{Commands}\\
-% \noalign{\hrule height 1.5pt}
-% Board 					&13 					&1				&12.4 seconds				\\
-% \cline{1-4}
-% Tablet 					&9						&1				&13.6 seconds				\\
-% \cline{1-4}
-% Kinect 					&23 					&20			&6.59 seconds				\\
-% \noalign{\hrule height 1.5pt}
-% \end{tabular}}{}
-% \end{table}
+\begin{table}[h]
+\begin{tabular}{!{\vrule width 1.5pt}c|c|c|c!{\vrule width 1.5pt}}
+\noalign{\hrule height 1.5pt}
+\multicolumn{1}{!{\vrule width 1.5pt}c!{\vrule width 1.5pt}}{\textbf{}}	
+&\textbf{Number} &\multicolumn{1}{!{\vrule width 1.5pt}c!{\vrule width 1.5pt}}{\textbf{Number}}	 &\textbf{Average Time}\\
+\multicolumn{1}{!{\vrule width 1.5pt}c!{\vrule width 1.5pt}}{\textbf{}}	
+&\textbf{of} &\multicolumn{1}{!{\vrule width 1.5pt}c!{\vrule width 1.5pt}}{\textbf{of}}	 &\textbf{to Issue}\\
+\multicolumn{1}{!{\vrule width 1.5pt}c!{\vrule width 1.5pt}}{\textbf{Device}}	
+&\textbf{Commands} &\multicolumn{1}{!{\vrule width 1.5pt}c!{\vrule width 1.5pt}}{\textbf{Errors}}	&\textbf{Commands}\\
+\noalign{\hrule height 1.5pt}
+Board 					&13 					&1				&12.4 seconds				\\
+\cline{1-4}
+Tablet 					&9						&1				&13.6 seconds				\\
+\cline{1-4}
+Kinect 					&23 					&20			&6.59 seconds				\\
+\noalign{\hrule height 1.5pt}
+\end{tabular}
+\caption{The usage of the control devices in the study.}
+\label{table:results1}
+\end{table}
 
-Table~\ref{table:results} summarises the usage of the three control technologies used in the study.
+Table~\ref{table:results1} summarises the usage of the three control technologies used in the study.
 The results showcase the strengths of each of the technologies in places.
 The board device was shown to produce the least errors over use whereas the tablet and Kinect devices were shown to provide shorter interaction times.
 The device which was quickest for issuing commands was the Kinect as shown in Figure~\ref{fig:averageTime}.
@@ -1196,37 +1198,38 @@ This would make the results of future studies much more indicative of whether th
 These future studies could benefit from the use of more than one teacher to allow for the results to be more indicative.
 The use of multiple teachers will also allow for changes in the task ordering to remove experience with the system as a confounding factor.
 
-% \begin{table}[h]
-% \processtable{The adhesion of the gesture set's implementation to the upper-body gesture criteria.\label{table:criteria}}{
-% \begin{tabular}{!{\vrule width 1.5pt}c|c!{\vrule width 1.5pt}}
-% \noalign{\hrule height 1.5pt}
-% \multicolumn{1}{!{\vrule width 1.5pt}c!{\vrule width 1.5pt}}{\textbf{Criterion}}	
-% &\textbf{Determined by} 	\\
-% \noalign{\hrule height 1.5pt}
-% Cost 					& 					\\
-% \cline{1-1}
-% Adaptability 				&Sensing 			\\
-% \cline{1-1}
-% Accuracy 				&Device 				\\
-% \cline{1-1}
-% Un-encumbering Nature	&(Kinect) 			\\
-% \cline{1-1}
-% Responsiveness 			& 					\\
-% \cline{1-2}
-% Lexicon Size 				&Control Sequence 	\\
-% \cline{1-2}
-% Intuitiveness 			& 					\\
-% \cline{1-1}
-% Comfort 					& 					\\
-% \cline{1-1}
-% Low Mental Load 			&Gesture Set 		\\
-% \cline{1-1}
-% Interaction Space 		& 					\\
-% \cline{1-1}
-% Ubiquity 				& 					\\
-% \noalign{\hrule height 1.5pt}
-% \end{tabular}}{}
-% \end{table}
+\begin{table}[h]
+\begin{tabular}{!{\vrule width 1.5pt}c|c!{\vrule width 1.5pt}}
+\noalign{\hrule height 1.5pt}
+\multicolumn{1}{!{\vrule width 1.5pt}c!{\vrule width 1.5pt}}{\textbf{Criterion}}	
+&\textbf{Determined by} 	\\
+\noalign{\hrule height 1.5pt}
+Cost 					& 					\\
+\cline{1-1}
+Adaptability 				&Sensing 			\\
+\cline{1-1}
+Accuracy 				&Device 				\\
+\cline{1-1}
+Un-encumbering Nature	&(Kinect) 			\\
+\cline{1-1}
+Responsiveness 			& 					\\
+\cline{1-2}
+Lexicon Size 				&Control Sequence 	\\
+\cline{1-2}
+Intuitiveness 			& 					\\
+\cline{1-1}
+Comfort 					& 					\\
+\cline{1-1}
+Low Mental Load 			&Gesture Set 		\\
+\cline{1-1}
+Interaction Space 		& 					\\
+\cline{1-1}
+Ubiquity 				& 					\\
+\noalign{\hrule height 1.5pt}
+\end{tabular}
+\caption{The adhesion of the gesture set's implementation to the upper-body gesture criteria.}
+\label{table:criteria}
+\end{table}
 
 Table~\ref{table:criteria} summarises criteria outlined for evaluating an upper-body gesture system outlined in Section~\ref{sec:gestures} which was derived from the requirements defined by Waches et al.~\citeyearpar{Wachs2011}.
 The table shows which elements of upper-body gesture system the criteria apply to.
@@ -2016,35 +2019,35 @@ For the Kinects, four of the successful commands given were intended to affect a
 \subsection{Results Summary}
 \label{sec:results:summary}  
 
-The usage of the three control technologies in the study is summarised in Table~\ref{table:results}.
+The usage of the three control technologies in the study is summarised in Table~\ref{table:results2}.
 
-%\begin{table}[h]
-%\centering
-%\begin{tabular}{!{\vrule width 1.5pt}c|c|c|c!{\vrule width 1.5pt}}
-%\noalign{\hrule height 1.5pt}
-%\multicolumn{1}{!{\vrule width 1.5pt}c!{\vrule width 1.5pt}}{\textbf{}}	
-%&\textbf{Number}
-%&\multicolumn{1}{!{\vrule width 1.5pt}c!{\vrule width 1.5pt}}{\textbf{Number}}	
-%&\textbf{Avg. time}\\
-%\multicolumn{1}{!{\vrule width 1.5pt}c!{\vrule width 1.5pt}}{\textbf{}}	
-%&\textbf{of}
-%&\multicolumn{1}{!{\vrule width 1.5pt}c!{\vrule width 1.5pt}}{\textbf{of}}	
-%&\textbf{to issue}\\
-%\multicolumn{1}{!{\vrule width 1.5pt}c!{\vrule width 1.5pt}}{\textbf{Device}}	
-%&\textbf{commands}
-%&\multicolumn{1}{!{\vrule width 1.5pt}c!{\vrule width 1.5pt}}{\textbf{errors}}	
-%&\textbf{commands}\\
-%\noalign{\hrule height 1.5pt}
-%Board 					&20 					&1				&8.28 seconds				\\
-%\cline{1-4}
-%Tablet 					&13					&3				&9.17 seconds				\\
-%\cline{1-4}
-%Kinect 					&26					&13			&2.63 seconds				\\
-%\noalign{\hrule height 1.5pt}
-%\end{tabular}
-%\caption{The usage of the control devices in the study.}
-%\label{table:results}
-%\end{table}
+\begin{table}[h]
+\centering
+\begin{tabular}{!{\vrule width 1.5pt}c|c|c|c!{\vrule width 1.5pt}}
+\noalign{\hrule height 1.5pt}
+\multicolumn{1}{!{\vrule width 1.5pt}c!{\vrule width 1.5pt}}{\textbf{}}	
+&\textbf{Number}
+&\multicolumn{1}{!{\vrule width 1.5pt}c!{\vrule width 1.5pt}}{\textbf{Number}}	
+&\textbf{Avg. time}\\
+\multicolumn{1}{!{\vrule width 1.5pt}c!{\vrule width 1.5pt}}{\textbf{}}	
+&\textbf{of}
+&\multicolumn{1}{!{\vrule width 1.5pt}c!{\vrule width 1.5pt}}{\textbf{of}}	
+&\textbf{to issue}\\
+\multicolumn{1}{!{\vrule width 1.5pt}c!{\vrule width 1.5pt}}{\textbf{Device}}	
+&\textbf{commands}
+&\multicolumn{1}{!{\vrule width 1.5pt}c!{\vrule width 1.5pt}}{\textbf{errors}}	
+&\textbf{commands}\\
+\noalign{\hrule height 1.5pt}
+Board 					&20 					&1				&8.28 seconds				\\
+\cline{1-4}
+Tablet 					&13					&3				&9.17 seconds				\\
+\cline{1-4}
+Kinect 					&26					&13			&2.63 seconds				\\
+\noalign{\hrule height 1.5pt}
+\end{tabular}
+\caption{The usage of the control devices in the study.}
+\label{table:results2}
+\end{table}
 
 The results show that the Kinect was the much faster control technology for issuing commands but also had the highest error rate.
 Though the error rate is smaller than that in present in the previous study, its magnitude indicates that not all the issues intended to be countered by the implemented improvement have been resolved.

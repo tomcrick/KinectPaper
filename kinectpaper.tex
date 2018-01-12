@@ -70,7 +70,12 @@
 
 \renewcommand\shortauthors{McNaughton, J. and Crick, T.}
 
+% TODO May need to include Liz Burd and Emma Mercier, contact them to see if they want including (and if so if they'll help proof)?
+
 \begin{abstract}
+
+% TODO Merge abstracts to tell the full story: Guessability study -> User Study 1 - > Improvements - User Study 2
+
 {\emph{Abstract 1:}} There is a growing need to give teachers the ability to remotely control computer interfaces in the classroom.
 Existing techniques such as control through fixed interfaces, mobile devices or voice commands have a number of short comings.
 The use of upper-body gestures to allow teachers to control classroom interfaces as an alternative is considered.
@@ -116,6 +121,10 @@ With the use of a more accurate sensing technology the system would be suitable 
 \section{Introduction 1}
 \label{sec:intro1}
 
+% TODO Extend with elements from Introduction 2 to explain how improvements are needed to make Open-Air gestures usable.
+
+% TODO Update Summary of Structure at the end.
+
 The uses of technology in the classroom are
 growing~\cite{Schrum2008,Lloyd2011,Robertson2012,mcnaughton-et-al:jce2017},
 further stimulated by significant reforms of digital skills and computer science education in various nations, especially across the UK~\cite{brown-et-al:toce2014}.
@@ -158,6 +167,10 @@ Future developments utilising findings from the study and our conclusions are pr
 
 \section{Background 1} 
 \label{sec:related1}
+
+% TODO Needs more recent content.
+
+% TODO Double check that the Kinect actually is a time-of-flight and UTToF camera
 
 To allow a system to identify physical gestures a method of tracking the movements of users is required.
 Time-of-flight cameras~\cite{Lange2001} are capable of doing this through building a depth image of an environment and tracking movement by identifying areas where the depth values change.
@@ -207,6 +220,10 @@ The use of physical gestures monitored via a \ac{UTToF} camera appears to be the
 
 \section{Classroom Control with Gestures 1}  
 \label{sec:classcontrol1}
+
+% TODO Trim down (subsection on potential issues could be summarised (its just reasoning for the limitations on acceptable gestures which we used to determine what we asked the participants.)
+
+% TODO Merge next 3 sections?
 
 The ability to track specific users and their limbs allows a \ac{UTToF} camera to be used for identifying body-orientated gestures.
 This could allow teachers to control technology in the classroom without the need for an intermediate physical interface.
@@ -330,6 +347,8 @@ Therefore, an alternative method of identifying which gestures should be affecte
 \section{Gauging Gesture Suitability 1} 
 \label{sec:gestures1}
 
+% TODO Trim down.
+
 The requirements of the set of gestures to be used by teachers in the classroom are determined by both the shortcomings of the sensing technology, as discussed in Section~\ref{sec:classcontrol1}, and the abilities of the intended users.
 Specifically, the set of gestures for controlling classroom technologies are those which are able to be detected by a \ac{UTToF} camera and are suited to be performed by teachers.
 With the potential set of suitable gestures already reduced to the upper-body by the requirements of using the sensing technology in a classroom environment, there is now the task of identifying which gestures to use and with which controls.
@@ -411,6 +430,8 @@ We use these \textit{upper-body gestures criteria} to assesses the gestures prop
 
 \section{Focus Group 1}  
 \label{sec:focusgroup1}
+
+% TODO Trim Down.
 
 To discover gestures which conform to the criteria outlined in Section~\ref{sec:gestures1} a user-centred design process was adopted.
 As part of this process a user study in the form of a focus group was organised.
@@ -520,6 +541,10 @@ In addition to the ranking of gestures per action, the data analysis also aimed 
 
 \section{Focus Group Results 1}
 \label{sec:focusgroupresults1}  
+
+% TODO Trim down.
+
+% TODO Merge with following implementation section?
 
 Of the sixty seven participants who took part in the study, fifteen were male and fifty two were female.
 This was representative of the gender balance of \ac{PGCE} students at the institution.
@@ -701,6 +726,8 @@ With the gesture set and control sequence defined, a classroom technology system
 \section{Implementation 1}
 \label{sec:implementation1}
 
+% TODO Trim down.
+
 The SynergyNet framework~\cite{Higgins2011} was selected for the control sequence defined in Section~\ref{sec:discussion1} to be implemented into.
 SynergyNet is a software framework which supports education based activities that are intended to be interacted with through multi-touch table interfaces.
 The framework offers a wide range of supporting features such as communication between multiple interfaces via a network and is capable of displaying several forms of media.
@@ -792,6 +819,8 @@ When the control sequence is finished the borders are removed from the Kinect no
 
 \section{User Study 1}
 \label{sec:evaluation1}
+
+% TODO Trim down?
 
 A user study was conducted as an observed lab-based experiment.
 The study took place in the SynergyNet lab used in the focus group discussed in Section~\ref{sec:focusgroup1}.
@@ -885,6 +914,8 @@ The frequency of each device's use and their error rates can also be identified 
 
 \section{User Study Results 1}
 \label{sec:evaluationresults1}
+
+% TODO Trim down?
 
 The teacher was able to meet the minimum training need relating to the use of the Kinect, outlined in Section~\ref{sec:gestures1}, of being able to recall all gestures and their associated commands.
 To assess this the teacher performed a dry run of a mysteries task with the study organisers acting as students.
@@ -1026,6 +1057,10 @@ The average time taken to issue a command with the Kinect was 6.5 seconds with a
 \section{Study Discussion 1}
 \label{sec:evaluationdiscussion1}
 
+% TODO Trim down.
+
+% TODO Merge with following conclusion.
+
 \begin{table}[h]
 \begin{tabular}{!{\vrule width 1.5pt}c|c|c|c!{\vrule width 1.5pt}}
 \noalign{\hrule height 1.5pt}
@@ -1137,6 +1172,12 @@ The improvements proved to be significant enough to warrant being discussed sepa
 
 \section{Conclusions 1}
 \label{sec:conclusions1}
+
+% TODO Trim down.
+
+% TODO Remove paper summaries.
+
+% TODO Remove discussions of what to do next.
 
 The primary objective of the study was to find how the use of upper-body gestures compares to alternative classroom control technologies.
 The Kinect was shown to be the quickest despite the errors encountered.
@@ -1277,6 +1318,12 @@ The implementation of the suggested improvements to resolve the observed errors 
 \section{Introduction 2}
 \label{sec:intro2}
 
+% TODO Merge the next 6 sections to just `Improvements to Open Air Gestures'
+
+% TODO Trim down - can almost totally remove this as it just repetition of the first introduction..
+
+% TODO Remove summary of paper.
+
 With technology becoming more prevalent in the classroom~\cite{Lloyd2011,Robertson2012,Schrum2008} the likelihood of there being a number of student-orientated interfaces present in the environment increases.
 Due to the student-orientated nature of these interfaces teachers may have difficulty in attaining students' attention or assisting them with tasks~\cite{Chen2005,Karabenick2011}.
 This is because control of these interfaces lies primarily in the hands of the student.
@@ -1308,6 +1355,8 @@ Future developments utilising findings from the study and our conclusions are pr
 
 \section{Background 2} 
 \label{sec:related2}
+
+% TODO Trim down - can remove most of this section as its just summarising the first half of the paper.
 
 \begin{figure}[h]
    \centering
@@ -1371,6 +1420,8 @@ Once calibrated, a teacher could perform gestures which, when identified by the 
 \section{SynergyNet and Upper-body Gesture Controls}  
 \label{sec:gestures2}
 
+% TODO Trim down - can remove a lot of this as its just summarising the first half of the paper.
+
 \begin{figure*}[t]
    \centering
    \includegraphics[width=1\textwidth]{figures/old_control_sequence_flow_diagram.png}
@@ -1409,6 +1460,10 @@ If a teacher does this, the corresponding command will be applied to all student
 
 \section{Issues with Upper-body Gesture Controls 2}  
 \label{sec:issues2}
+
+% TODO Trim down.
+
+% TODO A lot of this (especially the structure) could be merged into the discussion of User Study 1.
 
 Previous studies involving the use of SynergyNet's upper-body gesture controls revealed several shortcomings.
 To assess the existing implementation a set of criteria for upper-body gestures was derived from the requirements for hand gestures outlined by Wachs et al.~\cite{Wachs2011}.
@@ -1608,6 +1663,8 @@ This would reduce the amount of user intervention required by the control sequen
 
 \subsection{Resolving Issue 4: Adding Functionality}
 \label{sec:improveFunctionality}
+
+% TODO Trim down.
 
 In the original control sequence design built on the guessability study results, teachers were intended to select the tables they wished to affect through pointing at them.
 However, the issue of constant obstruction of the pointing arm resulted in this not being implemented.
@@ -1826,6 +1883,8 @@ The updated control sequence with new gestures and interface selection is summar
 \section{User Study 2}  
 \label{sec:study2}    
 
+% TODO Trim down - a lot of this is repetition of the first user study section as both were set up and carried out the same way - therefore just mention its the same but discuss the differences (improvements, different class/teacher, etc).
+
 A study was organised to assess the impact of the implemented improvements on the system's use.
 The study followed a similar structure to that carried out in previous work.
 A primary-school level teacher took part in the study with sixteen of their students.
@@ -1858,6 +1917,8 @@ The study's hypothesis was that the error rate of the Kinects' use would be sign
 The criteria used in the previous study, generated from Wachs et al.~\cite{Wachs2011} requirements for hand gestures, was employed to assess the improved upper-body gesture control system.
 The success of improvements could be observed through whether previously unmet criteria were fulfilled.
 
+
+
 Timing information was collected from the session recordings.
 The time from the teacher first announcing their intention to issue a command to the command's broadcast from the controlling technology is classified as the execution time.
 The teacher's announcement of their intentions can also be used to identify when the result of the command differs from their intended effect, indicating an error has occurred.
@@ -1869,6 +1930,8 @@ In addition to this, the number of errors committed with each technology and qua
 
 \section{User Study Results 2}
 \label{sec:results2}  
+
+% TODO Trim down.
 
 The study was carried out without any major deviations from its design.
 The teacher completed the training for the system the day before the study and stated that they felt confident enough to use the each of the control technologies without any additional aid or practice.
@@ -2057,6 +2120,8 @@ Though the error rate is smaller than that in present in the previous study, its
 
 \section{Discussion2}
 \label{sec:discussion2}
+
+% TODO Trim down.
 
 In the previous study the Kinect controls had an overall error rate of 86.96\meaning that twenty in twenty three commands were erroneous.
 As Figure~\ref{fig:controlDevicesErrors} shows, the error rate for the Kinect controls in this study was 50\%.
@@ -2273,6 +2338,10 @@ The criterion of mental load could now be said to be fulfilled by the system wit
 \section{Conclusions 2}
 \label{sec:conclusion2}
 
+% TODO Lift some of conclusion 1 here so that the whole paper is summarised.
+
+% TODO Trim down.
+
 The study was designed to identify whether the implemented improvements detailed in this paper resolved the issues noted to cause the previous implementation of the system to fail to meet certain criteria.
 The results of the study reveal that all but one of the criteria were filled by the improvements.
 The previously unmet criteria fulfilled by the improvements were those for interaction space, intuitiveness and mental load.
@@ -2344,6 +2413,8 @@ Therefore, these improvements can be considered suitable for any other open-air 
 \begin{acks}
 
 This work was partially funded under the UK's EPSRC/ERSC Teaching and Learning Research Programme (TLRP) {\emph{SynergyNet}} project (RES-139-25-0400).
+
+% TODO Include thanks to Andrew J-G?
 
 \end{acks}
 

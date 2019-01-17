@@ -328,12 +328,12 @@ All other gesture sets have been discounted due to their use of lower body limbs
 Gesture set 8 consists of gestures which can be observed by a \ac{UTToF} camera that use the upper-body but not the lower-body or fingers.
 
 \subsection{Potential Issues}  
-\label{sec:attention}
+\label{subsec:potentialIssues}
 
 The use of physical gestures in the classroom requires that several potential issues are accommodated for in the design of any system which supports them.
 
 \subsubsection{False Positives}  
-\label{sec:attention}
+\label{subsubsec:falsePositives}
 
 A potential issue concerning \ac{UTToF} cameras are that, by default, they are active at all times.
 This means that teachers will need to be mindful of their actions.
@@ -361,7 +361,7 @@ A method of ensuring that a teacher knows whether they have the \ac{UTToF} camer
 Audible or visual feedback would aid the teacher in knowing whether their movement can or cannot be interpreted by the system as a gesture.
 
 \subsubsection{Interface Selection}  
-\label{sec:selection}
+\label{subsubsec:interfaceSelection}
 
 It is important to note that sometimes a teacher may not want to affect all interfaces when issuing a command.
 This means that the teacher should be able to perform a gesture in such a way that the system is informed that the related action is intended to only affect specific interfaces.
@@ -372,19 +372,20 @@ This requires the teacher to move about the classroom and may interrupt their in
 Therefore, an alternative method of identifying which gestures should be affected by a command is desirable.
 
 \section{Study Approach} 
-\label{sec:studyapproach}
+\label{sec:studyApproach}
 
 % TODO Highlight need for a suitable gesture set to be generated
 
 % TODO Highlight need for an iterative design due to exploring alternative implementations, therefore there are multiple phases to the study.
 
 \subsection{Gathering User Generated Gestures} 
+\label{subsec:gatheringGestures}
 
 % TODO Trim a lot of this section.
 
 % TODO Explain need for focus group.
 
-The requirements of the set of gestures to be used by teachers in the classroom are determined by both the shortcomings of the sensing technology, as discussed in Section~\ref{sec:classcontrol1}, and the abilities of the intended users.
+The requirements of the set of gestures to be used by teachers in the classroom are determined by both the shortcomings of the sensing technology, as discussed in Section~\ref{sec:orchestration}, and the abilities of the intended users.
 Specifically, the set of gestures for controlling classroom technologies are those which are able to be detected by a \ac{UTToF} camera and are suited to be performed by teachers.
 With the potential set of suitable gestures already reduced to the upper-body by the requirements of using the sensing technology in a classroom environment, there is now the task of identifying which gestures to use and with which controls.
 It is important that the selected gestures are intuitive~\cite{Cohen,Wachs2011}.
@@ -428,7 +429,7 @@ The framework to assess potential upper-body gestures consists of a series of cr
 Criteria relating to upper-body gesture sensing systems derived from Waches et al.'s~\citeyearpar{Wachs2011} requirements and how a typical \ac{UTToF} camera adheres to them are as follows:
 
 \begin{itemize}
-\item  \textit{\textbf{Cost:}} As detailed in Section~\ref{sec:classcontrol1}, \ac{UTToF} cameras are relatively low cost.
+\item  \textit{\textbf{Cost:}} As detailed in Section~\ref{sec:orchestration}, \ac{UTToF} cameras are relatively low cost.
 \item \textit{\textbf{Responsiveness:}} The Kinect, a \ac{UTToF} camera, has a frame rate of 30Hz~\cite{Livingston2012} which is enough to be considered adequately responsive for tracking the movement of users.
 \item \textit{\textbf{Adaptability:}} A typical \ac{UTToF} camera has the ability to be used by various supporting software frameworks which each allow for easy accessing of the device's collected data and functions~\cite{Goth2011}.
 This allows \ac{UTToF} cameras to be easily adapted for changes in use.
@@ -464,6 +465,7 @@ We use these \textit{upper-body gestures criteria} to assesses the gestures prop
 
 
 \subsection{Focus Group }
+\label{subsec:focusGroup}
 
 % TODO Trim Down.
 
@@ -541,6 +543,7 @@ However, time restraints made the need for capturing usable gestures, i.e. those
 Therefore, the unconstrained gesture capturing phase was not carried out in this study.
 
 \subsubsection{Focus Group Data Analysis}
+\label{subsubsec:focusGroupAnalysis}
 
 Participants were recorded on video performing the gestures during the study.
 Using the recordings, for each command all participants' movements could be studied and summarised as a sequence of poses and movements.
@@ -572,6 +575,7 @@ Therefore, it is important to ensure that it is intuitive and natural.
 In addition to the ranking of gestures per action, the data analysis also aimed to identify how the participants differentiated gestures intended for all interfaces from those intended for specific interfaces.
 
 \subsubsection{Focus Group Results}
+\label{subsubsec:focusGroupResults}
 
 % TODO Trim down.
 
@@ -692,6 +696,7 @@ Again, this gesture was likely to be popular due to its similarity to the action
 With this set of gestures compiled, a gesture recognition system can be implemented into a classroom technology system utilising a \ac{UTToF} camera.
 
 \subsection{User Generated Gestures}
+\label{subsec:userGeneratedGestures}
 
 The results from the focus group discussed in Section~\ref{sec:focusgroupresults1} indicated that the gestures which were the most popular were those that bore a metaphorical relationship to their corresponding commands.
 If a command could be interpreted as a physical task, participants would often use a gesture which mimicked an action carried out to complete that task.
@@ -750,11 +755,12 @@ This feedback is necessary for informing the teacher whether the gesture they ha
 With the gesture set and control sequence defined, a classroom technology system can be augmented to use a \ac{UTToF} camera.
 
 \section{Study Phase 1} 
-\label{sec:studyphase1}
+\label{sec:studyPhase1}
 
 % TODO Brief intro to first stage of study
 
 \subsection{Software implementation}
+\label{subsec:studyPhase1Implementation}
 
 % TODO Trim down and make appropriate to section.
 
@@ -846,7 +852,8 @@ If the table is not frozen there will be no blue tinting to the screen.
 
 When the control sequence is finished the borders are removed from the Kinect node and student interface to indicate that the system's attention is lost.
 
-\subsection{Design}
+\subsection{Study Design}
+\label{subsec:studyPhase1Design}
 
 % TODO Trim down
 
@@ -907,6 +914,7 @@ The teacher was asked to think aloud when possible and announce their intentions
 This allowed for accurate timing of intention to execution.
 
 \subsubsection{Data Analysis}
+\label{subsec:studyPhase1Analysis}
 
 The ordering of the tasks could have influenced the teacher's use of the system.
 Gaining experience with the system commands during the earlier tasks may afford the teacher more confidence later in the study, theoretically reducing their error rate and improving their interaction times.
@@ -939,6 +947,7 @@ With these annotations the average time taken to issue commands with each of the
 The frequency of each device's use and their error rates can also be identified through the video annotations.
 
 \subsection{Results}
+\label{subsec:studyPhase1Results}
 
 % TODO Trim down
 
@@ -971,6 +980,7 @@ Throughout this dry run the teacher was able to correctly recall and invoke all 
 \end{figure*} 
 
 \subsubsection{Task 1 - Board Only}
+\label{subsubsec:studyPhase1ResultsTask1}
 
 Ten commands were issued by the teacher during task 1's 25 minute and 46 second duration.
 All these commands were issued through the interactive whiteboard as shown in Figure~\ref{fig:studyBoard}.
@@ -981,6 +991,7 @@ This led to the teacher confusing the two similarly worded command buttons.
 The average time taken to issue a command with the board was 12.5 seconds with a standard deviation of 6.36 seconds.
 
 \subsubsection{Task 2 - Tablet Only}
+\label{subsubsec:studyPhase1ResultsTask2}
 
 Nine commands were observed to be issued by the teacher in task 2's 18 minute duration.
 All these commands were issued through the tablet interface as shown in Figure~\ref{fig:studyTablet}.
@@ -992,6 +1003,7 @@ The average time taken to issue a command with the tablet was 13.6 seconds with 
 It was noted that the teacher would become preoccupied with the interface when issuing commands through the tablet and break interaction with the students to concentrate on using the device.
 
 \subsubsection{Task 3 - Kinect Only}
+\label{subsubsec:studyPhase1ResultsTask3}
 
 Twenty one commands were observed to be issued by the teacher during task 3 in its 11 minute and 26 second duration.
 All these commands were issued through the Kinect as shown in Figure~\ref{fig:studyKinect}.
@@ -1056,6 +1068,7 @@ The teacher had to repeat gestures which failed or issue additional commands to 
 Three of the errors noted during this task could be categorised as false negatives whereas eight of the errors were false positives.
 
 \subsubsection{Task 4 - All Devices}
+\label{subsubsec:studyPhase1ResultsTask4}
 
 For task 4, where the teacher had the option of using any of the three control devices, five commands were observed to be issued by the teacher in its 11 minute and 38 second duration.
 Three of these commands were issued through the board control and two through the Kinect.
@@ -1076,6 +1089,7 @@ During this task the average time taken to issue a command with the board was 12
 The average time taken to issue a command with the Kinect was 6.5 seconds with a standard deviation of 1.38 seconds.
 
 \subsection{Observations}
+\label{subsec:studyPhase1Observations}
 
 % TODO Note how the Kinect's poor range and tracking of movement were hugely problematic and needed to be corrected for any further phases.
 
@@ -1402,6 +1416,7 @@ Being able to track the location of a person's limbs and joints allows for a sys
 Once calibrated, a teacher could perform gestures which, when identified by the recognition system, would trigger the sending of commands to student-centric interfaces.
 
 \subsubsection{Issues with Initial Upper-body Gesture Controls}
+\label{subsubsec:studyPhase1ObservationsIssues}
 
 Previous studies involving the use of SynergyNet's upper-body gesture controls revealed several shortcomings.
 To assess the existing implementation a set of criteria for upper-body gestures was derived from the requirements for hand gestures outlined by Wachs et al.~\cite{Wachs2011}.
@@ -1453,8 +1468,8 @@ Because any command issued with the Kinect must influence all interfaces, teache
 The lack of cohesion between the Kinect controls and alternatives may exacerbate the identified problems concerning intuitiveness and mental load.
 % From Background 2 ===========================================================================
 
-\section{Study Phase 2} 
-\label{sec:studyphase2}
+\section{Study Phase 2}
+\label{sec:studyPhase2}
 
 % TODO Trim down and make suitable.
 
@@ -1629,6 +1644,7 @@ Using this approach the teacher can select multiple interfaces at once without t
 This approach allows for interface selection without diminishing the system's intuitiveness or speed of use.
 
 \subsection{Implementation}
+\label{subsec:studyPhase2Implementation}
 
 With clear definitions of the issues in Section~\ref{sec:issues2} and their potential solutions in Section~\ref{sec:improvements2}, improvements can be implemented in SynergyNet.
 Four key improvements were selected for implementation.
@@ -1643,7 +1659,8 @@ These implemented improvements were; support for multiple Kinect devices, creati
 
 Figure~\ref{fig:issueFlow} outlines what issues cause the failure of various criteria and the implemented solutions intended to resolve them.
 
-\subsubsection{Multiple Kinects}  
+\subsubsection{Multiple Kinects} 
+\label{subsubsec:studyPhase2ImplementationMultipleKinects}
 
 \begin{figure*}[t]
   \centering
@@ -1726,6 +1743,7 @@ In addition to this the use of multiple Kinects will support the implementation 
 With multiple perspectives the teacher's torso cannot obscure where they are pointing.
 
 \subsubsection{Gesture Set Cohesion} 
+\label{subsubsec:studyPhase2ImplementationGestureSet}
 
 To improve the cohesion of the gesture set it was decided that all the upper-body gestures used in the control sequence should conform to an overarching pattern.
 As noted in Section~\ref{sec:improveIntuitiveness}, the most obvious pattern amongst the existing gestures was their similarities to related real-world actions.
@@ -1767,6 +1785,7 @@ All the gestures used in the framework now bare resemblance to related real-worl
 The gesture set can be said to be more cohesive with no more outlying gesture which do not conform to the metaphor pattern.
 
 \subsubsection{Enabling Pause Tolerance}  
+\label{subsubsec:studyPhase2ImplementationPauseTolerance}
 
 A pause was implemented into the control sequence at positions before and after identifying a teacher performing a gesture.
 These pauses are where the system will ignore any actions performed by the teacher.
@@ -1781,6 +1800,7 @@ These pauses last one and a half seconds, giving teachers time to move their lim
 \end{figure*}
 
 \subsubsection{Automatic Calibration}  
+\label{subsubsec:studyPhase2ImplementationAutoCalibration}
 
 The control sequence was also augmented by the implementation of automatic calibration.
 With this the teacher does not need to perform a calibration pose for the Kinect to track their upper-body joints.
@@ -1791,6 +1811,7 @@ Without automatic calibration the teacher would be required to perform the calib
 Automatic calibration saves the time and mental load which would be required to repeatedly perform this pose.
 
 \subsubsection{Interface Selection}  
+\label{subsubsec:studyPhase2ImplementationInterfaceSelection}
 
 With the system augmented to use multiple Kinects the teacher should only be able to obscure a single Kinect's view of the interfaces pointed at.
 Therefore, the control sequence was augmented to include the pointing gesture for the selection of interfaces.
@@ -1814,6 +1835,7 @@ The implementation of the pointing gesture is intended to improve intuitiveness 
 The updated control sequence with new gestures and interface selection is summarised in Figure~\ref{fig:controlSequenceFlowDiagram}.
 
 \subsection{Design}
+\label{subsec:studyPhase2Design}
 
 % TODO Trim down - a lot of this is repetition of the first user study section as both were set up and carried out the same way - therefore just mention its the same but discuss the differences (improvements, different class/teacher, etc).
 
@@ -1845,6 +1867,7 @@ The primary objective of this study was to assess whether the implemented improv
 The study's hypothesis was that the error rate of the Kinects' use would be significantly smaller than the error rate of the Kinect controls in the previous study.
 
 \subsubsection{Data Analysis}
+\label{subsec:studyPhase2Analysis}
 
 The criteria used in the previous study, generated from Wachs et al.~\cite{Wachs2011} requirements for hand gestures, was employed to assess the improved upper-body gesture control system.
 The success of improvements could be observed through whether previously unmet criteria were fulfilled.
@@ -1857,6 +1880,7 @@ Times taken to perform similar actions with each classroom technology were compa
 In addition to this, the number of errors committed with each technology and quality of communication between the teacher and students were also noted from the recordings.
 
 \subsection{Results}
+\label{subsec:studyPhase2Results}
 
 % TODO Trim down.
 
@@ -1864,6 +1888,7 @@ The study was carried out without any major deviations from its design.
 The teacher completed the training for the system the day before the study and stated that they felt confident enough to use the each of the control technologies without any additional aid or practice.
 
 \subsubsection{Task 1 - Board Only}
+\label{subsubsec:studyPhase2ResultsTask1}
 
 For task 1 eleven commands were observed to be issued by the teacher in its 19 minute and 43 second duration.
 Out of these eleven commands, one was issued incorrectly:
@@ -1887,6 +1912,7 @@ The average time taken to issue a successful command with the board was 9.82 sec
 Six of the successful commands given were intended to affect all student interfaces and four were intended to affect a specific selection.
 
 \subsubsection{Task 2 - Tablet Only}
+\label{subsubsec:studyPhase2ResultsTask2}
 
 During task 2, thirteen commands were observed to be issued by the teacher in its 17 minute and 59 second duration.
 Of these thirteen commands, three were issued incorrectly.
@@ -1923,6 +1949,7 @@ The average time taken to issue a successful command with the tablet was 9.17 se
 Eight of the successful commands given were intended to affect all student interfaces and two of the successful commands were intended to affect a specific selection.
 
 \subsubsection{Task 3 - Kinect Only}
+\label{subsubsec:studyPhase2ResultsTask3}
 
 During task 3, twelve commands were observed to be issued by the teacher in its 18 minute duration.
 Of the twelve commands issued during this task with the Kinects, eight were issued with errors.
@@ -1968,6 +1995,7 @@ The average time taken to issue a successful command with the Kinects was 2.44 s
 All four of the successful commands were intended to affect all the student interfaces.
 
 \subsubsection{Task 4}
+\label{subsubsec:studyPhase2ResultsTask4}
 
 For task 4, where the teacher had the option of using any of the three control devices, twenty three commands were observed to be issued by the teacher in its 19 minute and 28 second duration.
 Nine of these commands were issued through the board control, none through the tablet and fourteen through the Kinects.
@@ -2005,6 +2033,7 @@ Seven of the successful commands given with the board were intended to affect al
 For the Kinects, four of the successful commands given were intended to affect all student interfaces and five were intended to affect a specific selection.
 
 \subsubsection{Results Summary}
+\label{subsubsec:studyPhase2ResultsSummary}
 
 The usage of the three control technologies in the study is summarised in Table~\ref{table:results2}.
 
@@ -2040,6 +2069,7 @@ The results show that the Kinect was the much faster control technology for issu
 Though the error rate is smaller than that in present in the previous study, its magnitude indicates that not all the issues intended to be countered by the implemented improvement have been resolved.
 
 \subsection{Observations}
+\label{subsec:studyPhase2Observations}
 
 % TODO Trim down.
 
@@ -2058,6 +2088,7 @@ This is a great improvement over the previous study's error rate and indicates t
 The results indicate that the implemented did have a positive impact on the system but the impact was not as great as intended.
 
 \subsubsection{Successfulness of the Improvements}
+\label{subsubsec:studyPhase2ObservationsSuccess}
 
 The 50\% error rate indicates that there are still issues with the system and that a selection of the improvements may have had little to no positive consequences.
 
@@ -2125,6 +2156,7 @@ The implementation of interface selection not only allowed the Kinects to match 
 The results demonstrate that the interface selection implementation was successful in improving the functionality of the Kinect controls.
 
 \subsubsection{Resolution of the Issues}
+\label{subsubsec:studyPhase2ObservationsResolution}
 
 The distribution of erroneous commands across the improvements indicates that implemented improvements have been successful in resolving the majority of issues noted in the previous study.
 The Kinect controls' 50\% error rate observed during this study are therefore caused by the minority of issues that remain unresolved.
@@ -2191,6 +2223,7 @@ The majority of these commands were successful and when these commands failed it
 The use of multiple Kinects and implementation of interface selection have both allowed the system to resolve the issue of reduced functionality.
 
 \subsubsection{Fulfilment of Criteria}
+\label{subsubsec:studyPhase2ObservationsFulfilment}
 
 To assess the success of the improvements in resolving the issues the criteria for evaluation upper-body gestures, derived from Wachs et al.'s~\cite{Wachs2011} requirements can be employed.
 If all the criteria are fulfilled the improvements can be said to have been completely successful.

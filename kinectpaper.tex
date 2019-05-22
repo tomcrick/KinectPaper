@@ -1,7 +1,5 @@
 \listfiles
-\documentclass[manuscript, review, screen]{acmart}
-\setcitestyle{super,sort&compress}
-\citestyle{acmauthoryear}
+\documentclass[link]{IWCOMP}
 \usepackage{graphicx}
 \usepackage{amsmath, amsthm, amssymb}
 \usepackage{amsfonts}
@@ -23,68 +21,27 @@
 \newcommand{\tickYes}{\checkmark}
 \newcommand{\crossNo}{$\times$}
 
-% Metadata Information
-% \acmJournal{TOCHI}
-% \acmVolume{9}
-% \acmNumber{4}
-% \acmArticle{39}
-% \acmYear{2018}
-% \acmMonth{3}
+\copyrightyear{2012}
 
-% Copyright
-%\setcopyright{acmcopyright}
-\setcopyright{acmlicensed}
-%\setcopyright{rightsretained}
-%\setcopyright{usgov}
-%\setcopyright{usgovmixed}
-%\setcopyright{cagov}
-%\setcopyright{cagovmixed}
-
-% DOI
-%\acmDOI{}
+\DOI{xxxxxx}
 
 % Document starts
 \begin{document}
 
 % Title portion
-\title{Controlling Classroom Technology with Upper-Body Gestures
-  {\emph{and}} Improving Upper-Body Gesture Controls for Teacher Use}
+\title{Controlling Classroom Technology with Upper-Body Gestures and Improving Upper-Body Gesture Controls for Teacher Use}
 
-\author{James McNaughton}
-\orcid{0000-0002-7412-5303}
-\affiliation{%
-  \institution{Durham University}
-  \streetaddress{South Road}
-  \city{Durham}
-  \postcode{DH1 3LE}
-  \country{UK}}
-\email{j.a.mcnaughton@durham.ac.uk}
-\author{Tom Crick}
-\orcid{0000-0001-5196-9389}
-\affiliation{%
-  \institution{Swansea University}
-  \streetaddress{Singleton Campus}
-  \city{Swansea}
-  \postcode{SA2 8PP}
-  \country{UK}}
-\email{thomas.crick@swansea.ac.uk}
+\author{James McNaughton$^{1}$, Tom Crick$^{2}$ and Liz Burd$^{3}$}
 
-\author{Elizabeth Burd}
-%\orcid{}
-\affiliation{%
-  \institution{The University of Newcastle}
-  \streetaddress{University Drive}
-  \city{Newcastle}
-  \postcode{NSW 2308}
-  \country{Australia}}
-\email{	liz.burd@newcastle.edu.au}
+\affiliation{$^{1}$Durham University, South Road, Durham, DH1 3LE, UK \\
+$^{2}$Swansea University, Singleton Campus, Swansea, SA2 8PP, UK \\
+$^{3}$The University of Newcastle, University Drive, Newcastle, NSW 2308, Australia}
 
-
-\renewcommand\shortauthors{McNaughton, J., Crick, T. and Burd, E. }
+\shortauthors{McNaughton, J., Crick, T. and Burd, E. }
 
 \begin{abstract}
 
-% TODO New abstract to explain the 2 phase approach to the study (with the gesture gathering exercise before hand).
+% // TODO New abstract to explain the 2 phase approach to the study (with the gesture gathering exercise before hand).
 
 
 % From Abstract 1 ===========================================================================
@@ -115,11 +72,14 @@ With the use of a more accurate sensing technology the system would be suitable 
 
 \keywords{Kinect, gestures, education, multi-touch, classroom technology}
 
+\category{management decision-support system; teamwork; communication}
+
+\editorial{Name}
+
 \maketitle
 
-\section{Introduction}
+\section{INTRODUCTION}
 \label{sec:intro}
-
 
 % From Introduction 1 ===========================================================================
 The uses of technology in the classroom are
@@ -155,7 +115,7 @@ For a system such as this, a series of gestures must be produced which can be us
 
 % From Introduction 2 ===========================================================================
 
-% TODO Trim down - can almost totally remove this as it just repetition of the first introduction.
+% // TODO Trim down - can almost totally remove this as it just repetition of the first introduction.
 
 With technology becoming more prevalent in the classroom~\cite{Lloyd2011,Robertson2012,Schrum2008} the likelihood of there being a number of student-orientated interfaces present in the environment increases.
 Due to the student-orientated nature of these interfaces teachers may have difficulty in attaining students' attention or assisting them with tasks~\cite{Chen2005,Karabenick2011}.
@@ -176,7 +136,7 @@ Therefore, any improvements which resolve the issues observed in the SynergyNet 
 These improvements have the potential to benefit any systems with similar technologies, control sequences or gesture sets.
 % From Introduction 2 ===========================================================================
 
-% TODO Update Summary of Structure .
+% // TODO Update Summary of Structure .
 
 % The remainder of this paper is as follows. 
 % Section~\ref{sec:related1} discusses gesture detection technologies, specifically time-of-flight cameras.
@@ -192,13 +152,13 @@ These improvements have the potential to benefit any systems with similar techno
 \section{Background} 
 \label{sec:background}
 
-% TODO Needs more recent content.
+% // TODO Needs more recent content.
 
-% TODO Double check that the Kinect actually is a time-of-flight and UTToF camera
+% // TODO Double check that the Kinect actually is a time-of-flight and UTToF camera
 
 % From Background 2 ===========================================================================
 
-% TODO Trim down - can remove most of this section as its just summarising the first half of the paper.
+% // TODO Trim down - can remove most of this section as its just summarising the first half of the paper.
 
 \begin{figure}[h]
    \centering
@@ -312,9 +272,9 @@ The use of physical gestures monitored via a \ac{UTToF} camera appears to be the
 \section{Classroom Technology Orchestration} 
 \label{sec:orchestration}
 
-% TODO RQ: Whats a better control mechanism for teachers: smart boards, tablets or the Kinect?
+% // TODO RQ: Whats a better control mechanism for teachers: smart boards, tablets or the Kinect?
 
-% TODO Trim down (subsection on potential issues could be summarised (they are just reasons for the limitations on acceptable gestures which we used to determine what we asked the participants.)
+% // TODO Trim down (subsection on potential issues could be summarised (they are just reasons for the limitations on acceptable gestures which we used to determine what we asked the participants.)
 
 The ability to track specific users and their limbs allows a \ac{UTToF} camera to be used for identifying body-orientated gestures.
 This could allow teachers to control technology in the classroom without the need for an intermediate physical interface.
@@ -437,16 +397,16 @@ Therefore, an alternative method of identifying which gestures should be affecte
 \section{Study Approach} 
 \label{sec:studyApproach}
 
-% TODO Highlight need for a suitable gesture set to be generated
+% // TODO Highlight need for a suitable gesture set to be generated
 
-% TODO Highlight need for an iterative design due to exploring alternative implementations, therefore there are multiple phases to the study.
+% // TODO Highlight need for an iterative design due to exploring alternative implementations, therefore there are multiple phases to the study.
 
 \subsection{Gathering User Generated Gestures} 
 \label{subsec:gatheringGestures}
 
-% TODO Trim a lot of this section.
+% // TODO Trim a lot of this section.
 
-% TODO Explain need for focus group.
+% // TODO Explain need for focus group.
 
 The requirements of the set of gestures to be used by teachers in the classroom are determined by both the shortcomings of the sensing technology, as discussed in Section~\ref{sec:orchestration}, and the abilities of the intended users.
 Specifically, the set of gestures for controlling classroom technologies are those which are able to be detected by a \ac{UTToF} camera and are suited to be performed by teachers.
@@ -530,7 +490,7 @@ We use these \textit{upper-body gestures criteria} to assesses the gestures prop
 \subsection{Focus Group }
 \label{subsec:focusGroup}
 
-% TODO Trim Down.
+% // TODO Trim Down.
 
 To discover gestures which conform to the criteria outlined in Section~\ref{subsec:gatheringGestures} a user-centred design process was adopted.
 As part of this process a user study in the form of a focus group was organised.
@@ -640,7 +600,7 @@ In addition to the ranking of gestures per action, the data analysis also aimed 
 \subsubsection{Focus Group Results}
 \label{subsubsec:focusGroupResults}
 
-% TODO Trim down.
+% // TODO Trim down.
 
 Of the sixty seven participants who took part in the study, fifteen were male and fifty two were female.
 This was representative of the gender balance of \ac{PGCE} students at the institution.
@@ -820,12 +780,12 @@ With the gesture set and control sequence defined, a classroom technology system
 \section{Study Phase 1} 
 \label{sec:studyPhase1}
 
-% TODO Brief intro to first stage of study
+% // TODO Brief intro to first stage of study
 
 \subsection{Software implementation}
 \label{subsec:studyPhase1Implementation}
 
-% TODO Trim down and make appropriate to section.
+% // TODO Trim down and make appropriate to section.
 
 The SynergyNet framework~\cite{Higgins2011} was selected for the control sequence defined in Section~\ref{sec:background} to be implemented into.
 SynergyNet is a software framework which supports education based activities that are intended to be interacted with through multi-touch table interfaces.
@@ -918,7 +878,7 @@ When the control sequence is finished the borders are removed from the Kinect no
 \subsection{Study Design}
 \label{subsec:studyPhase1Design}
 
-% TODO Trim down
+% // TODO Trim down
 
 A user study was conducted as an observed lab-based experiment.
 The study took place in the SynergyNet lab used in the focus group discussed in Section~\ref{subsec:focusGroup}.
@@ -1012,7 +972,7 @@ The frequency of each device's use and their error rates can also be identified 
 \subsection{Results}
 \label{subsec:studyPhase1Results}
 
-% TODO Trim down
+% // TODO Trim down
 
 The teacher was able to meet the minimum training need relating to the use of the Kinect, outlined in Section~\ref{subsec:gatheringGestures}, of being able to recall all gestures and their associated commands.
 To assess this the teacher performed a dry run of a mysteries task with the study organisers acting as students.
@@ -1154,12 +1114,12 @@ The average time taken to issue a command with the Kinect was 6.5 seconds with a
 \subsection{Observations}
 \label{subsec:studyPhase1Observations}
 
-% TODO Note how the Kinect's poor range and tracking of movement were hugely problematic and needed to be corrected for any further phases.
+% // TODO Note how the Kinect's poor range and tracking of movement were hugely problematic and needed to be corrected for any further phases.
 
 
 % From Discussion 1 ===========================================================================
 
-% TODO Trim down.
+% // TODO Trim down.
 
 \begin{table}[h]
 \begin{tabular}{!{\vrule width 1.5pt}c|c|c|c!{\vrule width 1.5pt}}
@@ -1273,11 +1233,11 @@ The improvements proved to be significant enough to warrant being discussed sepa
 
 % From Conclusion 1 ===========================================================================
 
-% TODO Trim down.
+% // TODO Trim down.
 
-% TODO Remove paper summaries.
+% // TODO Remove paper summaries.
 
-% TODO Remove discussions of what to do next.
+% // TODO Remove discussions of what to do next.
 
 The primary objective of the study was to find how the use of upper-body gestures compares to alternative classroom control technologies.
 The Kinect was shown to be the quickest despite the errors encountered.
@@ -1418,7 +1378,7 @@ The implementation of the suggested improvements to resolve the observed errors 
 
 % From Background 2 ===========================================================================
 
-% TODO Trim down - can remove most of this section as its just summarising the first half of the paper.
+% // TODO Trim down - can remove most of this section as its just summarising the first half of the paper.
 
 \subsubsection{Issues with Initial Upper-body Gesture Controls}
 \label{subsubsec:studyPhase1ObservationsIssues}
@@ -1476,12 +1436,12 @@ The lack of cohesion between the Kinect controls and alternatives may exacerbate
 \section{Study Phase 2}
 \label{sec:studyPhase2}
 
-% TODO Small intro to phase 2
+% // TODO Small intro to phase 2
 
 \subsection{Resolving Issues}
 \label{subsec:studyPhase2ResolvingIssues}
 
-% TODO Trim down and make suitable.
+% // TODO Trim down and make suitable.
 
 The issues outlined in Section~\ref{subsubsec:studyPhase1ObservationsIssues} were noted in the previous phase of the study to make the use of the system counter-productive.
 The benefits afforded by the system of non-intrusive and quick command execution were made irrelevant due to the high number of errors caused by the identified issues.
@@ -1851,7 +1811,7 @@ The updated control sequence with new gestures and interface selection is summar
 \subsection{Design}
 \label{subsec:studyPhase2Design}
 
-% TODO Trim down - a lot of this is repetition of the first user study section as both were set up and carried out the same way - therefore just mention its the same but discuss the differences (improvements, different class/teacher, etc).
+% // TODO Trim down - a lot of this is repetition of the first user study section as both were set up and carried out the same way - therefore just mention its the same but discuss the differences (improvements, different class/teacher, etc).
 
 A study was organised to assess the impact of the implemented improvements on the system's use.
 The study followed a similar structure to that carried out in previous work.
@@ -1896,7 +1856,7 @@ In addition to this, the number of errors committed with each technology and qua
 \subsection{Results}
 \label{subsec:studyPhase2Results}
 
-% TODO Trim down.
+% // TODO Trim down.
 
 The study was carried out without any major deviations from its design.
 The teacher completed the training for the system the day before the study and stated that they felt confident enough to use the each of the control technologies without any additional aid or practice.
@@ -2085,7 +2045,7 @@ Though the error rate is smaller than that in present in the previous study, its
 \subsection{Observations}
 \label{subsec:studyPhase2Observations}
 
-% TODO Trim down.
+% // TODO Trim down.
 
 In the previous study the Kinect controls had an overall error rate of 86.96\meaning that twenty in twenty three commands were erroneous.
 As Figure~\ref{fig:controlDevicesErrors} shows, the error rate for the Kinect controls in this study was 50\%.
@@ -2303,7 +2263,7 @@ The criterion of mental load could now be said to be fulfilled by the system wit
 \section{Conclusions}
 \label{sec:conclusions}
 
-% TODO Trim down.
+% // TODO Trim down.
 
 % Summarise stuff overall (i.e. both phases)
 
@@ -2374,17 +2334,20 @@ Issues outlined in this work could be present in any open-air gesture system.
 The improvements implemented into SynergyNet were shown to be successful where the accuracy of the Kinects was not concerned.
 Therefore, these improvements can be considered suitable for any other open-air gesture system which could potentially suffer from the same issues.
 
-\begin{acks}
+\begin{ack}
 
 This work was partially funded under the UK's EPSRC/ERSC Teaching and Learning Research Programme (TLRP) {\emph{SynergyNet}} project (RES-139-25-0400).
 The authors would also like to thank the members of the Durham University Technology Enhanced Learning Special Interest Group for supporting the redrafting of this manuscript, specifically Andrew Joyce-Gibbons.
 The source code for the software implemented in the studies discussed in this manuscript is freely available here: \url{https://github.com/synergynet/synergynet3.1}.
 
-\end{acks}
+\end{ack}
+
+\makeatletter
+\def\@biblabel#1{}
+\makeatother
 
 % Bibliography
-\bibliographystyle{ACM-Reference-Format}
+\bibliographystyle{apa}
 \bibliography{kinectpaper}
-
 
 \end{document}

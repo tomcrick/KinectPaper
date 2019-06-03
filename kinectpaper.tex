@@ -81,7 +81,6 @@ With the use of a more accurate sensing technology the system would be suitable 
 \section{INTRODUCTION}
 \label{sec:intro}
 
-% From Introduction 1 ===========================================================================
 The uses of technology in the classroom are
 growing~\cite{Schrum2008,Lloyd2011,Robertson2012},
 further stimulated by significant reforms of digital skills and computer science education in various nations, especially across the UK~\cite{brown-et-al:toce2014}.
@@ -105,51 +104,26 @@ This means that teachers using a static or mobile interface which utilises a vis
 This division of attention can interrupt interaction between teachers and students.
 The use of physical gestures should allow teachers to continue interacting with students while issuing commands to a classroom technology's control system.
 
-Teachers in technology enhanced classroom also acquire additional administration responsibilities~\cite{Kuhn2005} such as managing the consequence of faults with the devices used.
+Teachers in technology enhanced classrooms also acquire additional administration responsibilities~\cite{Kuhn2005} such as managing the consequence of faults with the devices used.
 A physical gesture interface may reduce the overheads of such additional responsibilities by allowing teachers to quickly execute administrative tasks from any location in the classroom.
-
 The potential benefits of physical gestures make its implementation into a classroom software framework desirable.
-For a system such as this, a series of gestures must be produced which can be used to execute the various control commands within the framework.
-% From Introduction 1 ===========================================================================
 
+This paper investigates the implementation of physical gestures for use by teachers by utilising SynergyNet~\cite{HatchA.HigginsS&Mercier2009}, a multi-touch software platform intended for use in the classroom.
+The platform is built to support applications intended for use by students through multi-touch interfaces.
+SynergyNet contains a number of advanced networking features which support the sharing of materials~\cite{McNaughton2017} and the ability to issue commands to student devices through a network.
 
-% From Introduction 2 ===========================================================================
+This paper documents the steps taken to augment the SynergyNet platform to use upper-body gestures, a subset of open-air gestures, to allow teachers to control classroom interfaces.
+The paper also details the further steps taken to improve the experience of using the gestures in light of feedback.
+These details of these steps, the reasoning behind them and their impact discussed in this paper have the potentional to benefit the future development of any systems with similar technologies, control sequences or gesture sets.
 
-% // TODO Trim down - can almost totally remove this as it just repetition of the first introduction.
+The remainder of this paper is as follows. 
+Section~\ref{sec:background} discusses gesture detection technologies and approaches to gathering useful sets of gestures.
+The question of what technology is most useful for use in orchastrating a classroom is considered in Section~\ref{sec:orchestration}.
+The design and preparation for a study for answering this question is then detailed in Section~\ref{sec:studyApproach}.
+The first phase of the study is discussed in Section~\ref{sec:studyPhase1} then the second phase and its results are discussed in Section~\ref{sec:studyPhase2}.
+Overall conclusions and potential future developments based on the findings from the study are presented in Section~\ref{sec:conclusions}.
 
-With technology becoming more prevalent in the classroom~\cite{Lloyd2011,Robertson2012,Schrum2008} the likelihood of there being a number of student-orientated interfaces present in the environment increases.
-Due to the student-orientated nature of these interfaces teachers may have difficulty in attaining students' attention or assisting them with tasks~\cite{Chen2005,Karabenick2011}.
-This is because control of these interfaces lies primarily in the hands of the student.
-There is therefore a need for teachers to have some degree of control over these interfaces~\cite{Apple1990,Selwyn2010,Selwyn2011}.
-
-This paper focuses on SynergyNet~\cite{HatchA.HigginsS&Mercier2009}, a multi-touch framework intended for use in the classroom.
-The framework is built to support applications designed to be used by students through multi-touch interfaces.
-The SynergyNet lab, built around the framework's use, consists of a number of multi-touch tabletop surfaces and is arranged to resemble a classroom.
-The SynergyNet framework allows interaction between the multi-touch interfaces which enables the sharing of materials and the ability to issue commands through a network.
-The ability for commands to be sent across a network offers the opportunity for control to be remotely exerted over the tabletop interfaces.
-The SynergyNet framework has been augmented to use upper-body gestures, a subset of open-air gestures, to allow teachers to control classroom interfaces.
-However, previous studies have identified issues that make its use in the classroom unsuitable as discussed previously in this paper.
-
-The gesture controls enable the orchestration of several common-place commands, such as sending or retrieving materials~\cite{mcnaughton-et-al:jce2017}.
-It is through that issues relating to the SynergyNet framework's upper-body gesture support may be present in similar open-air gesture driven systems.
-Therefore, any improvements which resolve the issues observed in the SynergyNet framework could be employed in other gesture systems. 
-These improvements have the potential to benefit any systems with similar technologies, control sequences or gesture sets.
-% From Introduction 2 ===========================================================================
-
-% // TODO Update Summary of Structure .
-
-% The remainder of this paper is as follows. 
-% Section~\ref{sec:related1} discusses gesture detection technologies, specifically time-of-flight cameras.
-% Section~\ref{sec:orchestration} considers how the time-of-flight cameras could be used to adapt a classroom-based technology to utilise physical gestures.
-% What constitutes an effective gesture is discussed in Section~\ref{subsec:gatheringGestures}.
-% A focus group based study is outlined in Section~\ref{sec:focusgroup1} which was carried out to identify intuitive gestures for classroom control commands.
-% The results of the study are outlined in Section~\ref{sec:focusgroupresults1} and their implications are discussed in Section~\ref{sec:discussion1}. 
-% Implementation of a user generated set of gestures from observations on the focus group is detailed in Section~\ref{subsec:studyPhase1Implementation}.
-% Section~\ref{sec:evaluation1} discusses a study using the implemented physical gesture control system.
-% Section~\ref{subsec:studyPhase1Results} presents the results of this study and Section~\ref{subsec:studyPhase1Observations} elaborates on the implications of the results.
-% Future developments utilising findings from the study and our conclusions are presented in Section~\ref{sec:conclusions1}.
-
-\section{Background} 
+\section{BACKGROUND} 
 \label{sec:background}
 
 % // TODO Needs more recent content.
@@ -1617,7 +1591,7 @@ When a teacher points at an interface it becomes selected.
 Using this approach the teacher can select multiple interfaces at once without the need to travel about the classroom.
 This approach allows for interface selection without diminishing the system's intuitiveness or speed of use.
 
-\subsection{Implementation}
+\subsection{Software Implementation}
 \label{subsec:studyPhase2Implementation}
 
 With clear definitions of the issues in Section~\ref{subsubsec:studyPhase1ObservationsIssues} and their potential solutions in Section~\ref{subsec:studyPhase2ResolvingIssues}, improvements can be implemented in SynergyNet.

@@ -16,7 +16,6 @@
 \setlist{nolistsep}
 
 \newacro{PGCE}{Postgraduate Certificate of Education}
-\newacro{UTToF}{User Tracking Time-of-Flight}
 
 \newcommand{\tickYes}{\checkmark}
 \newcommand{\crossNo}{$\times$}
@@ -110,7 +109,7 @@ The potential benefits of physical gestures make its implementation into a class
 
 This paper investigates the implementation of physical gestures for use by teachers by utilising SynergyNet~\cite{HatchA.HigginsS&Mercier2009}, a multi-touch software platform intended for use in the classroom.
 The platform is built to support applications intended for use by students through multi-touch interfaces.
-SynergyNet contains a number of advanced networking features which support the sharing of materials~\cite{McNaughton2017} and the ability to issue commands to student devices through a network.
+SynergyNet contains a number of advanced networking features which support the sharing of materials~\cite{mcnaughton-et-al:jce2017} and the ability to issue commands to student devices through a network.
 
 This paper documents the steps taken to augment the SynergyNet platform to use upper-body gestures, a subset of open-air gestures, to allow teachers to control classroom interfaces.
 The paper also details the further steps taken to improve the experience of using the gestures in light of feedback.
@@ -128,88 +127,10 @@ Overall conclusions and potential future developments based on the findings from
 
 % // TODO Needs more recent content.
 
-% // TODO Double check that the Kinect actually is a time-of-flight and UTToF camera
-
-% From Background 2 ===========================================================================
-
-% // TODO Trim down - can remove most of this section as its just summarising the first half of the paper.
-
-\begin{figure}[h]
-   \centering
-   \includegraphics[width=0.45\textwidth]{figures/new_control_board.png}
-   \caption{The multi-touch board used to control SynergyNet.}
-   \label{fig:controlBoard}
-\end{figure}
-
-SynergyNet is a software framework designed for use in with networked touch-screen devices in a classroom environment~\cite{mcnaughton-et-al:cvm2018,mcnaughton-et-al:hcis2017,mcnaughton-et-al:jce2017}.
-The framework supports numerous control technologies which teachers can use to control instances of the framework on student-centric multi-touch interfaces.
-The first of these supported technologies is a multi-touch interface.
-The teacher controls used for this technology are implemented as a typical SynergyNet application.
-This allows the teacher to use any multi-touch device capable of running the framework to control the environment's student-centric interfaces.
-This set of teacher controls has been made available to teachers in the SynergyNet lab through one of two multi-touch devices; a board and a podium.
-
-The multi-touch board used in the SynergyNet lab for issuing commands to the students' interfaces is shown in Figure~\ref{fig:controlBoard} running an instance of the teacher controls.
-Both the podium and board devices are static.
-Due to this the teacher is required to be positioned in close proximity to them in order to issue any control commands.
-This requirement of the devices can be detrimental on interaction between the teacher and students.
-This is because whenever the teacher wishes to issue a control command they will be required move away from the students to one of the devices.
-The time taken to travel to the device can prolong the break in interaction between the students and the teacher.
-
-\begin{figure}[h]
-   \centering
-   \includegraphics[width=0.45\textwidth]{figures/new_control_tablet.png}
-   \caption{The web interface which controls SynergyNet accessed through a tablet device.}
-   \label{fig:controlTablet}
-\end{figure}
-
-To resolve the potential problem of breaking interaction with students to issue commands through static interfaces, controls which can be accessed through a range of mobile devices were implemented into SynergyNet.
-These controls, shown in Figure~\ref{fig:controlTablet}, are built to be accessed through any device capable of joining a wireless network and displaying web-based content.
-The controls can be accessed by teachers through devices such as smart-phones and tablets.
-Despite the mobile nature of these interfaces, they have been noted in previous studies~\cite{Hatch2011} to remove the teacher's attention from the students.
-Teachers were also noted to take a significant amount of time to issue commands through the mobile interface, prolonging the break in interaction with the students.
-The interaction between students and teachers is required to ensure that students stay on task and that teachers are able to monitor the student's performance \cite{Hall1968}.
-This break in interaction can be detrimental for both a student's ability to learn and the teacher's ability to maintain order in the classroom \cite{Shirley2010}.
-A system of control which allows teachers to quickly issue commands without interrupting their interaction with their students would be beneficial.
-
-Utilising open-air gestures could allow teachers to issue commands without the requirement to concentrate on an interface~\cite{Varona2009,Wachs2011}.
-The term \lq open-air gesture\rq\ is used to refer to gestures performed by users which do not require contact with an interface.
-
-\begin{figure}[h]
-   \centering
-   \includegraphics[width=0.45\textwidth]{figures/control_kinect.png}
-   \caption{Microsoft's Kinect.}
-   \label{fig:controlKinect}
-\end{figure}
-
-The Microsoft Kinect, shown in Figure~\ref{fig:controlKinect}, can be used to support the detection of open-air gestures~\cite{Goth2011}.
-The Kinect is a low-cost device which is capable of capturing both RGB and depth information about an environment.
-The RGB data is captured through a typical visible light camera and the depth data through an infra-red camera. 
-The device projects an infra-red light pattern which the Kinect can see and identify.
-The Kinect can then use deformations of the pattern it views to identify surfaces and their distances from the device.
-This method of depth-sensing is known as a structured light pattern~\cite{Salvi2010}.
-Using both RGB and depth data the Kinect is capable of tracking persons about an environment.
-Once a person performs a calibration gesture, the Kinect is then capable of tracking that person's limbs and joints.
-
-Being able to track the location of a person's limbs and joints allows for a system to be built around the Kinect's output which can identify gestures performed by a user~\cite{Davison2012,Lai2012,Patsadu2012}.
-Once calibrated, a teacher could perform gestures which, when identified by the recognition system, would trigger the sending of commands to student-centric interfaces.
-% From Background 2 ===========================================================================
-
-
-% From Background 1 ===========================================================================
 To allow a system to identify physical gestures a method of tracking the movements of users is required.
-Time-of-flight cameras~\cite{Lange2001} are capable of doing this through building a depth image of an environment and tracking movement by identifying areas where the depth values change.
-The Canesta~\cite{Yang2007} and 3DV~\cite{Wilson2007a} devices are both examples of these cameras.
-The devices emit beams of infra-red light which can then be seen through an infra-red camera.
-
-Using knowledge of the infra-red light emitted, the devices can identify where the beams are interrupted by an object.
-This positional information allows the devices to build a depth image of an environment.
-Thus, devices can identify the distance between itself and any item within the range of its infra-red beams.
-However, both the Canesta~\cite{Yang2007} and 3DV~\cite{Wilson2007a} devices provide a low quality depth image.
-There are alternatives which provide much more detailed depth images, such as Oblong's Mezzanine~\cite{kramer2011}.
-However, the cost of the alternatives can also be prohibitive.
-Devices which occupy the middle-ground between quality depth images and cost are also available.
-Such devices include the Microsoft Kinect, shown in Figure~\ref{fig:kinect} and the Primesense sensor~\cite{Wilson2010}.
-These devices are accurate enough to track user movement and have previously been used as part of gesture monitoring systems~\cite{Goth2011}.
+Light-coding is a technique which can achieve this through detecting deformations in a projected pattern of light (usually infra-red) and using them to work out depth information.
+There are serveral devices which support this technique such as the Canesta~\cite{Yang2007}, 3DV~\cite{Wilson2007a}, the Primesense sensor~\cite{Wilson2010} and the first generation of Microsoft Kinect shown in Figure~\ref{fig:kinect}.
+These devices are not be confused with Time-of-flight cameras which use the time it takes for light shone by a device to be returned to build a depth-image ~\cite{Lange2001} such as the second generation of the Microsoft Kinect.
 
 \begin{figure}[h]
    \centering
@@ -218,30 +139,29 @@ These devices are accurate enough to track user movement and have previously bee
    \label{fig:kinect}
 \end{figure}
 
-The firmware of \ac{UTToF} cameras, like the Kinect and Primesense sensor, offer several features relating to the tracking of a user.
+The firmware of devices which utilise light-coding offer several features relating to the tracking of a user.
 These devices can outline any persons in front of the device and differentiate between them using their distances from the camera.
 The device can then identify and give positional information on specific parts of a person's body, such as their limbs and joints if a calibration technique is executed.
 This is usually a pose assumed by a person which allows the device to view a specific human outline from which it can identify joints and limbs~\cite{Xia2011}.
 Using the difference between frames from the depth camera, the device's firmware can track the movement of people in its field of view.
 
-The information a \ac{UTToF} camera can give concerning the positions of a person and their limbs offers a wealth of possibilities regarding computer interaction.
+The information a light-coding device can give concerning the positions of a person and their limbs offers a wealth of possibilities regarding computer interaction.
 Specifically, the ability to obtain the positional information of people may be of use for co-located interfaces where interaction may require knowledge of the position of the user.
 The ability to track and differentiate between users comes in useful for interaction technologies which allow users to share interfaces.
 Dietz and Leigh~\cite{Dietz2001} note how the ability to track a user can be important.
 Their research also identifies how existing techniques for tracking user positions which entail encumbering the user with extra devices are undesirable.
-\ac{UTToF} cameras offer the opportunity to track people without the need for users to wear additional devices.
+Light-coding devices offer the opportunity to track people without the need for users to wear additional devices.
 
-\ac{UTToF} cameras allow users to move about an environment without being constrained to an interface.
+Devices which can track the movement of user allow for movement about an environment without being constrained to an interface.
 This is beneficial for teachers in classroom environment for whom mobility is vital.
-There are alternatives to physical gesture sensing technologies, like \ac{UTToF} cameras, which also afford this type of freedom from the interface.
+There are alternatives to physical gesture sensing technologies which also afford this type of freedom from the interface.
 Voice control is one such alternative where the teacher could issue commands to a technological framework in the classroom through a series of spoken instructions.
 Using physical gestures alongside the voice commands could be beneficial as shown in the work of Bolt~\citeyearpar{Bolt1980}.
 Allowing the user to gesture at where they want a specific command to influence reduces the need for additional spoken instructions.
 However, the ambient noise in a typical classroom is likely to be too loud for voice recognition technologies~\cite{Cavalier1996,Goette1998,OHare1999}.
 In addition to this caveat, the issuing of voice commands also will require teachers to interrupt their conversations with their students.
 
-The use of physical gestures monitored via a \ac{UTToF} camera appears to be the most suitable approach to creating a system which allows teachers to control classroom technologies without the requirement for a distracting interface.
-% From Background 1 ===========================================================================
+The use of physical gestures monitored via a light-coding device appears to be the most suitable approach to creating a system which allows teachers to control classroom technologies without the requirement for a distracting interface.
 
 \section{Classroom Technology Orchestration} 
 \label{sec:orchestration}
@@ -250,21 +170,21 @@ The use of physical gestures monitored via a \ac{UTToF} camera appears to be the
 
 % // TODO Trim down (subsection on potential issues could be summarised (they are just reasons for the limitations on acceptable gestures which we used to determine what we asked the participants.)
 
-The ability to track specific users and their limbs allows a \ac{UTToF} camera to be used for identifying body-orientated gestures.
+The ability to track specific users and their limbs allows a light-coding device to be used for identifying body-orientated gestures.
 This could allow teachers to control technology in the classroom without the need for an intermediate physical interface.
 Teachers would not be encumbered with a device allowing them freedom to move about the classroom.
 Since physical gestures would permit eyes-free interaction~\cite{Brewster2003} with a control system, teachers could interact with students without losing control of the technology.
-Due to a \ac{UTToF} camera's ability to track people in an environment, once a teacher is identified their movement around the classroom can be followed.
+Due to a light-coding device's ability to track people in an environment, once a teacher is identified their movement around the classroom can be followed.
 As a result of this, teachers could potentially issue commands through gestures anywhere in the classroom.
 
-\ac{UTToF} cameras have high availability and relatively low cost in comparison to alternative depth sensing devices such as those used in Oblong's Mezzanine~\cite{kramer2011}.
-Despite these potential benefits of \ac{UTToF} camera, there are several limitations that must be considered.
+light-coding devices have high availability and relatively low cost in comparison to alternative depth sensing devices such as those used in Oblong's Mezzanine~\cite{kramer2011}.
+Despite these potential benefits of light-coding device, there are several limitations that must be considered.
 One limitation is their accuracy.
-\ac{UTToF} cameras are capable of tracking users and the position of their limbs.
-However, for a \ac{UTToF} camera to track anything more precise, such as fingers, additional constraints on their abilities will need to be imposed \cite{Clark2011}.
+light-coding devices are capable of tracking users and the position of their limbs.
+However, for a light-coding device to track anything more precise, such as fingers, additional constraints on their abilities will need to be imposed \cite{Clark2011}.
 These additional limitations potentially include a reduction in range, a reduced limit on the number of tracked users and the use of encumbering devices.
 All these limitations are undesirable for the use of the device in the classroom.
-Therefore, in the work discussed here, \ac{UTToF} camera will be assumed not be augmented to track anything more precise than user limbs.
+Therefore, in the work discussed here, light-coding device will be assumed not be augmented to track anything more precise than user limbs.
 This means that any gestures to be used by teachers for issuing control commands should consist of limb positioning and movement.
 
 \begin{figure}[t]
@@ -275,29 +195,29 @@ This means that any gestures to be used by teachers for issuing control commands
 \end{figure}
 
 Figure~\ref{fig:gestureVenn} represents the different sub-sets of physical gestures.
-The inability of an un-augmented \ac{UTToF} camera to track anything more precise than user limbs discounts the adoption of gesture sets 4 and 5, i.e. gestures which use fingers, for use in the classroom.
-Any gesture which lies outside the grouping of those which can be identified by a \ac{UTToF} camera must be discounted.
+The inability of an un-augmented light-coding device to track anything more precise than user limbs discounts the adoption of gesture sets 4 and 5, i.e. gestures which use fingers, for use in the classroom.
+Any gesture which lies outside the grouping of those which can be identified by a light-coding device must be discounted.
 This results in gestures sets 1, 2 and 3 also being deemed unsuitable for classroom use.
 
 There are several reasons for gestures involving the use of the lower body limbs and joints, such as the legs, to be discounted.
 One such reason is their requirement for the visibility of the lower body.
-In a classroom full of furniture and seated students, the teacher's lower body will potentially be obscured most of the time from the view of the \ac{UTToF} camera.
-The requirement for a teacher to move to a position where their lower body is visible to the \ac{UTToF} camera counters the device's potential benefit of allowing for control of the system without the need to move away from students.
+In a classroom full of furniture and seated students, the teacher's lower body will potentially be obscured most of the time from the view of the light-coding device.
+The requirement for a teacher to move to a position where their lower body is visible to the light-coding device counters the device's potential benefit of allowing for control of the system without the need to move away from students.
 
 Another reason for discounting gestures using lower limbs and joints is that the movement of the teacher's legs may affect their balance which could result in accidents.
 In addition to this, gestures utilising a teacher's legs may require the teacher to be standing when performing them.
 This could interrupt interaction with students if the teacher is seated while in discussion with them.
 Gestures which do not require teachers to stand would allow the teacher to issue commands while still being seated.
 Due to these reasons, only gestures which utilise the positioning and movement of the upper-body should be considered when developing a classroom control system.
-This means that gestures should only make use of upper-body joints and limbs which a \ac{UTToF} camera can track: the torso, wrists, hands, elbows, shoulders, neck and head.
+This means that gestures should only make use of upper-body joints and limbs which a light-coding device can track: the torso, wrists, hands, elbows, shoulders, neck and head.
 Therefore, gesture sets 6 and 7 in Figure~\ref{fig:gestureVenn} are shown to be unsuitable for use in the classroom.
 
 \begin{table}[h]
 \begin{tabular}{!{\vrule width 1.5pt}c|c|c|c|c!{\vrule width 1.5pt}}
 \noalign{\hrule height 1.5pt}
-\textbf{} 			&\textbf{Uses}	&\textbf{Uses}	&\textbf{} 	&\textbf{Visible to}	\\
-\textbf{Gesture} 	&\textbf{Upper-}	&\textbf{Lower-}	&\textbf{Uses} 	&\textbf{a \ac{UTToF}}	\\
-\textbf{Set} 		&\textbf{body} 	&\textbf{body} 	&\textbf{Fingers}	&\textbf{camera}			\\
+\textbf{} 			&\textbf{Uses}	&\textbf{Uses}	&\textbf{} 	&\textbf{Visible to a}	\\
+\textbf{Gesture} 	&\textbf{Upper-}	&\textbf{Lower-}	&\textbf{Uses} 	&\textbf{light-coding}	\\
+\textbf{Set} 		&\textbf{body} 	&\textbf{body} 	&\textbf{Fingers}	&\textbf{device}			\\
 \cline{1-5}
 1			&\tickYes 				&\crossNo			&\crossNo				&\crossNo			\\
 \cline{1-5}
@@ -321,8 +241,8 @@ Therefore, gesture sets 6 and 7 in Figure~\ref{fig:gestureVenn} are shown to be 
 \end{table}
 
 As Table~\ref{table:gestures} shows, only gesture set 8 is suitable for use by a teacher in a classroom environment.
-All other gesture sets have been discounted due to their use of lower body limbs or inability to be identified by a \ac{UTToF} camera.
-Gesture set 8 consists of gestures which can be observed by a \ac{UTToF} camera that use the upper-body but not the lower-body or fingers.
+All other gesture sets have been discounted due to their use of lower body limbs or inability to be identified by a light-coding device.
+Gesture set 8 consists of gestures which can be observed by a light-coding device that use the upper-body but not the lower-body or fingers.
 
 \subsection{Potential Issues}  
 \label{subsec:potentialIssues}
@@ -332,29 +252,29 @@ The use of physical gestures in the classroom requires that several potential is
 \subsubsection{False Positives}  
 \label{subsubsec:falsePositives}
 
-A potential issue concerning \ac{UTToF} cameras are that, by default, they are active at all times.
+A potential issue concerning light-coding devices are that, by default, they are active at all times.
 This means that teachers will need to be mindful of their actions.
-Expressive body language or movement around the classroom could be interpreted by a \ac{UTToF} camera as a gesture.
+Expressive body language or movement around the classroom could be interpreted by a light-coding device as a gesture.
 This may trigger unwanted responses from any system utilising the device.
-Therefore, a method of dismissing a \ac{UTToF} camera's attention and recapturing it later would be beneficial 
+Therefore, a method of dismissing a light-coding device's attention and recapturing it later would be beneficial 
 One potential solution to these false positives is to have designated areas from which gestures should be made.
 This would allow teachers to move outside these areas without the possibility of accidentally issuing a command.
 However, this solution does restrict the locations where the commands can be issues from, diminishing the ability of teachers to issue commands from anywhere.
 
-A gesture based method of toggling a \ac{UTToF} camera's attention is another potential solution to the issue of a teacher unintentionally issuing commands through their movement in the classroom.
-The \ac{UTToF} camera will not be able to issue any commands to a classroom technology unless its attention has been obtained by the teacher.
-This results in the \ac{UTToF} camera used having two states: attentive and inattentive.
-A gesture could be setup to be identified by the \ac{UTToF} camera in both states.
+A gesture based method of toggling a light-coding device's attention is another potential solution to the issue of a teacher unintentionally issuing commands through their movement in the classroom.
+The light-coding device will not be able to issue any commands to a classroom technology unless its attention has been obtained by the teacher.
+This results in the light-coding device used having two states: attentive and inattentive.
+A gesture could be setup to be identified by the light-coding device in both states.
 This gesture can be used to toggle state.
 This diminishes the range of possible false gestures to one.
-The solution reduces the chances of a teacher unintentionally issuing commands and allows for control over the \ac{UTToF} camera anywhere in the environment.
-If this solution is adopted it is important to identify the gesture for gaining and dismissing the \ac{UTToF} camera's attention.
+The solution reduces the chances of a teacher unintentionally issuing commands and allows for control over the light-coding device anywhere in the environment.
+If this solution is adopted it is important to identify the gesture for gaining and dismissing the light-coding device's attention.
 
 A potential drawback with the attention-toggling approach of managing these false positives is that if a teacher intentionally performs a gesture without getting the device's attention they will be ignored.
 A false negative is preferable to a false positive because an unintended gesture may have irrecoverable consequences.
-A false positive will have no consequence other than requiring the teacher to repeat their gesture again with the attention of the \ac{UTToF} camera.
+A false positive will have no consequence other than requiring the teacher to repeat their gesture again with the attention of the light-coding device.
 Despite not being as problematic as the potential consequences of a false positive, the time-wasting result of a false negative is a potential issue.
-A method of ensuring that a teacher knows whether they have the \ac{UTToF} camera's attention would be beneficial in stopping false negatives if the attention-toggling approach is taken.
+A method of ensuring that a teacher knows whether they have the light-coding device's attention would be beneficial in stopping false negatives if the attention-toggling approach is taken.
 Audible or visual feedback would aid the teacher in knowing whether their movement can or cannot be interpreted by the system as a gesture.
 
 \subsubsection{Interface Selection}  
@@ -362,11 +282,12 @@ Audible or visual feedback would aid the teacher in knowing whether their moveme
 
 It is important to note that sometimes a teacher may not want to affect all interfaces when issuing a command.
 This means that the teacher should be able to perform a gesture in such a way that the system is informed that the related action is intended to only affect specific interfaces.
-A \ac{UTToF} camera's ability to track users can allow for the system to be informed of the location of a teacher in relation to the interfaces in the classroom.
+A light-coding device's ability to track users can allow for the system to be informed of the location of a teacher in relation to the interfaces in the classroom.
 Therefore, the teacher's proximity to interfaces could be used by a system to identify which devices a command should affect if informed of their locations.
 However, the drawback to this approach is that if the teacher wishes to influence multiple interfaces they will be required to repeat the gesture in close proximity to each of the target interface.
 This requires the teacher to move about the classroom and may interrupt their interactions with the students.
 Therefore, an alternative method of identifying which gestures should be affected by a command is desirable.
+
 
 \section{Study Approach} 
 \label{sec:studyApproach}
@@ -383,7 +304,7 @@ Therefore, an alternative method of identifying which gestures should be affecte
 % // TODO Explain need for focus group.
 
 The requirements of the set of gestures to be used by teachers in the classroom are determined by both the shortcomings of the sensing technology, as discussed in Section~\ref{sec:orchestration}, and the abilities of the intended users.
-Specifically, the set of gestures for controlling classroom technologies are those which are able to be detected by a \ac{UTToF} camera and are suited to be performed by teachers.
+Specifically, the set of gestures for controlling classroom technologies are those which are able to be detected by a light-coding device and are suited to be performed by teachers.
 With the potential set of suitable gestures already reduced to the upper-body by the requirements of using the sensing technology in a classroom environment, there is now the task of identifying which gestures to use and with which controls.
 It is important that the selected gestures are intuitive~\cite{Cohen,Wachs2011}.
 This will allow teachers to easily remember gestures and perform them with minimal forethought.
@@ -423,18 +344,18 @@ If these requirements are used in a framework it could be better suited to asses
 Therefore, it was decided that Waches et al.~\citeyearpar{Wachs2011} would be used to assess any proposed upper-body gesture systems.
 
 The framework to assess potential upper-body gestures consists of a series of criteria which a suitable gesture set should completely fulfil.
-Criteria relating to upper-body gesture sensing systems derived from Waches et al.'s~\citeyearpar{Wachs2011} requirements and how a typical \ac{UTToF} camera adheres to them are as follows:
+Criteria relating to upper-body gesture sensing systems derived from Waches et al.'s~\citeyearpar{Wachs2011} requirements and how a typical light-coding device adheres to them are as follows:
 
 \begin{itemize}
-\item  \textit{\textbf{Cost:}} As detailed in Section~\ref{sec:orchestration}, \ac{UTToF} cameras are relatively low cost.
-\item \textit{\textbf{Responsiveness:}} The Kinect, a \ac{UTToF} camera, has a frame rate of 30Hz~\cite{Livingston2012} which is enough to be considered adequately responsive for tracking the movement of users.
-\item \textit{\textbf{Adaptability:}} A typical \ac{UTToF} camera has the ability to be used by various supporting software frameworks which each allow for easy accessing of the device's collected data and functions~\cite{Goth2011}.
-This allows \ac{UTToF} cameras to be easily adapted for changes in use.
-The scalability of a single \ac{UTToF} camera  to track the joints and limbs of multiple persons is a demonstration of its ability to adapt to different numbers of users.
-\item \textit{\textbf{Accuracy:}} The Kinect, a \ac{UTToF} camera, is noted to track user's limb and joints to 20mm when in range~\cite{Marquardt2011}. 
+\item  \textit{\textbf{Cost:}} As detailed in Section~\ref{sec:orchestration}, light-coding devices are relatively low cost.
+\item \textit{\textbf{Responsiveness:}} The Kinect, a light-coding device, has a frame rate of 30Hz~\cite{Livingston2012} which is enough to be considered adequately responsive for tracking the movement of users.
+\item \textit{\textbf{Adaptability:}} A typical light-coding device has the ability to be used by various supporting software frameworks which each allow for easy accessing of the device's collected data and functions~\cite{Goth2011}.
+This allows light-coding devices to be easily adapted for changes in use.
+The scalability of a single light-coding device  to track the joints and limbs of multiple persons is a demonstration of its ability to adapt to different numbers of users.
+\item \textit{\textbf{Accuracy:}} The Kinect, a light-coding device, is noted to track user's limb and joints to 20mm when in range~\cite{Marquardt2011}. 
 \item \textit{\textbf{Un-encumbering nature:}} When a user is required to wear a device for some purpose, the affiliated system is considered to be encumbering.
 This can be undesirable as it detracts from a system's ubiquity and may impede use. 
-Since a \ac{UTToF} camera can track users through a single static device which does not need to be worn it is considered to be un-encumbering.\\ 
+Since a light-coding device can track users through a single static device which does not need to be worn it is considered to be un-encumbering.\\ 
 \end{itemize}
 
 One of Waches et al.'s~\citeyearpar{Wachs2011} requirements refers to the gesture set itself.
@@ -468,7 +389,7 @@ We use these \textit{upper-body gestures criteria} to assesses the gestures prop
 
 To discover gestures which conform to the criteria outlined in Section~\ref{subsec:gatheringGestures} a user-centred design process was adopted.
 As part of this process a user study in the form of a focus group was organised.
-Through the focus group a user-generated set of viable upper-body gestures for use with a \ac{UTToF} camera was discovered.
+Through the focus group a user-generated set of viable upper-body gestures for use with a light-coding device was discovered.
 The focus groups acted as a form of guessability study~\cite{Ruiz2011,Wobbrock2009} which would generate gestures which are natural to the user~\cite{Grandhi2011}.
 User-generated gestures for surface computing are noted to be intuitive, comfortable, memorable and ubiquitous~\cite{Bjørneseth2012}.
 These potential benefits of user-generated gestures adhere to the criteria relating to the definition of effective upper-body gestures.
@@ -533,7 +454,7 @@ Participants were made aware that gestures should only use the upper-body but no
 Participants were also informed that when performing a gesture linked to specific interfaces, a teacher's proximity could be used to identify which interfaces would be affected.
 Before commencing the study participants were informed that they should treat the camera recording the session as the device which would be tracking their movement.
 This was to ensure participants would attempt to make their gestures visible to the camera.
-This was beneficial for the recordings and for generating gestures which could be monitored by a \ac{UTToF} camera.
+This was beneficial for the recordings and for generating gestures which could be monitored by a light-coding device.
 
 The original intention of the study was not to place constraints on the gestures performed by participants, then to repeat the study with the same participants with the constraints.
 However, time restraints made the need for capturing usable gestures, i.e. those which conformed to the constraints, paramount.
@@ -550,7 +471,7 @@ The gestures which were used most frequently for specific commands could be iden
 The most frequently occurring gesture for a command is likely to be the most intuitive since they will match the intended users' mental model of how the system should be used~\cite{Nielsen2004,Ruiz2011,Wobbrock2009}.
 
 Each unique gesture performed during the study was identified.
-Every gesture was first assessed using the limitations of a typical \ac{UTToF} camera.
+Every gesture was first assessed using the limitations of a typical light-coding device.
 Any gestures which did not conform to these limitations, such as those which used finger motions, were discounted.
 Following this, the criteria outlined in Section~\ref{subsec:gatheringGestures} were used to assess the gestures.
 Any gesture which did not meet the criteria was also discounted.
@@ -592,7 +513,7 @@ This set of default gestures were not specific to any particular subset of comma
 In addition to waving with one hand these default gestures included; holding one hand up and pointing with one hand.
 These gestures accounted for twenty eight percent of the observed gestures in the study.
 
-The horizontal wave with one hand was assigned to attaining and dismissing the attention of the \ac{UTToF} camera since it was the most common gesture for all actions.
+The horizontal wave with one hand was assigned to attaining and dismissing the attention of the light-coding device since it was the most common gesture for all actions.
 
 \emph{Interface Selection:}
 
@@ -607,7 +528,7 @@ A minority, 23\% of participants, would always perform different gestures as a m
 This differed from the majority who would use the same gesture for a command when applied to all or specific interfaces with a slight deviation between them.
 A drawback with the approach of using different gestures is that it effectively doubles the number of gestures a teacher must remember since each command would have two gestures affiliated with it.
 This would increase the number of gestures to ten which is unacceptable since it may to be large for many potential users' short-term memory.
-Another drawback to this approach was that the gesture intended to affect specific interfaces would be required to utilise the \ac{UTToF} camera's user tracking ability to determine which interface the teacher is closest to.
+Another drawback to this approach was that the gesture intended to affect specific interfaces would be required to utilise the light-coding device's user tracking ability to determine which interface the teacher is closest to.
 This would require the teacher to repeat the gesture for all interfaces they wish to the command to be applied to making the issuing of commands take significantly longer.
 
 \textit{Use different sized versions of the same gesture}
@@ -631,7 +552,7 @@ This approach, like that which utilises the size of the gesture, requires teache
 
 The majority of participants, 57\% in total, would perform a pointing gesture to signify a command affecting specific interfaces.
 This pointing gesture would be where participants locked their arm in a straight line.
-Some of the participants performing this gesture would also point with a finger but this would be ignored by a sensing technology as inaccurate as a \ac{UTToF} camera.
+Some of the participants performing this gesture would also point with a finger but this would be ignored by a sensing technology as inaccurate as a light-coding device.
 Participants who adopted the approach of pointing at the interfaces they wished to affect would perform the command gesture on its own when wishing to issue the command to all interfaces.
 This was the most popular method of differentiating between whether a command should affect all or specific interfaces.
 3\% of participants who adopted the pointing approach would always perform the gesture with one hand and point with the other throughout.
@@ -679,7 +600,7 @@ This gesture was likely popular because the motion gives the appearance of the t
 \textit{Gesture 29: Holding both hands together at the torso.}\\
 10.26\% of the gestures performed for this command exclusively entailed participants holding both their hands together near their torso.
 Many participants made a gesture with their fingers for this command emulating taking a photo on a camera.
-When asked to modify their behaviour so that they did not use their fingers (due to the limitations of \ac{UTToF} cameras discussed in Section~\ref{sec:orchestration}) participants often performed Gesture 21 instead.
+When asked to modify their behaviour so that they did not use their fingers (due to the limitations of light-coding devices discussed in Section~\ref{sec:orchestration}) participants often performed Gesture 21 instead.
 This gesture is as close to emulating taking photos as possible without the use of fingers.\\
 
 \item \textbf{Clearing the classroom interfaces.}\\
@@ -690,7 +611,7 @@ The second most popular gesture for this command was gesture 15, waving both han
 Again, this gesture was likely to be popular due to its similarity to the action of clearing objects off a surface.\\
 \end{itemize}
 
-With this set of gestures compiled, a gesture recognition system can be implemented into a classroom technology system utilising a \ac{UTToF} camera.
+With this set of gestures compiled, a gesture recognition system can be implemented into a classroom technology system utilising a light-coding device.
 
 \subsection{User Generated Gestures}
 \label{subsec:userGeneratedGestures}
@@ -705,9 +626,9 @@ Of the five gestures chosen for the commands, four could be interpreted as being
 Only gesture 6, the holding up of one hand to send content to the board does not directly represent a related action.
 This may be because any physical actions related to this task are not as obvious as the actions which other gestures emulate.
 
-As discussed in Section~\ref{subsec:gatheringGestures}, criteria derived from the requirements outlined by Wachs et al.~\citeyearpar{Wachs2011} relating to the sensing technology are fulfilled by the proposed use of a \ac{UTToF} camera.
+As discussed in Section~\ref{subsec:gatheringGestures}, criteria derived from the requirements outlined by Wachs et al.~\citeyearpar{Wachs2011} relating to the sensing technology are fulfilled by the proposed use of a light-coding device.
 Using the results of the focus group based study; this set of five command gestures can be used to control some systems of classroom technology that entail the sharing of content between teacher and student interfaces.
-In addition to this, gesture 20; the horizontal wave above the torso, is suitable for obtaining and dismissing the \ac{UTToF} camera's attention.
+In addition to this, gesture 20; the horizontal wave above the torso, is suitable for obtaining and dismissing the light-coding device's attention.
 
 The pointing approach discussed in Section~\ref{subsubsec:focusGroupResults} was the most popular option for use when defining which interfaces a command affects.
 The alternative approaches require the teacher's proximity to interfaces.
@@ -738,18 +659,18 @@ The sequential approach of pointing then gesturing allows for multiple interface
 This saves time because the teacher would not need to repeat the gesture.
 
 Figure~\ref{fig:flow} outlines a control sequence in which the gestures and approaches to interface selection indicated by the focus group to be intuitive can be used to issue common commands to classroom technologies.
-Teachers first obtain the \ac{UTToF} camera's attention with a wave then touch the interfaces they wish the following command gesture to affect.
+Teachers first obtain the light-coding device's attention with a wave then touch the interfaces they wish the following command gesture to affect.
 The teacher can repeatedly touch interfaces to select and deselect them until they perform the command gesture.
 This approach allows teachers to issue commands to whichever interfaces they desire without requiring them to break interaction with a student.
-Alternatively, the teacher can perform the command gesture immediately after obtaining the \ac{UTToF} camera's attention to issue the corresponding command to all interfaces.
-At any time during this control sequence a teacher can wave again to dismiss the \ac{UTToF} camera's attention.
-After the command gesture is performed the \ac{UTToF} camera stops paying attention to the teacher.
-This saves the teacher the need to dismiss the \ac{UTToF} camera with another gesture.
+Alternatively, the teacher can perform the command gesture immediately after obtaining the light-coding device's attention to issue the corresponding command to all interfaces.
+At any time during this control sequence a teacher can wave again to dismiss the light-coding device's attention.
+After the command gesture is performed the light-coding device stops paying attention to the teacher.
+This saves the teacher the need to dismiss the light-coding device with another gesture.
 
 For each response of the system to teacher gestures, denoted in Figure~\ref{fig:flow} with the black boxes with white text, some form of feedback will need to be provided to the teacher.
 This feedback is necessary for informing the teacher whether the gesture they have performed has had the intended effect on the system or not.
 
-With the gesture set and control sequence defined, a classroom technology system can be augmented to use a \ac{UTToF} camera.
+With the gesture set and control sequence defined, a classroom technology system can be augmented to use a light-coding device.
 
 \section{Study Phase 1} 
 \label{sec:studyPhase1}
@@ -781,7 +702,7 @@ SynergyNet accepts inputs from a range of multi-touch protocols, such as TUIO~\c
 Though initially intended for use with diffused illumination multi-touch technology~\cite{Matsushita1997}, the support of multiple protocols allows the framework to be used with a wide range of touch interfaces including interactive whiteboards and multi-touch tables.
 The framework offers a range of functions in addition to the management of multi-touch inputs, including networking which facilitates communication between different devices running instances of SynergyNet.
 
-To support the implementation of the gesture control sequence a \ac{UTToF} camera was required.
+To support the implementation of the gesture control sequence a light-coding device was required.
 The Microsoft Kinect was chosen due to its low cost and availability.
 
 \begin{figure}[h]
@@ -1245,7 +1166,7 @@ Though there are many issues with the use of multiple Kinects~\cite{Maimone2012,
 If SynergyNet is made capable of combining user data from multiple Kinect devices it should be possible to track teachers moving across the device's monitored areas.
 
 As discussed in Section~\ref{subsec:studyPhase1Implementation}, the decision was made not to implement a method of interface selection.
-This was due to the fact that the most popular method of interface selection in the focus group would be problematic when implemented into a system with only a single \ac{UTToF} camera.
+This was due to the fact that the most popular method of interface selection in the focus group would be problematic when implemented into a system with only a single light-coding device.
 With the use of multiple Kinects this issue may be overcome. 
 The implementation of support for multiple Kinects in future systems would allow the teacher to select tables without the need to move to them through the use of the pointing gesture without obstruction.
 This would allow teachers to perform the entire command sequence without moving from their current location.
@@ -1315,7 +1236,7 @@ As discussed in Section~\ref{subsec:gatheringGestures}, the criteria relating to
 The implemented system used in the study's adherence to these criteria was determined by the technical specifications of the Kinect device.
 Though low-cost, responsive, adaptable and un-encumbering, concerns about the device's accuracy during the user study were raised.
 A better trade-off between accuracy and the other device-determined criteria may be found through an alternative.
-The suggested improvements of using a different \ac{UTToF} camera or multiple Kinects could aid the system in meeting the criterion of acceptable accuracy.
+The suggested improvements of using a different light-coding device or multiple Kinects could aid the system in meeting the criterion of acceptable accuracy.
 
 The criterion relating to the lexicon size can be said to be met by the gesture-set produced in this paper.
 This is because the gesture set is the same size as the minimum typical short-term memory limit as discussed in Section~\ref{subsec:gatheringGestures}.
@@ -1335,7 +1256,7 @@ In the post-study interview the teacher explained the pauses were caused by thei
 This indicates that improvements could be made to the gesture set and the control sequence to reduce mental load.
 \item \textit{{Interaction Space:}} The failure of the Kinect to recognise many of the gestures performed occurred due to the device losing track of joints which left its accurately monitored area.
 This implies that the gestures and classroom environment require more interaction space than the device is capable of.
-The use of a different \ac{UTToF} camera or multiple Kinects could increase the device's range to accommodate for the system's required interaction space.
+The use of a different light-coding device or multiple Kinects could increase the device's range to accommodate for the system's required interaction space.
 \item \textit{{Ubiquity:}} In the post-study interview the teacher discussed how all the gestures used were similar enough to typical classroom actions performed by teachers that they did not feel out of place.\\ 
 \end{itemize}
 
@@ -1344,8 +1265,8 @@ The initial results show promise but were impeded by issues relating to the accu
 To overcome the limitations of the evaluation of the implemented control system, future work will entail repeating the study with a greater number of teachers and improvements to the sensing technology.
 
 Both the gesture set presented in this work and its implementation, despite requiring improvements, have shown enough potential to warrant further work.
-The gestures and control sequence presented could be used to control various classroom technologies through the use of a \ac{UTToF} camera.
-The ability for teachers to quickly issue commands without breaking discussion with their students made feasible by \ac{UTToF} camera, as observed with the implemented system's use in the study, is desirable for technology-rich classroom environments.
+The gestures and control sequence presented could be used to control various classroom technologies through the use of a light-coding device.
+The ability for teachers to quickly issue commands without breaking discussion with their students made feasible by a light-coding device, as observed with the implemented system's use in the study, is desirable for technology-rich classroom environments.
 The implementation of the suggested improvements to resolve the observed errors could make upper-body gestures an effective method of managing classroom technology.
 % From Conclusion 1 ===========================================================================
 

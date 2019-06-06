@@ -163,93 +163,37 @@ In addition to this caveat, the issuing of voice commands also will require teac
 
 The use of physical gestures monitored via a light-coding device appears to be the most suitable approach to creating a system which allows teachers to control classroom technologies without the requirement for a distracting interface.
 
-\section{Classroom Technology Orchestration} 
+\section{CLASSROOM TECHNOLOGY ORCHESTRATION WITH GESTURES} 
 \label{sec:orchestration}
 
-% // TODO RQ: Whats a better control mechanism for teachers: smart boards, tablets or the Kinect?
-
-% // TODO Trim down (subsection on potential issues could be summarised (they are just reasons for the limitations on acceptable gestures which we used to determine what we asked the participants.)
-
-The ability to track specific users and their limbs allows a light-coding device to be used for identifying body-orientated gestures.
-This could allow teachers to control technology in the classroom without the need for an intermediate physical interface.
-Teachers would not be encumbered with a device allowing them freedom to move about the classroom.
+Light-coding devices could allow teachers to control technology in the classroom without the need for a physical interface.
 Since physical gestures would permit eyes-free interaction~\cite{Brewster2003} with a control system, teachers could interact with students without losing control of the technology.
 Due to a light-coding device's ability to track people in an environment, once a teacher is identified their movement around the classroom can be followed.
-As a result of this, teachers could potentially issue commands through gestures anywhere in the classroom.
+As a result of this, teachers could potentially issue commands through gestures from anywhere in the classroom.
 
 light-coding devices have high availability and relatively low cost in comparison to alternative depth sensing devices such as those used in Oblong's Mezzanine~\cite{kramer2011}.
 Despite these potential benefits of light-coding device, there are several limitations that must be considered.
 One limitation is their accuracy.
-light-coding devices are capable of tracking users and the position of their limbs.
+Light-coding devices are capable of tracking users and the position of their limbs.
 However, for a light-coding device to track anything more precise, such as fingers, additional constraints on their abilities will need to be imposed \cite{Clark2011}.
 These additional limitations potentially include a reduction in range, a reduced limit on the number of tracked users and the use of encumbering devices.
 All these limitations are undesirable for the use of the device in the classroom.
 Therefore, in the work discussed here, light-coding device will be assumed not be augmented to track anything more precise than user limbs.
 This means that any gestures to be used by teachers for issuing control commands should consist of limb positioning and movement.
 
-\begin{figure}[t]
-   \centering
-   \includegraphics[width=0.45\textwidth]{figures/gestures_venn_diagram.png}
-   \caption{The hierarchy and intersection of physical gesture sets.}
-   \label{fig:gestureVenn}
-\end{figure}
-
-Figure~\ref{fig:gestureVenn} represents the different sub-sets of physical gestures.
-The inability of an un-augmented light-coding device to track anything more precise than user limbs discounts the adoption of gesture sets 4 and 5, i.e. gestures which use fingers, for use in the classroom.
-Any gesture which lies outside the grouping of those which can be identified by a light-coding device must be discounted.
-This results in gestures sets 1, 2 and 3 also being deemed unsuitable for classroom use.
-
-There are several reasons for gestures involving the use of the lower body limbs and joints, such as the legs, to be discounted.
+The inability of an un-augmented light-coding device to track anything more precise than user limbs discounts the adoption of gestures which use fingers for use in the classroom.
+There are several reasons for gestures involving the use of the lower body limbs and joints, such as the legs, to be discounted also.
 One such reason is their requirement for the visibility of the lower body.
 In a classroom full of furniture and seated students, the teacher's lower body will potentially be obscured most of the time from the view of the light-coding device.
-The requirement for a teacher to move to a position where their lower body is visible to the light-coding device counters the device's potential benefit of allowing for control of the system without the need to move away from students.
-
-Another reason for discounting gestures using lower limbs and joints is that the movement of the teacher's legs may affect their balance which could result in accidents.
-In addition to this, gestures utilising a teacher's legs may require the teacher to be standing when performing them.
-This could interrupt interaction with students if the teacher is seated while in discussion with them.
-Gestures which do not require teachers to stand would allow the teacher to issue commands while still being seated.
 Due to these reasons, only gestures which utilise the positioning and movement of the upper-body should be considered when developing a classroom control system.
 This means that gestures should only make use of upper-body joints and limbs which a light-coding device can track: the torso, wrists, hands, elbows, shoulders, neck and head.
-Therefore, gesture sets 6 and 7 in Figure~\ref{fig:gestureVenn} are shown to be unsuitable for use in the classroom.
 
-\begin{table}[h]
-\begin{tabular}{!{\vrule width 1.5pt}c|c|c|c|c!{\vrule width 1.5pt}}
-\noalign{\hrule height 1.5pt}
-\textbf{} 			&\textbf{Uses}	&\textbf{Uses}	&\textbf{} 	&\textbf{Visible to a}	\\
-\textbf{Gesture} 	&\textbf{Upper-}	&\textbf{Lower-}	&\textbf{Uses} 	&\textbf{light-coding}	\\
-\textbf{Set} 		&\textbf{body} 	&\textbf{body} 	&\textbf{Fingers}	&\textbf{device}			\\
-\cline{1-5}
-1			&\tickYes 				&\crossNo			&\crossNo				&\crossNo			\\
-\cline{1-5}
-2			& \crossNo				&\tickYes 			&\crossNo				&\crossNo			\\
-\cline{1-5}
-3			&\tickYes  				&\tickYes 			&\crossNo				&\crossNo			\\
-\cline{1-5}
-4			&\tickYes  				&\crossNo 			&\tickYes 				&\crossNo			\\
-\cline{1-5}
-5			&\tickYes  				&\tickYes 			&\tickYes 				&\crossNo			\\
-\cline{1-5}
-6			&\crossNo 				&\tickYes 			&\crossNo				&\tickYes 			\\
-\cline{1-5}
-7			&\tickYes  				&\tickYes 			&\crossNo				&\tickYes 			\\
-\noalign{\hrule height 1.5pt}
-8 			&\tickYes  				&\crossNo 			&\crossNo				&\tickYes 			\\
-\noalign{\hrule height 1.5pt}
-\end{tabular}
-\caption{Unique physical gesture sets.}
-\label{table:gestures}
-\end{table}
+\subsection{Considerations for Light-Coding in the Classroom}  
+\label{subsec:considerations}
 
-As Table~\ref{table:gestures} shows, only gesture set 8 is suitable for use by a teacher in a classroom environment.
-All other gesture sets have been discounted due to their use of lower body limbs or inability to be identified by a light-coding device.
-Gesture set 8 consists of gestures which can be observed by a light-coding device that use the upper-body but not the lower-body or fingers.
+The use of physical gestures in the classroom requires that several considerations are taken into account in the design of any system which supports them.
 
-\subsection{Potential Issues}  
-\label{subsec:potentialIssues}
-
-The use of physical gestures in the classroom requires that several potential issues are accommodated for in the design of any system which supports them.
-
-\subsubsection{False Positives}  
+\subsubsection{Avoiding False Positives}  
 \label{subsubsec:falsePositives}
 
 A potential issue concerning light-coding devices are that, by default, they are active at all times.
@@ -280,17 +224,19 @@ Audible or visual feedback would aid the teacher in knowing whether their moveme
 \subsubsection{Interface Selection}  
 \label{subsubsec:interfaceSelection}
 
-It is important to note that sometimes a teacher may not want to affect all interfaces when issuing a command.
-This means that the teacher should be able to perform a gesture in such a way that the system is informed that the related action is intended to only affect specific interfaces.
+It is important to note that sometimes a teacher may wish to issue a command to specific selection of devices in the classroom rather than all.
+This means that the teacher should be able to perform a gesture in such a way that the system is informed that the related action is intended to only affect specific devices.
 A light-coding device's ability to track users can allow for the system to be informed of the location of a teacher in relation to the interfaces in the classroom.
 Therefore, the teacher's proximity to interfaces could be used by a system to identify which devices a command should affect if informed of their locations.
-However, the drawback to this approach is that if the teacher wishes to influence multiple interfaces they will be required to repeat the gesture in close proximity to each of the target interface.
-This requires the teacher to move about the classroom and may interrupt their interactions with the students.
-Therefore, an alternative method of identifying which gestures should be affected by a command is desirable.
+However, the drawback to this approach is that if the teacher wishes to influence multiple interfaces they will be required to repeat the gesture in close proximity to each of the target interface which could take up an undesirable amount of time.
+An alternative could be to use a specific gesture which can communicate a preferred device, or devices, to the system.
+If implementing this into the design of a gesture set it is important to ensure this gesture is quick to perform and intuitive as it is likely to be repeated often by the teacher.
 
-
-\section{Study Approach} 
+\section{STUDY APPROACH} 
 \label{sec:studyApproach}
+
+With all the requirements for using gestures in the classroom and the limitations of the most suitable technologies outlined in Section~\ref{sec:orchestration} an important question becomes apparent:
+\emph{Are gestures a viable method for controlling technology in the classroom?}
 
 % // TODO Highlight need for a suitable gesture set to be generated
 

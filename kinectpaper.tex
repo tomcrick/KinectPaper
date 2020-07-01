@@ -171,7 +171,7 @@ Since physical gestures would permit eyes-free interaction~\cite{Brewster2003} w
 Due to a light-coding device's ability to track people in an environment, once a teacher is identified their movement around the classroom can be followed.
 As a result of this, teachers could potentially issue commands through gestures from anywhere in the classroom.
 
-light-coding devices have high availability and relatively low cost in comparison to alternative depth sensing devices such as those used in Oblong's Mezzanine~\cite{kramer2011}.
+Light-coding devices have high availability and relatively low cost in comparison to alternative depth sensing devices such as those used in Oblong's Mezzanine~\cite{kramer2011}.
 Despite these potential benefits of light-coding device, there are several limitations that must be considered.
 One limitation is their accuracy.
 Light-coding devices are capable of tracking users and the position of their limbs.
@@ -259,54 +259,31 @@ With the potential set of suitable gestures already reduced to the upper-body by
 \subsubsection{Gathering User Generated Gestures} 
 \label{subsec:gatheringGestures}
 
-% // TODO Trim down.
-It is important that the gestures selected for use with the study's implemented system are intuitive~\cite{Cohen,Wachs2011}.
-This will allow teachers to easily remember gestures and perform them with minimal forethought.
-If the number of gestures to be used with the system is too large, the difficulty of committing them to and recalling them from memory may result in the teacher committing errors.
-This may result in frustration with the systems use~\cite{Mendoza2005}.
-
-Prior to use of a classroom technology control system which uses upper-body gestures teachers should receive training.
-The training should at least ensure that the teacher is capable of recalling all the gestures used in the system and their associated commands.
-
-It is important to note that to facilitate the use of the system; teachers should not be laden with too many gestures to remember.
+It is important that the gestures selected for use in the study are intuitive~\cite{Cohen,Wachs2011} to allow teachers to easily remember gestures and perform them with minimal forethought.
+Its also important that the number of gestures is kept small to avoid difficulties with requiring users to remember too much so that frustration with using the system can be minimised~\cite{Mendoza2005}.
 The typical adult can remember seven items in a list, give or take two, in their short term memory~\cite{mil56}.
 Relying on committing a greater number of commands to long term memory is undesirable since it counters the benefit that intuitive gestures offer of being quick to learn and use.
-If there are too many gestures to recall from short term memory, teachers may have to rely on instructions sheets which would cause the same issues as the use as mobile interfaces where their attention is taken away from the students.
 
-To compare possible sets of upper-body gestures for use with a system for controlling classroom technologies, a framework for assessing the gesture sets must be decided upon.
-An exhaustive literature survey utilising a structured protocol~\cite{kitchenham04} revealed that no framework exists for the evaluation of the specific set of potential gestures relating to the upper-body.
-Therefore, an evaluation framework used for a similar set of gestures was required to be identified and adapted to the upper-body set.
+A framework for assessing potential gesture sets for the study must be decided upon.
+An exhaustive literature survey utilising a structured protocol~\cite{kitchenham04} revealed that no framework currently exists for the evaluation of gestures meeting the requirements of classroom orchestration with upper-body gestures as outlined in Section~\ref{sec:orchestration}.
+Therefore, an evaluation framework used for a similar set of gestures was required to be identified and adapted.
 
-Grandhi et al.'s \citeyearpar{Grandhi2011} work relates to identifying physical open-air gestures.
-As part of the work a study is carried out where a framework is used to assess the gestures performed by participants.
-The gestures are categorised in the work by whether the action performed is pantomimic, where the user mimics a related real-world action, or uses a body part to represent a tool connected to a related real-world action.
-The study was intended to find which of these categories held the more intuitive gestures.
-To assess the intuitiveness of a gesture post session interviews were used.
-The results indicated that the pantomimic gestures were more intuitively performed, though this conclusion is based on the opinions of the participants.
-Gestures that were present in the study all appear to reside in the subset of hand-gestures.
-However, the findings and approach to assessing the actions could be applied to a wider scope of gestures.
-
-Nielsen et al.~\citeyearpar{Nielsen2004}'s work on procuring suitable sets of gestures for ergonomic interfaces entails the assessment of user gestures using a framework of characteristics.
+Nielsen et al.~\citeyearpar{Nielsen2004}'s work on procuring suitable sets of gestures for ergonomic interfaces entails the assessment of gestures using a framework of characteristics.
 This framework is derived from a combination of usability principles and heuristics derived from ergonomic theory.
 The characteristics the framework uses for assessment are a gesture's; (i) ease to perform and recall, (ii) intuitiveness, (iii) logical metaphoric and iconic links towards functionality and (iv) ergonomic nature.
+Waches et al.~\citeyearpar{Wachs2011} outline a series of requirements which systems using hand-gestures should adhere to, a number of which echo the characteristics used in Nielsen et al.~\citeyearpar{Nielsen2004}'s work.
+In addition to these are additional requirements which relate to the sensing technology used which relate to the technologies to be used in the study.
 
-Waches et al.~\citeyearpar{Wachs2011} outline a series of requirements which systems using hand-gestures should adhere to.
-The work goes into great detail on how each requirement is important, not only for the specific gesture set of hand actions but for physical gestures in general.
-A number of these requirements echo the characteristics used in Nielsen et al.~\citeyearpar{Nielsen2004}'s work.
-In addition to these are additional requirements which relate to the sensing technology used.
-If these requirements are used in a framework it could be better suited to assessing a proposed gesture-based system as a whole, rather than just focusing on the gestures.
-Therefore, it was decided that Waches et al.~\citeyearpar{Wachs2011} would be used to assess any proposed upper-body gesture systems.
-
-The framework to assess potential upper-body gestures consists of a series of criteria which a suitable gesture set should completely fulfil.
-Criteria relating to upper-body gesture sensing systems derived from Waches et al.'s~\citeyearpar{Wachs2011} requirements and how a typical light-coding device adheres to them are as follows:
+Because of their relevance it was decided that the requirements outlined by Waches et al.~\citeyearpar{Wachs2011} would be adopted for use to assess gestures in the study.
+The more technical requirements and how a typical light-coding device adheres to them are as follows:
 
 \begin{itemize}
 \item  \textit{\textbf{Cost:}} As detailed in Section~\ref{sec:orchestration}, light-coding devices are relatively low cost.
 \item \textit{\textbf{Responsiveness:}} The Kinect, a light-coding device, has a frame rate of 30Hz~\cite{Livingston2012} which is enough to be considered adequately responsive for tracking the movement of users.
-\item \textit{\textbf{Adaptability:}} A typical light-coding device has the ability to be used by various supporting software frameworks which each allow for easy accessing of the device's collected data and functions~\cite{Goth2011}.
+\item \textit{\textbf{Adaptability:}} A typical light-coding device has the ability to be used by various supporting software frameworks which each allow accessing of the device's collected data and functions~\cite{Goth2011}.
 This allows light-coding devices to be easily adapted for changes in use.
-The scalability of a single light-coding device  to track the joints and limbs of multiple persons is a demonstration of its ability to adapt to different numbers of users.
-\item \textit{\textbf{Accuracy:}} The Kinect, a light-coding device, is noted to track user's limb and joints to 20mm when in range~\cite{Marquardt2011}. 
+The scalability of a single light-coding device to track the joints and limbs of multiple persons is a demonstration of its ability to adapt to different numbers of users.
+\item \textit{\textbf{Accuracy:}} The Kinect, a light-coding device, is noted to track user's limb and joints to 20mm when in range~\cite{Marquardt2011}.
 \item \textit{\textbf{Un-encumbering nature:}} When a user is required to wear a device for some purpose, the affiliated system is considered to be encumbering.
 This can be undesirable as it detracts from a system's ubiquity and may impede use. 
 Since a light-coding device can track users through a single static device which does not need to be worn it is considered to be un-encumbering.\\ 
@@ -316,7 +293,7 @@ One of Waches et al.'s~\citeyearpar{Wachs2011} requirements refers to the gestur
 A criterion based on this requirement can be stated as follows:
 
 \begin{itemize}
-\item \textit{\textbf{Lexicon Size:}}  The size of the gesture set must not be too large.
+\item \textit{\textbf{Lexicon Size:}} The size of the gesture set must not be too large.
 This criterion can be adhered to by taking into account the limitations of short term memory.\\ 
 \end{itemize}
 
@@ -333,7 +310,6 @@ Therefore, to fulfil this requirement, gestures should minimise used space.
 \end{itemize}
 
 Using these criteria, any suggested gesture sets and their implementation can be assessed to be viable or not.
-We use these \textit{upper-body gestures criteria} to assesses the gestures proposed for teacher use.
 
 \subsubsection{Focus Group Approach} 
 \label{subsec:focusGroupDesign}
@@ -571,7 +547,7 @@ With this set of gestures compiled, a gesture recognition system can be implemen
 The results from the focus group discussed in Section~\ref{subsubsec:focusGroupResults} indicated that the gestures which were the most popular were those that bore a metaphorical relationship to their corresponding commands.
 If a command could be interpreted as a physical task, participants would often use a gesture which mimicked an action carried out to complete that task.
 This re-iterates the importance of metaphor when designing intuitive systems \cite{Wang2008}.
-All of the metaphoric gestures observed in the study were pantomimic.
+All of the metaphoric gestures observed in the study were pantomimic, where the user mimics a related real-world action.
 As shown in the work of Grandhi et al. \citeyearpar{Grandhi2011}, gestures which are pantomimic have a greater chance of being intuitive.
 In addition to being a familiar and natural action, a metaphor-based gesture is easier for a user to remember due to its connection to the task it represents.
 Of the five gestures chosen for the commands, four could be interpreted as being metaphor-based.

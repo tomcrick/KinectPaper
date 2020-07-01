@@ -309,12 +309,10 @@ Therefore, to fulfil this requirement, gestures should minimise used space.
 \item \textit{\textbf{Ubiquity:}} A gesture which does not appear to be in keeping with a user's typical actions in the current environment would not fulfil this criterion. \\ 
 \end{itemize}
 
-Using these criteria, any suggested gesture sets and their implementation can be assessed to be viable or not.
+Using these criteria, any suggested gesture sets and their suitability can be assessed to be viable or not.
 
 \subsubsection{Focus Group Approach} 
 \label{subsec:focusGroupDesign}
-
-% // TODO Trim Down.
 
 To discover gestures which conform to the criteria outlined in Section~\ref{subsec:gatheringGestures} a user-centred design process was adopted.
 As part of this process a user study in the form of a focus group was organised.
@@ -325,31 +323,10 @@ These potential benefits of user-generated gestures adhere to the criteria relat
 
 The primary objective of this study was to find the quickest, most intuitive and least intrusive upper-body gestures which can be performed in the classroom to execute the most important control commands.
 
-Three separate focus groups took place, each populated with students working towards a \ac{PGCE}.
-\ac{PGCE} students were chosen because they were training towards careers in teaching.
-This meant that they would share the same training experiences as most teachers.
-All the participants had some experience of teacher in a classroom environment.
-Therefore, \ac{PGCE} students may have similar considerations concerning gestures ubiquitous to the classroom.
-In addition to this, gestures which are found to be intuitive to \ac{PGCE} students are likely to also be intuitive to teachers.
-
-\begin{figure}[h]
-   \centering
-   \includegraphics[width=0.45\textwidth]{figures/synergynet_lab.png}
-   \caption{The SynergyNet lab.}
-   \label{fig:synergynetLab}
-\end{figure}
-
-Time constraints defined much of the study's design since the participating \ac{PGCE} were not able to stay on-site for more than a single morning.
-It is due to the time constraints that an approach similar to that suggested by Nielsen et al.~\citeyearpar{Nielsen2004} could not be adopted.
-
-The study took place in the SynergyNet lab, a laboratory designed to resemble a potential future technology enhanced classroom shown in Figure~\ref{fig:synergynetLab}.
-The lab comprises of four tables with multi-touch interfaces embedded in their surfaces and an interactive whiteboard. 
-The tabletop interfaces are intended to be viewed and used by individual groups of students whereas the board is intended to be visible to the entire class.
-This is similar to more traditional classroom technology systems where students may have their own terminal or laptop in addition to a shared interface, either a interactive whiteboard or projection, for displaying materials to the class in general.
-The lab is furnished with a range of recording apparatus which can capture audio and video from various locations around the classroom.
-Participants were asked to position themselves in the room used in the study facing away from each other and towards the cameras recording the session.
-The participants were positioned in this manner to reduce the influence that they would have on each other.
-In each study a number of the participants were asked to stand and the rest were seated.
+Three focus group sessions took place.
+All participants were required to have had some experience of teaching in a classroom environment.
+Participants were asked to position themselves in the room used in the study facing away from each other and towards the cameras recording the session to reduce the influence that they would have on each other.
+In each session a number of the participants were asked to stand and the rest were seated.
 A list of commands that teachers using a classroom control system may need to issue was compiled.
 The commands used were those for: 
 \begin{itemize}
@@ -360,65 +337,46 @@ The commands used were those for:
 \item Clearing the student interfaces.\\
 \end{itemize}
 
-These commands were decided upon based on observations regarding the use of technology in the SynergyNet lab during previous studies~\cite{Hatch2011}.
-The commands are ranked based on how frequently they were observed to be issued previously.
-
+These commands were decided upon based on observations on which were the most frequently issued during previous studies~\cite{Hatch2011}.
 It was decided to adhere the lower bound of short term memory, discussed in Section~\ref{subsec:gatheringGestures}, of five.
 This relatively small gesture set conforms to the Wachs et al.'s~\citeyearpar{Wachs2011} requirement for a small lexicon size.
 
-For each command participants were asked to perform the first gesture that they thought of which related to it.
-Participants were asked not to put too much consideration into the gestures they performed.
-This meant that the gestures performed were likely to be natural to the participant which is beneficial for finding gestures which conform to the criteria outlined in Section~\ref{subsec:gatheringGestures}.
+For each command participants were asked to perform the first gesture that they thought of which related to it meaning  that the gestures performed were likely to be natural to the participant.This is beneficial for finding gestures which conform to the criteria outlined in Section~\ref{subsec:gatheringGestures}.
 Spontaneous and frequently repeated gestures are assumed to be natural to the user and therefore are \textit{\textbf{intuitive}}~\cite{Grandhi2011}.
 The intuitive nature of the gestures also implies that they are \textit{\textbf{comfortable}} for participants to perform.
 Since participants were asked to put little thought into their motions, the gestures can also be said to have a \textit{\textbf{low mental load}}.
-Since the participants were asked to perform the gestures while positioned next to others in the study there were limitations on how large their gestures could be.
-This helped reduce the \textit{\textbf{interaction space}} that would be required when carrying out the gesture.
-Participants were also asked to be mindful of the fact that these gestures would be performed in a classroom environment.
-This was to ensure that the gestures suggested by participants would be in some way \textit{\textbf{ubiquitous}} to the classroom environment.
+Participants were placed closely side-by-side helping ensure that the gestures used would utilise a restrained \textit{\textbf{interaction space}}.
+Participants were also asked to be mindful of the fact that these gestures would be performed in a classroom environment to ensure that the gestures suggested by participants would be in some part \textit{\textbf{ubiquitous}} to the classroom environment.
 
 Participants in the study were asked to perform two gestures for each command.
 The first gesture related to a command issued to all interfaces whereas the second related to a command intended for a specific selection of interfaces.
 Participants were made aware that gestures should only use the upper-body but not fingers and that a gesture can either be a pose or movement.
-Participants were also informed that when performing a gesture linked to specific interfaces, a teacher's proximity could be used to identify which interfaces would be affected.
-Before commencing the study participants were informed that they should treat the camera recording the session as the device which would be tracking their movement.
-This was to ensure participants would attempt to make their gestures visible to the camera.
-This was beneficial for the recordings and for generating gestures which could be monitored by a light-coding device.
-
-The original intention of the study was not to place constraints on the gestures performed by participants, then to repeat the study with the same participants with the constraints.
-However, time restraints made the need for capturing usable gestures, i.e. those which conformed to the constraints, paramount.
-Therefore, the unconstrained gesture capturing phase was not carried out in this study.
+Participants were also informed that they could not assume their promiximity to a device could not be used for selecting a specific interface.
 
 \emph{Focus Group Data Analysis:}
 
-Participants were recorded on video performing the gestures during the study.
-Using the recordings, for each command all participants' movements could be studied and summarised as a sequence of poses and movements.
+Using video recordings of the focus group sessions all participants' movements for each command could be studied and summarised as a sequence of poses and movements.
 This allowed the participants' actions to be formalised as gestures.
 These gestures could then be compared, allowing similar actions to be identified as being separate instances of the same gesture.
-The gestures which were used most frequently for specific commands could be identified.
+The gestures which were used most frequently for specific commands could then be identified.
 The most frequently occurring gesture for a command is likely to be the most intuitive since they will match the intended users' mental model of how the system should be used~\cite{Nielsen2004,Ruiz2011,Wobbrock2009}.
 
-Each unique gesture performed during the study was identified.
-Every gesture was first assessed using the limitations of a typical light-coding device.
+Each unique gesture identified was first evaluated against the limitations of a typical light-coding device.
 Any gestures which did not conform to these limitations, such as those which used finger motions, were discounted.
 Following this, the criteria outlined in Section~\ref{subsec:gatheringGestures} were used to assess the gestures.
 Any gesture which did not meet the criteria was also discounted.
-The viable gestures observed in all of the focus groups were listed for each command alongside the number of participants which performed them.
-The gesture with the highest number of occurrences for a specific command could then be established as the most likely to be intuitive to a teacher.
+The viable gestures observed for a command across all the sessions were then ranked by frequency to identify those to be considered most intuitive.
 
-If more than one command had the same gesture with the highest number of occurrences, the gesture would be assigned to the command with the highest frequency of use observed in past studies~\cite{HatchA.HigginsS&Mercier2009}.
-The less frequently used commands would then be assigned their gesture with the next highest number of occurrences.
-This approach may confound the overall intuitiveness of the gesture set, however it enhances the intuitiveness of the more frequently used gestures.
-This was gauged to be more important at the time of the study by the organisers.
+If more than one command had the same gesture with the highest frequency, the gesture would be assigned to the command with the highest usage observed in past studies~\cite{HatchA.HigginsS&Mercier2009}.
+The less used commands would then be assigned their gesture with the next highest frequency.
 
 It was decided that the attention toggling method of managing false positives, discussed in Section~\ref{subsubsec:falsePositives}, would be adopted due to its ability to reduce errors without placing constraints on where in an environment gestures can be performed.
 Every effort was made to ensure participants' minds were kept clear of any assumptions about the system to aid the performance of intuitive gestures~\cite{Nielsen2004}.
 As part of this effort it was decided that the participants should not be made aware of the toggle mechanic.
-Therefore a separate collection for the toggle mechanic could not be used, instead the most frequently occurring gesture throughout the entire study was chosen.
 Since this gesture potentially needs to be performed prior to any other command gesture, it will be the most frequently used in the system.
-Therefore, it is important to ensure that it is intuitive and natural.
+Therefore, the most frequently occurring gesture throughout the entire study was chosen for this mechanic to ensure that is is intuitive and natural.
 
-In addition to the ranking of gestures per action, the data analysis also aimed to identify how the participants differentiated gestures intended for all interfaces from those intended for specific interfaces.
+The data analysis also aimed to identify how the participants differentiated gestures intended for all interfaces from those intended for specific interfaces.
 
 \subsubsection{Focus Group Results}
 \label{subsubsec:focusGroupResults}

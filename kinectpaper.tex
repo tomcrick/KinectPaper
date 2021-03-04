@@ -40,7 +40,7 @@ $^{3}$The University of Newcastle, University Drive, Newcastle NSW 2308, Austral
 
 \begin{abstract}
 
-% // TODO New abstract to explain the 2 phase approach to the study (with the gesture gathering exercise before hand).
+% // TODO New abstract to explain the approach to the study (with the gesture gathering exercise and pilot beforehand).
 
 
 % From Abstract 1 ===========================================================================
@@ -117,9 +117,10 @@ These details of these steps, the reasoning behind them and their impact discuss
 
 The remainder of this paper is as follows. 
 Section~\ref{sec:background} discusses gesture detection technologies and approaches to gathering useful sets of gestures.
-The question of what technology is most useful for use in orchastrating a classroom is considered in Section~\ref{sec:orchestration}.
-The design and preparation for a study for answering this question is then detailed in Section~\ref{sec:studyApproach}.
-The first phase of the study is discussed in Section~\ref{sec:studyPhase1} then the second phase and its results are discussed in Section~\ref{sec:studyPhase2}.
+The issues in applying a gesture control to classroom orchestration is considered in Section~\ref{sec:issues}.
+The creation of a solution which resolves these issues is then detailed in Section~\ref{sec:solutionDesign}.
+A pilot study is presented in Section~\ref{sec:pilotStudy} which investigates the practical issues of implementing the proposed solution.
+A study which then investigates the use of the devised solution is discussed in Section~\ref{sec:study}.
 Overall conclusions and potential future developments based on the findings from the study are presented in Section~\ref{sec:conclusions}.
 
 \section{Background} 
@@ -163,8 +164,8 @@ In addition to this caveat, the issuing of voice commands also will require teac
 
 The use of physical gestures monitored via a light-coding device appears to be the most suitable approach to creating a system which allows teachers to control classroom technologies without the requirement for a distracting interface.
 
-\section{Classroom Technology Orchestration with Gestures} 
-\label{sec:orchestration}
+\section{Issues with Gesture-Driven Classroom Technology Orchestration} 
+\label{sec:issues}
 
 Light-coding devices could allow teachers to control technology in the classroom without the need for a physical interface.
 Since physical gestures would permit eyes-free interaction~\cite{Brewster2003} with a control system, teachers could interact with students without losing control of the technology.
@@ -232,10 +233,10 @@ However, the drawback to this approach is that if the teacher wishes to influenc
 An alternative could be to use a specific gesture which can communicate a preferred device, or devices, to the system.
 If implementing this into the design of a gesture set it is important to ensure this gesture is quick to perform and intuitive as it is likely to be repeated often by the teacher.
 
-\section{Study Approach} 
-\label{sec:studyApproach}
+\section{Designing a Solution for Gesture-Driven Classroom Orchestration} 
+\label{sec:solutionDesign}
 
-With all the requirements for using gestures in the classroom and the limitations of the most suitable technologies outlined in Section~\ref{sec:orchestration} an important question becomes apparent:
+With all the requirements for using gestures in the classroom and the limitations of the most suitable technologies outlined in Section~\ref{sec:issues} an important question becomes apparent:
 \emph{Are gestures a viable method for controlling technology in the classroom?}
 
 To answer this question a system for using gestures in the classroom first needs to be designed and implemented.
@@ -251,7 +252,7 @@ The study consists of multiple phases to explore alternative implementations of 
 \subsection{Focus Group}
 \label{subsec:focusGroup}
 
-The requirements of the set of gestures to be used by teachers in the classroom are determined by both the shortcomings of the sensing technology, as discussed in Section~\ref{sec:orchestration}, and the abilities of the intended users.
+The requirements of the set of gestures to be used by teachers in the classroom are determined by both the shortcomings of the sensing technology, as discussed in Section~\ref{sec:issues}, and the abilities of the intended users.
 Specifically, the set of gestures for controlling classroom technologies are those which are able to be detected by a light-coding device and are suited to be performed by teachers.
 With the potential set of suitable gestures already reduced to the upper-body by the requirements of using the sensing technology in a classroom environment, there is now the task of identifying which gestures to use and with which controls.
 
@@ -265,7 +266,7 @@ The typical adult can remember seven items in a list, give or take two, in their
 Relying on committing a greater number of commands to long term memory is undesirable since it counters the benefit that intuitive gestures offer of being quick to learn and use.
 
 A framework for assessing potential gesture sets for the study must be decided upon.
-An exhaustive literature survey utilising a structured protocol~\cite{kitchenham04} revealed that no framework currently exists for the evaluation of gestures meeting the requirements of classroom orchestration with upper-body gestures as outlined in Section~\ref{sec:orchestration}.
+An exhaustive literature survey utilising a structured protocol~\cite{kitchenham04} revealed that no framework currently exists for the evaluation of gestures meeting the requirements of classroom orchestration with upper-body gestures as outlined in Section~\ref{sec:issues}.
 Therefore, an evaluation framework used for a similar set of gestures was required to be identified and adapted.
 
 Nielsen et al.~\citeyearpar{Nielsen2004}'s work on procuring suitable sets of gestures for ergonomic interfaces entails the assessment of gestures using a framework of characteristics.
@@ -278,7 +279,7 @@ Because of their relevance it was decided that the requirements outlined by Wach
 The more technical requirements and how a typical light-coding device adheres to them are as follows:
 
 \begin{itemize}
-\item  \textit{\textbf{Cost:}} As detailed in Section~\ref{sec:orchestration}, light-coding devices are relatively low cost.
+\item  \textit{\textbf{Cost:}} As detailed in Section~\ref{sec:issues}, light-coding devices are relatively low cost.
 \item \textit{\textbf{Responsiveness:}} The Kinect, a light-coding device, has a frame rate of 30Hz~\cite{Livingston2012} which is enough to be considered adequately responsive for tracking the movement of users.
 \item \textit{\textbf{Adaptability:}} A typical light-coding device has the ability to be used by various supporting software frameworks which each allow accessing of the device's collected data and functions~\cite{Goth2011}.
 This allows light-coding devices to be easily adapted for changes in use.
@@ -486,7 +487,7 @@ This gesture was likely popular because the motion gives the appearance of the t
 \textit{Gesture 29: Holding both hands together at the torso.}\\
 10.26\% of the gestures performed for this command exclusively entailed participants holding both their hands together near their torso.
 Many participants made a gesture with their fingers for this command emulating taking a photo on a camera.
-When asked to modify their behaviour so that they did not use their fingers (due to the limitations of light-coding devices discussed in Section~\ref{sec:orchestration}) participants often performed Gesture 21 instead.
+When asked to modify their behaviour so that they did not use their fingers (due to the limitations of light-coding devices discussed in Section~\ref{sec:issues}) participants often performed Gesture 21 instead.
 This gesture is as close to emulating taking photos as possible without the use of fingers.\\
 
 \item \textbf{Clearing the classroom interfaces.}\\
@@ -558,13 +559,13 @@ This feedback is necessary for informing the teacher whether the gesture they ha
 
 With the gesture set and control sequence defined, a classroom technology system can be augmented to use a light-coding device.
 
-\section{Study Phase 1} 
-\label{sec:studyPhase1}
+\section{Pilot Study} 
+\label{sec:pilotStudy}
 
-% // TODO Brief intro to first stage of study
+% // TODO Brief intro to pilot study
 
 \subsection{Software Implementation}
-\label{subsec:studyPhase1Implementation}
+\label{subsec:pilotStudyImplementation}
 
 % // TODO Trim down and make appropriate to section.
 
@@ -657,7 +658,7 @@ If the table is not frozen there will be no blue tinting to the screen.
 When the control sequence is finished the borders are removed from the Kinect node and student interface to indicate that the system's attention is lost.
 
 \subsection{Study Design}
-\label{subsec:studyPhase1Design}
+\label{subsec:pilotStudyDesign}
 
 % // TODO Trim down
 
@@ -718,7 +719,7 @@ The teacher was asked to think aloud when possible and announce their intentions
 This allowed for accurate timing of intention to execution.
 
 \subsubsection{Data Analysis}
-\label{subsec:studyPhase1Analysis}
+\label{subsec:pilotStudyAnalysis}
 
 The ordering of the tasks could have influenced the teacher's use of the system.
 Gaining experience with the system commands during the earlier tasks may afford the teacher more confidence later in the study, theoretically reducing their error rate and improving their interaction times.
@@ -751,7 +752,7 @@ With these annotations the average time taken to issue commands with each of the
 The frequency of each device's use and their error rates can also be identified through the video annotations.
 
 \subsection{Results}
-\label{subsec:studyPhase1Results}
+\label{subsec:pilotStudyResults}
 
 % // TODO Trim down
 
@@ -784,7 +785,7 @@ Throughout this dry run the teacher was able to correctly recall and invoke all 
 \end{figure*} 
 
 \subsubsection{Task 1: Board Only}
-\label{subsubsec:studyPhase1ResultsTask1}
+\label{subsubsec:pilotStudyResultsTask1}
 
 Ten commands were issued by the teacher during task 1's 25 minute and 46 second duration.
 All these commands were issued through the interactive whiteboard as shown in Figure~\ref{fig:studyBoard}.
@@ -795,7 +796,7 @@ This led to the teacher confusing the two similarly worded command buttons.
 The average time taken to issue a command with the board was 12.5 seconds with a standard deviation of 6.36 seconds.
 
 \subsubsection{Task 2: Tablet Only}
-\label{subsubsec:studyPhase1ResultsTask2}
+\label{subsubsec:pilotStudyResultsTask2}
 
 Nine commands were observed to be issued by the teacher in task 2's 18 minute duration.
 All these commands were issued through the tablet interface as shown in Figure~\ref{fig:studyTablet}.
@@ -807,7 +808,7 @@ The average time taken to issue a command with the tablet was 13.6 seconds with 
 It was noted that the teacher would become preoccupied with the interface when issuing commands through the tablet and break interaction with the students to concentrate on using the device.
 
 \subsubsection{Task 3: Kinect Only}
-\label{subsubsec:studyPhase1ResultsTask3}
+\label{subsubsec:pilotStudyResultsTask3}
 
 Twenty one commands were observed to be issued by the teacher during task 3 in its 11 minute and 26 second duration.
 All these commands were issued through the Kinect as shown in Figure~\ref{fig:studyKinect}.
@@ -872,7 +873,7 @@ The teacher had to repeat gestures which failed or issue additional commands to 
 Three of the errors noted during this task could be categorised as false negatives whereas eight of the errors were false positives.
 
 \subsubsection{Task 4: All Devices}
-\label{subsubsec:studyPhase1ResultsTask4}
+\label{subsubsec:pilotStudyResultsTask4}
 
 For task 4, where the teacher had the option of using any of the three control devices, five commands were observed to be issued by the teacher in its 11 minute and 38 second duration.
 Three of these commands were issued through the board control and two through the Kinect.
@@ -893,7 +894,7 @@ During this task the average time taken to issue a command with the board was 12
 The average time taken to issue a command with the Kinect was 6.5 seconds with a standard deviation of 1.38 seconds.
 
 \subsection{Observations}
-\label{subsec:studyPhase1Observations}
+\label{subsec:pilotStudyObservations}
 
 % // TODO Note how the Kinect's poor range and tracking of movement were hugely problematic and needed to be corrected for any further phases.
 
@@ -1034,7 +1035,7 @@ The teacher would often focus entirely on the board or tablet during their use b
 However, the error-rate is too high to allow for conclusions to be drawn from these observations.
 
 Despite the teacher's preference for the Kinect device, its use has been shown to be problematic.
-Through using the improvement of a pause during the control sequence, as suggested in Section~\ref{subsec:studyPhase1Observations}, a number of these errors could be countered.
+Through using the improvement of a pause during the control sequence, as suggested in Section~\ref{subsec:pilotStudyObservations}, a number of these errors could be countered.
 However, the errors resulting from the limitations of the Kinect, such as those caused by the Kinect tracking the user's limbs and joints inaccurately at locations in close proximity to the extremes of the device's range, would still be present in the future use of the system.
 There are several possibilities which could be considered for overcoming these limitations.
 The most obvious of these is to use an alternative sensing technology capable of tracking a user's upper-body.
@@ -1051,7 +1052,7 @@ If the area accurately monitored by the Kinect is expanded to cover the entirety
 Though there are many issues with the use of multiple Kinects~\cite{Maimone2012,Schroder2011} there are several potential methods which allow them to work together~\cite{Wang2012}.
 If SynergyNet is made capable of combining user data from multiple Kinect devices it should be possible to track teachers moving across the device's monitored areas.
 
-As discussed in Section~\ref{subsec:studyPhase1Implementation}, the decision was made not to implement a method of interface selection.
+As discussed in Section~\ref{subsec:pilotStudyImplementation}, the decision was made not to implement a method of interface selection.
 This was due to the fact that the most popular method of interface selection in the focus group would be problematic when implemented into a system with only a single light-coding device.
 With the use of multiple Kinects this issue may be overcome. 
 The implementation of support for multiple Kinects in future systems would allow the teacher to select tables without the need to move to them through the use of the pointing gesture without obstruction.
@@ -1137,7 +1138,7 @@ This could be improved through more intensive training before use or creation of
 It is possible that prolonged use of the device could cause fatigue.
 This should be investigated in future studies.
 \item \textit{{Low mental load:}}  The teacher was often able to quickly execute the issuing of commands through upper-body gestures.
-However, the teacher on several occasions paused during the control sequence, causing some of the issues discussed in Section~\ref{subsec:studyPhase1Results}.
+However, the teacher on several occasions paused during the control sequence, causing some of the issues discussed in Section~\ref{subsec:pilotStudyResults}.
 In the post-study interview the teacher explained the pauses were caused by their concentration on remembering which gesture should be performed next.
 This indicates that improvements could be made to the gesture set and the control sequence to reduce mental load.
 \item \textit{{Interaction Space:}} The failure of the Kinect to recognise many of the gestures performed occurred due to the device losing track of joints which left its accurately monitored area.
@@ -1162,7 +1163,7 @@ The implementation of the suggested improvements to resolve the observed errors 
 % // TODO Trim down - can remove most of this section as its just summarising the first half of the paper.
 
 \subsubsection{Issues with Initial Upper-body Gesture Controls}
-\label{subsubsec:studyPhase1ObservationsIssues}
+\label{subsubsec:pilotStudyObservationsIssues}
 
 Previous studies involving the use of SynergyNet's upper-body gesture controls revealed several shortcomings.
 To assess the existing implementation a set of criteria for upper-body gestures was derived from the requirements for hand gestures outlined by Wachs et al.~\cite{Wachs2011}.
@@ -1214,22 +1215,22 @@ Because any command issued with the Kinect must influence all interfaces, teache
 The lack of cohesion between the Kinect controls and alternatives may exacerbate the identified problems concerning intuitiveness and mental load.
 % From Background 2 ===========================================================================
 
-\section{Study Phase 2}
-\label{sec:studyPhase2}
+\section{Study}
+\label{sec:study}
 
-% // TODO Small intro to phase 2
+% // TODO Small intro to study (referring back to similar structure of the pilot)
 
 \subsection{Resolving Issues}
-\label{subsec:studyPhase2ResolvingIssues}
+\label{subsec:studyResolvingIssues}
 
 % // TODO Trim down and make suitable.
 
-The issues outlined in Section~\ref{subsubsec:studyPhase1ObservationsIssues} were noted in the previous phase of the study to make the use of the system counter-productive.
+The issues outlined in Section~\ref{subsubsec:pilotStudyObservationsIssues} were noted in the previous phase of the study to make the use of the system counter-productive.
 The benefits afforded by the system of non-intrusive and quick command execution were made irrelevant due to the high number of errors caused by the identified issues.
 Resolving these issues could allow the system to function as intended and would allow the potential benefits of the upper-body gesture controls to be evaluated and employed.
 
 \subsubsection{Resolving Issue 1: Improving the System's Tracking}
-\label{subsubsec:studyPhase2ResolvingIssues1}
+\label{subsubsec:studyResolvingIssues1}
 
 To improve the accuracy and interaction space of the sensing technology used with the system, multiple Kinects could be employed.
 With more Kinect devices in the environment, more of the classroom would be monitored.
@@ -1316,7 +1317,7 @@ Oblong's Mezzanine~\cite{kramer2011} uses custom built depth cameras to observe 
 The system's range is greater than that of a single Kinect but its cost far exceeds that of several of Microsoft's devices.
 
 \subsubsection{Resolving Issue 2: Improving Gestures}
-\label{subsubsec:studyPhase2ResolvingIssues2}
+\label{subsubsec:studyResolvingIssues2}
 
 To improve the intuitiveness of the SynergyNet upper-body gesture system it is possible that a number of the gestures may need to be changed.
 The previous study indicated that there was a subset of gestures which caused more problems than the rest.
@@ -1336,7 +1337,7 @@ The teacher may not have had enough time to memorise how to orchestrate using th
 Giving the teacher time after the training session to reflect on and memorise what they've learnt may allow their use of the system in the future to be less error-prone.
 
 \subsubsection{Resolving Issue 3: Improving the Control Sequence}
-\label{subsubsec:studyPhase2ResolvingIssues3}
+\label{subsubsec:studyResolvingIssues3}
 
 In the previous study, the teacher participating often committed errors issuing commands with the Kinect due to them following the command sequence incorrectly.
 These errors were often caused by the teacher stopping to think about the next gesture to perform in the command sequence.
@@ -1369,7 +1370,7 @@ This would allow the teacher to leave and re-enter the system's monitored enviro
 This would reduce the amount of user intervention required by the control sequence which would reduce the mental load required for its use.
 
 \subsubsection{Resolving Issue 4: Adding Functionality}
-\label{subsubsec:studyPhase2ResolvingIssues4}
+\label{subsubsec:studyResolvingIssues4}
 
 In the original control sequence design built on the guessability study results, teachers were intended to select the tables they wished to affect through pointing at them.
 However, the issue of constant obstruction of the pointing arm resulted in this not being implemented.
@@ -1392,16 +1393,16 @@ Teacher touches can be used during the control sequence to select which interfac
 This approach does facilitate interface selection but requires the teacher to travel to the interfaces they wish a gesture to affect.
 Travelling between interfaces reduces the system's intuitiveness and speed of use.
 
-The use of multiple sensing devices, as proposed for the resolution of issue 1 in Section~\ref{subsubsec:studyPhase2ResolvingIssues1}, could allow the originally proposed pointing gesture to be implemented into the control sequence.
+The use of multiple sensing devices, as proposed for the resolution of issue 1 in Section~\ref{subsubsec:studyResolvingIssues1}, could allow the originally proposed pointing gesture to be implemented into the control sequence.
 With multiple Kinects when the teacher's body obscures the view of a Kinect when pointing, another of the devices should be able to see the obscured area and identify which interface is being pointed at.
 When a teacher points at an interface it becomes selected.
 Using this approach the teacher can select multiple interfaces at once without the need to travel about the classroom.
 This approach allows for interface selection without diminishing the system's intuitiveness or speed of use.
 
 \subsection{Software Implementation}
-\label{subsec:studyPhase2Implementation}
+\label{subsec:studyImplementation}
 
-With clear definitions of the issues in Section~\ref{subsubsec:studyPhase1ObservationsIssues} and their potential solutions in Section~\ref{subsec:studyPhase2ResolvingIssues}, improvements can be implemented in SynergyNet.
+With clear definitions of the issues in Section~\ref{subsubsec:pilotStudyObservationsIssues} and their potential solutions in Section~\ref{subsec:studyResolvingIssues}, improvements can be implemented in SynergyNet.
 Four key improvements were selected for implementation.
 These implemented improvements were; support for multiple Kinect devices, creation of a more cohesive gesture set, changes to the control sequence to make it less severe on teachers, automatic calibration and support for interface selection through a pointing gesture.
 
@@ -1415,7 +1416,7 @@ These implemented improvements were; support for multiple Kinect devices, creati
 Figure~\ref{fig:issueFlow} outlines what issues cause the failure of various criteria and the implemented solutions intended to resolve them.
 
 \subsubsection{Multiple Kinects} 
-\label{subsubsec:studyPhase2ImplementationMultipleKinects}
+\label{subsubsec:studyImplementationMultipleKinects}
 
 \begin{figure*}[t]
   \centering
@@ -1437,7 +1438,7 @@ This reduces the issue of obstruction and as a consequence, improves the system'
 This is due to the teacher being made able to perform gestures at any location in the environment while facing any direction.
 The use of multiple Kinects also reduces mental load since the teacher will not need to put as much forethought into positioning themselves so that they are visible to a sensing device.
 
-To avoid the issue of interference, noted in Section~\ref{subsubsec:studyPhase2ResolvingIssues1} to occur when multiple Kinects are used together, the strategy of placing the devices perpendicular was adopted.
+To avoid the issue of interference, noted in Section~\ref{subsubsec:studyResolvingIssues1} to occur when multiple Kinects are used together, the strategy of placing the devices perpendicular was adopted.
 This reduces interference and does not incur any additional cost.
 This does, however, reduce the maximum number of Kinect devices which can be used together to two.
 This is enough to cover the entire SynergyNet lab but could be problematic for larger classroom.
@@ -1498,10 +1499,10 @@ In addition to this the use of multiple Kinects will support the implementation 
 With multiple perspectives the teacher's torso cannot obscure where they are pointing.
 
 \subsubsection{Gesture Set Cohesion} 
-\label{subsubsec:studyPhase2ImplementationGestureSet}
+\label{subsubsec:studyImplementationGestureSet}
 
 To improve the cohesion of the gesture set it was decided that all the upper-body gestures used in the control sequence should conform to an overarching pattern.
-As noted in Section~\ref{subsubsec:studyPhase2ResolvingIssues2}, the most obvious pattern amongst the existing gestures was their similarities to related real-world actions.
+As noted in Section~\ref{subsubsec:studyResolvingIssues2}, the most obvious pattern amongst the existing gestures was their similarities to related real-world actions.
 It was also noted that several of the gestures in the set did not follow this pattern.
 Changing these gestures to ones which bare similarities to related real-world actions may make the gesture set more cohesive.
 This should reduce the mental load required by the control sequence since teachers will not need to remember the specific gestures for each command.
@@ -1540,7 +1541,7 @@ All the gestures used in the framework now bare resemblance to related real-worl
 The gesture set can be said to be more cohesive with no more outlying gesture which do not conform to the metaphor pattern.
 
 \subsubsection{Enabling Pause Tolerance}  
-\label{subsubsec:studyPhase2ImplementationPauseTolerance}
+\label{subsubsec:studyImplementationPauseTolerance}
 
 A pause was implemented into the control sequence at positions before and after identifying a teacher performing a gesture.
 These pauses are where the system will ignore any actions performed by the teacher.
@@ -1555,7 +1556,7 @@ These pauses last one and a half seconds, giving teachers time to move their lim
 \end{figure*}
 
 \subsubsection{Automatic Calibration}  
-\label{subsubsec:studyPhase2ImplementationAutoCalibration}
+\label{subsubsec:studyImplementationAutoCalibration}
 
 The control sequence was also augmented by the implementation of automatic calibration.
 With this the teacher does not need to perform a calibration pose for the Kinect to track their upper-body joints.
@@ -1566,7 +1567,7 @@ Without automatic calibration the teacher would be required to perform the calib
 Automatic calibration saves the time and mental load which would be required to repeatedly perform this pose.
 
 \subsubsection{Interface Selection}  
-\label{subsubsec:studyPhase2ImplementationInterfaceSelection}
+\label{subsubsec:studyImplementationInterfaceSelection}
 
 With the system augmented to use multiple Kinects the teacher should only be able to obscure a single Kinect's view of the interfaces pointed at.
 Therefore, the control sequence was augmented to include the pointing gesture for the selection of interfaces.
@@ -1590,7 +1591,7 @@ The implementation of the pointing gesture is intended to improve intuitiveness 
 The updated control sequence with new gestures and interface selection is summarised in Figure~\ref{fig:controlSequenceFlowDiagram}.
 
 \subsection{Design}
-\label{subsec:studyPhase2Design}
+\label{subsec:studyDesign}
 
 % // TODO Trim down - a lot of this is repetition of the first user study section as both were set up and carried out the same way - therefore just mention its the same but discuss the differences (improvements, different class/teacher, etc).
 
@@ -1622,7 +1623,7 @@ The primary objective of this study was to assess whether the implemented improv
 The study's hypothesis was that the error rate of the Kinects' use would be significantly smaller than the error rate of the Kinect controls in the previous study.
 
 \subsubsection{Data Analysis}
-\label{subsec:studyPhase2Analysis}
+\label{subsec:studyAnalysis}
 
 The criteria used in the previous study, generated from Wachs et al.~\cite{Wachs2011} requirements for hand gestures, was employed to assess the improved upper-body gesture control system.
 The success of improvements could be observed through whether previously unmet criteria were fulfilled.
@@ -1635,7 +1636,7 @@ Times taken to perform similar actions with each classroom technology were compa
 In addition to this, the number of errors committed with each technology and quality of communication between the teacher and students were also noted from the recordings.
 
 \subsection{Results}
-\label{subsec:studyPhase2Results}
+\label{subsec:studyResults}
 
 % // TODO Trim down.
 
@@ -1643,7 +1644,7 @@ The study was carried out without any major deviations from its design.
 The teacher completed the training for the system the day before the study and stated that they felt confident enough to use the each of the control technologies without any additional aid or practice.
 
 \subsubsection{Task 1: Board Only}
-\label{subsubsec:studyPhase2ResultsTask1}
+\label{subsubsec:studyResultsTask1}
 
 For task 1 eleven commands were observed to be issued by the teacher in its 19 minute and 43 second duration.
 Out of these eleven commands, one was issued incorrectly:
@@ -1667,7 +1668,7 @@ The average time taken to issue a successful command with the board was 9.82 sec
 Six of the successful commands given were intended to affect all student interfaces and four were intended to affect a specific selection.
 
 \subsubsection{Task 2: Tablet Only}
-\label{subsubsec:studyPhase2ResultsTask2}
+\label{subsubsec:studyResultsTask2}
 
 During task 2, thirteen commands were observed to be issued by the teacher in its 17 minute and 59 second duration.
 Of these thirteen commands, three were issued incorrectly.
@@ -1704,7 +1705,7 @@ The average time taken to issue a successful command with the tablet was 9.17 se
 Eight of the successful commands given were intended to affect all student interfaces and two of the successful commands were intended to affect a specific selection.
 
 \subsubsection{Task 3: Kinect Only}
-\label{subsubsec:studyPhase2ResultsTask3}
+\label{subsubsec:studyResultsTask3}
 
 During task 3, twelve commands were observed to be issued by the teacher in its 18 minute duration.
 Of the twelve commands issued during this task with the Kinects, eight were issued with errors.
@@ -1750,7 +1751,7 @@ The average time taken to issue a successful command with the Kinects was 2.44 s
 All four of the successful commands were intended to affect all the student interfaces.
 
 \subsubsection{Task 4}
-\label{subsubsec:studyPhase2ResultsTask4}
+\label{subsubsec:studyResultsTask4}
 
 For task 4, where the teacher had the option of using any of the three control devices, twenty three commands were observed to be issued by the teacher in its 19 minute and 28 second duration.
 Nine of these commands were issued through the board control, none through the tablet and fourteen through the Kinects.
@@ -1788,7 +1789,7 @@ Seven of the successful commands given with the board were intended to affect al
 For the Kinects, four of the successful commands given were intended to affect all student interfaces and five were intended to affect a specific selection.
 
 \subsubsection{Results Summary}
-\label{subsubsec:studyPhase2ResultsSummary}
+\label{subsubsec:studyResultsSummary}
 
 The usage of the three control technologies in the study is summarised in Table~\ref{table:results2}.
 
@@ -1824,14 +1825,14 @@ The results show that the Kinect was the much faster control technology for issu
 Though the error rate is smaller than that in present in the previous study, its magnitude indicates that not all the issues intended to be countered by the implemented improvement have been resolved.
 
 \subsection{Observations}
-\label{subsec:studyPhase2Observations}
+\label{subsec:studyObservations}
 
 % // TODO Trim down.
 
 In the previous study the Kinect controls had an overall error rate of 86.96\meaning that twenty in twenty three commands were erroneous.
 As Figure~\ref{fig:controlDevicesErrors} shows, the error rate for the Kinect controls in this study was 50\%.
 This equates to one in two commands being erroneous.
-This is a great improvement over the previous study's error rate and indicates that the hypothesis of a significantly reduced error rate given in Section~\ref{subsec:studyPhase2Results} was correct.
+This is a great improvement over the previous study's error rate and indicates that the hypothesis of a significantly reduced error rate given in Section~\ref{subsec:studyResults} was correct.
 
 \begin{figure}[h]
   \centering
@@ -1843,7 +1844,7 @@ This is a great improvement over the previous study's error rate and indicates t
 The results indicate that the implemented did have a positive impact on the system but the impact was not as great as intended.
 
 \subsubsection{Successfulness of the Improvements}
-\label{subsubsec:studyPhase2ObservationsSuccess}
+\label{subsubsec:studyObservationsSuccess}
 
 The 50\% error rate indicates that there are still issues with the system and that a selection of the improvements may have had little to no positive consequences.
 
@@ -1911,7 +1912,7 @@ The implementation of interface selection not only allowed the Kinects to match 
 The results demonstrate that the interface selection implementation was successful in improving the functionality of the Kinect controls.
 
 \subsubsection{Resolution of the Issues}
-\label{subsubsec:studyPhase2ObservationsResolution}
+\label{subsubsec:studyObservationsResolution}
 
 The distribution of erroneous commands across the improvements indicates that implemented improvements have been successful in resolving the majority of issues noted in the previous study.
 The Kinect controls' 50\% error rate observed during this study are therefore caused by the minority of issues that remain unresolved.
@@ -1978,7 +1979,7 @@ The majority of these commands were successful and when these commands failed it
 The use of multiple Kinects and implementation of interface selection have both allowed the system to resolve the issue of reduced functionality.
 
 \subsubsection{Fulfilment of Criteria}
-\label{subsubsec:studyPhase2ObservationsFulfilment}
+\label{subsubsec:studyObservationsFulfilment}
 
 To assess the success of the improvements in resolving the issues the criteria for evaluation upper-body gestures, derived from Wachs et al.'s~\cite{Wachs2011} requirements can be employed.
 If all the criteria are fulfilled the improvements can be said to have been completely successful.
@@ -2082,7 +2083,7 @@ If the errors relating to accuracy had not occurred during the study the error r
 Because the remaining errors were deemed to be minor because of their minimal negative consequences the system could be considered fit for purpose.
 It is apparent that a method of improving the accuracy of the system's joint tracking is required.
 
-In Section~\ref{subsubsec:studyPhase1ObservationsIssues} the possibility of the Kinect device having difficulty tracking fast moving joints was raised.
+In Section~\ref{subsubsec:pilotStudyObservationsIssues} the possibility of the Kinect device having difficulty tracking fast moving joints was raised.
 Winkler et al.~\cite{Winkler2012} briefly discuss this limitation of the device stating that when the PrimeSense framework is employed, as it is within SynergyNet, fast movement can cause instability.
 Replacing all gestures which use movement, i.e. those which consist of pose sequences, were replaced with single poses the potential issues caused by this possibility would be resolved.
 This could reduce the errors originating from accuracy issues but would require another changing of the gesture set.
@@ -2099,7 +2100,7 @@ In addition to these future versions of the Kinect could provide more accurate r
 As an alternative to improving the accuracy of the system with alternative technologies, future work could entail utilising more Kinects.
 The improvements to SynergyNet allowed for any number of Kinects to be used with the framework.
 However, the issue of interference would not be resolved through perpendicular as it is with the current system set up.
-Therefore, at least one of the interference reducing methods discussed in Section~\ref{subsubsec:studyPhase2ImplementationMultipleKinects} would be required.
+Therefore, at least one of the interference reducing methods discussed in Section~\ref{subsubsec:studyImplementationMultipleKinects} would be required.
 The use of more Kinects could reduce the inaccurate area noted to occupy the edges of the Kinects' view through overlapping the inaccurate region on one Kinect with the accurate centre region on another.
 
 The reduction in error rate appears to be the result of the implemented improvements.

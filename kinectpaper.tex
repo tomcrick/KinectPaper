@@ -86,7 +86,7 @@ further stimulated by significant reforms of digital skills and computer science
 With this growth, the need for teachers to be able to control the deployed technologies increases~\cite{Apple1990,Selwyn2010,Selwyn2011}.
 Without the ability to influence or control classroom technology, teachers may be unable to manage learning interaction or intervene when students start to lose focus on their current task~\cite{Chen2005,Karabenick2011}.
 
-Many current systems that allow teachers to control technology in the classroom require the use of a teacher-centric interface~\cite{Dagdag2011,Kuhn2005,Vila,Zhou2010}.
+Many current systems that allow teachers to control technology in the classroom require the use of a teacher-centric interface~\cite{Dagdag2011,Kuhn2005,Vila2013,Zhou2010}.
 Whether static, where the interface remains stationary during its use, or mobile, where the interface can be carried to new locations during its use, these interfaces require the teacher to momentarily take their attention away from the students.
 This division of attention caused by the distraction of an interface could have a detrimental effect on the quality of a teacher's interaction with their students.
 The disruption in communication between the students and the teacher this causes can be undesirable in many circumstances.
@@ -256,7 +256,7 @@ With the potential set of suitable gestures already reduced to the upper-body by
 \subsection{Gathering User Generated Gestures} 
 \label{subsec:gatheringGestures}
 
-It is important that the gestures selected for use in the study are intuitive~\cite{Cohen,Wachs2011} to allow teachers to easily remember gestures and perform them with minimal forethought.
+It is important that the gestures selected for use in the study are intuitive~\cite{Cohen2002,Wachs2011} to allow teachers to easily remember gestures and perform them with minimal forethought.
 Its also important that the number of gestures is kept small to avoid difficulties with requiring users to remember too much so that frustration with using the system can be minimised~\cite{Mendoza2005}.
 The typical adult can remember seven items in a list, give or take two, in their short term memory~\cite{mil56}.
 Relying on committing a greater number of commands to long term memory is undesirable since it counters the benefit that intuitive gestures offer of being quick to learn and use.
@@ -379,12 +379,10 @@ The data analysis also aimed to identify how the participants differentiated ges
 \subsection{Focus Group Results}
 \label{subsec:focusGroupResults}
 
-% // TODO Trim down.
-
 Of the sixty seven participants who took part in the study, fifteen were male and fifty two were female.
 This was representative of the gender balance of \ac{PGCE} students at the institution.
 The majority of these participants were aged between twenty and twenty five.
-The video recordings from the study were analysed by by the first author.
+The video recordings from the study were analysed by the first author.
 From the analysis of the videos, several patterns in the participants' gestures were observed.
 
 \subsubsection{Toggling Attention}
@@ -398,15 +396,13 @@ This set of default gestures were not specific to any particular subset of comma
 In addition to waving with one hand these default gestures included; holding one hand up and pointing with one hand.
 These gestures accounted for twenty eight percent of the observed gestures in the study.
 
-The horizontal wave with one hand was assigned to attaining and dismissing the attention of the light-coding device since it was the most common gesture for all actions.
-
 \subsubsection{Interface Selection}
 \label{subsubsec:focusGroupResultsInterfaceSelection}
 
 7\% of the study's participants showed no clear method of differentiating between commands that affect all interfaces or those which affect specific interfaces. 
 These participants would either repeat the same gesture for both instances of the command or would have no single consistent differentiation approach for the commands. 
 
-To differentiate between commands which affect all interfaces and those which affect specific interfaces, 93\% of the participants would always follow the same approach.
+To differentiate between commands which affect all interfaces and those which affect specific interfaces, 93\% of the participants would always follow a consistent approach.
 
 \begin{itemize}
 
@@ -448,16 +444,16 @@ All of these participants would point first and then perform the gesture.
 \subsubsection{Command Gestures}
 \label{subsubsec:focusGroupResultsCommandGestures}
 
+Noted in the analysis was that despite many of the gestures being one handed, participants did not use handedness to distinguish between single hand gestures for various commands.
+Participants may have considered that a gesture which is required to be used with a specific hand may be problematic for those whose handedness differs from their own.
+This implies that hand-dominance did not influence which gestures participants considered for the commands.
+
 \begin{figure*}[p]
    \centering
    \includegraphics[width=1\textwidth]{figures/all_gestures.png}
    \caption{All unique gestures observed during the study.}
    \label{fig:allGestures}
 \end{figure*}
-
-Noted in the analysis was that despite many of the gestures being one handed, participants did not use handedness to distinguish between single hand gestures for various commands.
-Participants may have considered that a gesture which is required to be used with a specific hand may be problematic for those whose handedness differs from their own.
-This implies that hand-dominance did not influence which gestures participants considered for the commands.
 
 Thirty three unique gestures which conform to the criteria outlined in Section~\ref{subsec:gatheringGestures} were observed during the study.
 These gestures are shown and described in Figure~\ref{fig:allGestures}.  
@@ -525,71 +521,55 @@ This entails teachers moving about the classroom to perform gestures which would
 There are also other issues with the alternative approaches.
 For example, the approach which uses the size of the gesture to determine whether it affects all or just the nearest interface is subject to a teacher's interpretation of what constitutes a large gesture.
 The \lq small\rq\ gesture of some participants was larger than the \lq large\rq\ gesture of others.
-Therefore size limits would need to be applied to the gestures.
 
-This would require teachers to be more precise when performing a gesture.
-This could lead to a greater chance of teachers committing the wrong gesture due to an incorrect judgement of scale.
-Teachers may take longer to perform a gesture to ensure it is the right size, thus negating some of the time saving benefit of a gesture.
-The additional mental load spent concentrating on ensuring a gesture is the right size may also disrupt a teacher's interaction with their students.
+A control sequence that uses the proposed set of gestures should utilise pointing for table selection based on the popularity of this approach in the focus group.
+The sequential approach of pointing then gesturing allows for multiple interfaces to be selected before executing a command, something other approaches of selecting interfaces would not allow for.
+This saves time because the teacher would not need to repeat the gesture.
 
 \begin{figure*}[t]
    \centering
    \includegraphics[width=1\textwidth]{figures/control_flow.png}
-   \caption{How the gesture identified in the study are intended to be used.}
+   \caption{How the gesture identified in the focus group are intended to be used.}
    \label{fig:flow}
 \end{figure*}
 
-A control sequence that uses the proposed set of gestures should utilise pointing for table selection based on the popularity of this approach in the focus group.
-The approach of touching an interface while performing a gesture was discounted.  
-This is because it requires the user to dedicate a hand to the pointing gesture.  
-This diminishes the set of potential gestures by removing those which require two hands.
-Since three of the command gestures chosen require two hands, they could not be used when the user would be required to simultaneously perform the gesture and touch an interface.
-The sequential approach of pointing then gesturing allows for multiple interfaces to be selected before executing a command.
-This saves time because the teacher would not need to repeat the gesture.
-
 Figure~\ref{fig:flow} outlines a control sequence in which the gestures and approaches to interface selection indicated by the focus group to be intuitive can be used to issue common commands to classroom technologies.
-Teachers first obtain the light-coding device's attention with a wave then touch the interfaces they wish the following command gesture to affect.
-The teacher can repeatedly touch interfaces to select and deselect them until they perform the command gesture.
-This approach allows teachers to issue commands to whichever interfaces they desire without requiring them to break interaction with a student.
+Teachers first obtain the light-coding device's attention with a wave then point to the interfaces they wish the following command gesture to affect.
+The teacher can repeatedly point to interfaces to select and deselect them until they perform the command gesture.
 Alternatively, the teacher can perform the command gesture immediately after obtaining the light-coding device's attention to issue the corresponding command to all interfaces.
 At any time during this control sequence a teacher can wave again to dismiss the light-coding device's attention.
 After the command gesture is performed the light-coding device stops paying attention to the teacher.
-This saves the teacher the need to dismiss the light-coding device with another gesture.
 
 For each response of the system to teacher gestures, denoted in Figure~\ref{fig:flow} with the black boxes with white text, some form of feedback will need to be provided to the teacher.
 This feedback is necessary for informing the teacher whether the gesture they have performed has had the intended effect on the system or not.
 
 With the gesture set and control sequence defined, a classroom technology system can be augmented to use a light-coding device.
 
-\section{Pilot Study} 
+\section{Pilot Study}
 \label{sec:pilotStudy}
 
-% // TODO Brief intro to pilot study
+To explore the suitability of the defined gesture set to use with a light-coding device it was decided that a pilot study was needed.
+This pilot study would allow for any short-comings in the technology or gesture-set to be identified and corrected before carrying out any further studies.
 
 \subsection{Software Implementation}
 \label{subsec:pilotStudyImplementation}
 
-% // TODO Trim down and make appropriate to section.
-
-The SynergyNet framework~\cite{Higgins2011} was selected for the control sequence defined in Section~\ref{sec:background} to be implemented into.
+The SynergyNet framework~\cite{Higgins2011} was selected for implementing the control sequence defined in Section~\ref{sec:background} into.
 SynergyNet is a software framework which supports education based activities that are intended to be interacted with through multi-touch table interfaces.
 The framework offers a wide range of supporting features such as communication between multiple interfaces via a network and is capable of displaying several forms of media.
-This use of multiple networked user interfaces allows media-based content to be shared between multiple users.
+SynergyNet accepts inputs from a range of multi-touch protocols, such as TUIO~\cite{Kaltenbrunner2009}.
+Though initially intended for use with diffused illumination multi-touch technology~\cite{Matsushita1997}, the support of multiple protocols allows the framework to be used with a wide range of natural user input interfaces including interactive whiteboards and multi-touch tables.
 
 Applications for SynergyNet often utilise the network functionality of the framework to allow teachers to orchestrate classroom activities.
 Previously, teachers have been able to do this through a static multi-touch device~\cite{AlAgha2010}.
 Teachers can also orchestrate SynergyNet through a web interface which can be accessed through a mobile touch device, such as a phone or tablet~\cite{Mercier2013}.
 In previous studies using the SynergyNet framework it was noted that the use of both the static teacher console and mobile devices to issue commands distracted the teacher from the students whenever used~\cite{Hatch2011,Mercier2013}.
-This often disrupted conversations between the teacher and students.  
+This often disrupted conversations between the teacher and students.
 
-The SynergyNet framework may benefit greatly from the use of upper-air gestures. 
+The SynergyNet framework may benefit greatly from the use of upper-body gestures. 
 The commands chosen to find gestures for in the study were based on those used in the existing SynergyNet controls. 
 Several commands facilitated by these controls involve sharing materials between student interfaces and the classroom's board; a large, wall mounted interface used to display content to a class.
 These commands have been observed in previous studies of SynergyNet to be essential for orchestrating tasks across the system.
-
-SynergyNet accepts inputs from a range of multi-touch protocols, such as TUIO~\cite{Kaltenbrunner2009}.
-Though initially intended for use with diffused illumination multi-touch technology~\cite{Matsushita1997}, the support of multiple protocols allows the framework to be used with a wide range of touch interfaces including interactive whiteboards and multi-touch tables.
-The framework offers a range of functions in addition to the management of multi-touch inputs, including networking which facilitates communication between different devices running instances of SynergyNet.
 
 To support the implementation of the gesture control sequence a light-coding device was required.
 The Microsoft Kinect was chosen due to its low cost and availability.
@@ -602,70 +582,48 @@ The Microsoft Kinect was chosen due to its low cost and availability.
 \end{figure}
 
 To integrate the Kinect with SynergyNet, the SensorKinect driver~\cite{Avin2011}, OpenNI library and NITE framework~\cite{Organisation2011} were used together~\cite{Davison2012}.
-Instances of SynergyNet running on the same network act as nodes.
-There are several different types of node used by SynergyNet.
-Student-centric interfaces and interfaces which display teacher controls are classed as different types of node.
-For the implementation of the Kinect a new type of node was created.
-This type of node manages the Kinect, ensuring that it tracks users, identifies gestures and displays its current output, as shown in Figure~\ref{fig:kinectNode}.
-The Kinect node takes the relevant information obtained from the device, specifically user locations and the performance of gestures, and transmits it to the relevant SynergyNet nodes.
-This transmission is done through SynergyNet's network communication functionality which utilises the Hazelcast framework~\cite{Hazelcast2009}.
-The node also assigns colours to the persons it identifies allow for easier designation of the teacher.
+Instances of SynergyNet running on the same network act as nodes which communicate through Hazelcast~\cite{Hazelcast2009}.
+There are several different types of node used by SynergyNet defined by what device they as used on such as student-centric touch-screens or teacher control consoles.
+For the implementation of the Kinect a new type of node was created which would manage tracking users, identifing gestures and displaying its current output, as shown in Figure~\ref{fig:kinectNode}.
 
 The Kinect node obtains information on user locations relative to the sensor device position direct from the OpenNI framework.
-If a user is calibrated the node will obtain information on their limb locations, otherwise the location of the identified user's centre of mass will be used.
-Prior to use all SynergyNet nodes, including the Kinect node, will be informed of the position of its relevant device (either its interface or sensor) in the environment.
-Before transmitting a user's locational information, the Kinect node will use the knowledge of the sensing device's position to transform the locational information regarding the user to derive their position relative to the environment.
-Since the environment is intended to be common to all devices running instances of SynergyNet, the user-position information can then be made local to any SynergyNet node.
-This allows the relevant SynergyNet nodes to identify where a teacher or student is in relation to their interface.
+Prior to use all SynergyNet nodes, including the Kinect node, will be configured so that it knows its associated device's position and orientation in the environment.
+Before transmitting a tracked user's locational information, the Kinect node will use the knowledge of the sensing device's position to transform the locational information regarding the user to derive positions relative to the environment.
 
-The Kinect node is also used to identify when specific gestures are performed by a teacher.
+The Kinect node is used to identify when specific gestures are performed by a teacher.
 When a teacher is observed performing a gesture the corresponding command is sent through the network to the relevant SynergyNet nodes.
 The Kinect node has on-screen controls which allow identified persons to be designated as students or teachers, as shown in Figure~\ref{fig:kinectNode}.
-Teachers control which of the identified person can be calibrated.
-This reduces the workload of the Kinect as it will not need to track the limbs of the students in the classroom.
 
-Once a teacher is calibrated the Kinect can identify gestures through comparing the locations of limbs in relation to each other and their movement over time.
-The Kinect node has been implemented in such a way that makes it simple for the set of gestures used to be changed and added to, based on feedback from its use.
-
-The control sequence outlined in Section~\ref{subsec:userGeneratedGestures} dictates that teachers should be able to select which interfaces a command will affect by pointing at them.
-This was not implemented into SynergyNet due to the frameworks inability to support multiple Kinects.
-The use of a single Kinect could often result in the gesturing user's pointing arm being obscured by their torso.
-Any commands issued through gestures will affect all student interfaces with this implementation.
+Support for multiple Kinect devices was not possible in this pilot due to issues surrounding how the device's depth-detection techniques would interfere with other Kinect devices nearby.
+This meant that the use of the pointing gesture outlined in Section~\ref{subsec:userGeneratedGestures}'s defined control sequence used for selecting interfaces could not be implemented into SynergyNet.
+For the pilot study it was decided that any commands issued through gestures would have to affect all student interfaces.
 
 To minimise the potential of a false positive, a timer was implemented into the control sequence which would dismiss the Kinect's attention if no valid gestures are detected.
-Once a teacher has waved and gained the attention of the Kinect they have thirty seconds to perform a gesture in the control sequence.
+Once a teacher has waved and gained the attention of the Kinect they would have thirty seconds to perform a gesture in the control sequence.
 Otherwise, the control sequence ends and the Kinect's attention is dismissed.
-Any pause during the control sequence greater than thirty seconds results in the Kinect losing attention.
-This ensures that if a teacher unknowingly gains the attention of the Kinect, the amount of time they could perform a gesture accidentally in is limited.
+This ensured that if a teacher unknowingly gains the attention of the Kinect, the amount of time they could perform a gesture accidentally in is limited.
 
-As discussed in Section~\ref{subsec:userGeneratedGestures}, the system needs to provide feedback to the teacher for each action of the system denoted in Figure~\ref{fig:flow} with the black boxes with white text.
-As part of the control sequence a sound is played when the Kinect's attention is gained to alert teachers of successful or accidental waving gestures.
-This acts as a form of feedback to inform the teacher that they can now perform the command gesture.
+As discussed in Section~\ref{subsec:userGeneratedGestures}, the system needs to provide feedback to the teacher for each action of the system denoted in Figure~\ref{fig:flow}.
+As part of the control sequence a sound was played when the Kinect's attention is gained to alert teachers of successful intentional or accidental unintentional waving gestures.
 The use of audible feedback allows the teacher to be informed of this event without the need to focus on a visual output.
-This means the teacher does not need to move to a position where they can view the Kinect node's visual output.
-The additional freedom afforded by this form of feedback aids the ubiquity of the system.
-However, a visual form of feedback is also offered due to the potential problem of audio with ambient classroom noise as discussed in Section~\ref{sec:background}.
-This visual feedback takes the form of a border appearing on the Kinect node which is the same colour as that assigned to the teacher.
-This allows the teacher to ensure that they have the Kinect's attention before continuing with the control sequence.
-
+A visual form of feedback was also offered due to the potential problem of audio with ambient classroom noise as discussed in Section~\ref{sec:background}.
+This visual feedback took the form of a border appearing on the Kinect node display.
 A border also appears on all the student interfaces at this stage to indicate they are awaiting a command gesture.
-This increases the chance of the teacher seeing the feedback informing them that they have successfully gained the Kinect's attention if their view of the Kinect node is obscured.
+This increases the chance of the teacher seeing the feedback informing them that they have successfully gained the Kinect's attention.
 
 For the actions resulting directly from a command gesture the teacher can visually see the effect of the completed action as a form of feedback.
 The movement and removal of content is clear enough that no additional feedback is required.
-For the freezing and unfreezing of the system a blue tint is employed.
-When a screen is frozen it is tinted blue, in both adherence to the metaphor of its content being frozen and to indicate to the teacher the table's state.
-If the table is not frozen there will be no blue tinting to the screen.
+For the freezing and unfreezing of the system a blue tint is applied to the student interfaces in adherence to the metaphor of its content being frozen.
 
 When the control sequence is finished the borders are removed from the Kinect node and student interface to indicate that the system's attention is lost.
 
-\subsection{Study Design}
+\subsection{Pilot Study Design}
 \label{subsec:pilotStudyDesign}
 
-% // TODO Trim down
+% // TODO Trim down and make appropriate to section - focus on just the kinect.
 
 A user study was conducted as an observed lab-based experiment.
-The study took place in the SynergyNet lab used in the focus group discussed in Section~\ref{subsec:focusGroup}.
+The study took place in the SynergyNet lab used in the focus group discussed in Section~\ref{subsec:focusGroupDesign}.
 In this study the upper-body gesture driven Kinect device was compared against two existing control devices used by SynergyNet in previous studies~\cite{Mercier2012}.
 This would allow for the suitability of the gestures derived from the focus group and their encompassing control sequence's implementation into SynergyNet to be assessed.
 
@@ -688,7 +646,7 @@ This would allow for the suitability of the gestures derived from the focus grou
 \end{figure} 
 
 Prior to the incorporation of the Kinect, SynergyNet supported two control technologies which teachers could use to control instances of the framework on student-centric multi-touch interfaces as discussed in Section~\ref{sec:background}.
-In the lab, a multi-touch interface for the teacher controls, used to issue the commands listed in Section~\ref{subsec:focusGroup}, has been made available through an interactive whiteboard shown in Figure~\ref{fig:controlBoard}.
+In the lab, a multi-touch interface for the teacher controls, used to issue the commands listed in Section~\ref{subsec:userGeneratedGestures}, has been made available through an interactive whiteboard shown in Figure~\ref{fig:controlBoard}.
 
 As an alternative to the multi-touch based controls, teachers can also orchestrate instance of SynergyNet through a web interface.
 This web-based control interface is made accessible in the lab through an iPad tablet device as shown in Figure~\ref{fig:controlTablet}.
@@ -1663,7 +1621,7 @@ This error was caused by the teacher's understanding of the system's functions a
    \centering
    \includegraphics[width=0.45\textwidth]{figures/new_study_board.png}
    \caption{The board control in use during the study.}
-   \label{fig:studyBoard}
+   \label{fig:newStudyBoard}
 \end{figure}
 
 The average time taken to issue a successful command with the board was 9.82 seconds with a standard deviation of 5.97 seconds.
@@ -1700,7 +1658,7 @@ This error could occur with any of the control technologies.
    \centering
    \includegraphics[width=0.45\textwidth]{figures/new_study_tablet.png}
    \caption{The web controls in use during the study, accessed through a tablet interface.}
-   \label{fig:studyTablet}
+   \label{fig:newStudyTablet}
 \end{figure}
 
 The average time taken to issue a successful command with the tablet was 9.17 seconds with a standard deviation of 13 seconds.
@@ -1746,7 +1704,7 @@ This error occurred due to the teacher not following the control sequence by pau
    \centering
    \includegraphics[width=0.45\textwidth]{figures/new_study_kinect.png}
    \caption{The Kinect control in use during the study.}
-   \label{fig:studyKinect}
+   \label{fig:newStudyKinect}
 \end{figure}
 
 The average time taken to issue a successful command with the Kinects was 2.44 seconds with a standard deviation of 0.54 seconds.

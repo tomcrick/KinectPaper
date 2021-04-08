@@ -726,84 +726,27 @@ Three of the errors noted during this task could be categorised as false negativ
 \subsection{Pilot Study Observations}
 \label{subsec:pilotdiscussion}
 
-% // TODO Trim down and make appropriate to section - focus on how the Kinect's poor range and tracking of movement were hugely problematic and needed to be corrected for any further phases.
+Several shortcomings of the Kinect became evident throughout the pilot study.
 
-
-% From Discussion 1 ===========================================================================
-
-% // TODO Trim down.
-
-\begin{table}[h]
-\begin{tabular}{!{\vrule width 1.5pt}c|c|c|c!{\vrule width 1.5pt}}
-\noalign{\hrule height 1.5pt}
-\multicolumn{1}{!{\vrule width 1.5pt}c!{\vrule width 1.5pt}}{\textbf{}}	
-&\textbf{Number} &\multicolumn{1}{!{\vrule width 1.5pt}c!{\vrule width 1.5pt}}{\textbf{Number}}	 &\textbf{Average Time}\\
-\multicolumn{1}{!{\vrule width 1.5pt}c!{\vrule width 1.5pt}}{\textbf{}}	
-&\textbf{of} &\multicolumn{1}{!{\vrule width 1.5pt}c!{\vrule width 1.5pt}}{\textbf{of}}	 &\textbf{to Issue}\\
-\multicolumn{1}{!{\vrule width 1.5pt}c!{\vrule width 1.5pt}}{\textbf{Device}}	
-&\textbf{Commands} &\multicolumn{1}{!{\vrule width 1.5pt}c!{\vrule width 1.5pt}}{\textbf{Errors}}	&\textbf{Commands}\\
-\noalign{\hrule height 1.5pt}
-Board 					&13 					&1				&12.4 seconds				\\
-\cline{1-4}
-Tablet 					&9						&1				&13.6 seconds				\\
-\cline{1-4}
-Kinect 					&23 					&20			&6.59 seconds				\\
-\noalign{\hrule height 1.5pt}
-\end{tabular}
-\caption{The usage of the control devices in the study.}
-\label{table:results1}
-\end{table}
-
-Table~\ref{table:results1} summarises the usage of the three control technologies used in the study.
-The results showcase the strengths of each of the technologies in places.
-The board device was shown to produce the least errors over use whereas the tablet and Kinect devices were shown to provide shorter interaction times.
-The device which was quickest for issuing commands was the Kinect as shown in Figure~\ref{fig:averageTime}.
-However, the increasing interaction times as the study progressed could be in part attributed to the teacher gaining experience with the system over the tasks.
-
-\begin{figure*}[t]
-	\centering
-	\begin{subfigure}[t]{0.45\textwidth}
-		\centering
-		\includegraphics[width=\textwidth]{figures/bar_chart_average_time.png}
-		\caption{Average time taken to issue commands.}
-		\label{fig:averageTime}
-	\end{subfigure}
-	\begin{subfigure}[t]{0.45\textwidth}
-		\centering
-		\includegraphics[width=\textwidth]{figures/bar_chart_error_rate.png}
-		\caption{Percentage of erroneous commands.}
-		\label{fig:errorRates}
-	\end{subfigure}
-   	\caption{Comparison between each control technology.}
-   	\label{fig:graphs}
-\end{figure*} 
-
-Several shortcomings of the devices became evident throughout the study.
-Both the board and the tablet were noted to take the teacher's focus away from the students.
-The distraction of these devices was exacerbated by the fact that both required relatively longer interaction times the Kinect.
-
-The most problematic device was the Kinect as shown in Figure~\ref{fig:errorRates}.
-The majority of actions performed using the upper-body gestures through the device resulted in erroneous consequences such as the wrong command being issued.
-There are several potential causes of these errors.
-The first stems from the training of the teacher participating in the study.
+The first potentially stemmed from the training of the teacher participating.
 The one hour training may not have been enough time to allow the teacher to gain familiarity with the control devices.
 This may have contributed a number of failures to follow the command sequences, especially with the Kinect.
-In addition to this, the Kinect encountered several technical issues which prevented it from accurately tracking the teacher, their limbs and their joints.
+This could be rectified with more in-depth training in sub-sequent studies.
+
+The Kinect encountered several technical issues throughout the pilot study which prevented it from accurately tracking the teacher, their limbs and their joints.
 This inability to track could have been caused by the teacher leaving the Kinect's field of view.
-The classroom environment set up in the lab in which the study took place was larger than the Kinect's range.
+The classroom environment set up in the lab was larger than the Kinect's range.
 Due to this, the teacher often wandered beyond the Kinect's range to monitor and talk to students positioned around the distant tabletop interfaces.
 Whenever the teacher travelled outside the Kinect's field of view for more than several seconds the Kinect would lose track of their calibration and identity.
-This meant that the teacher would need to establish their teacher status on re-emerging into the Kinect's view and would need to perform the calibration pose again.
-
-The Kinect is capable of regaining their identification of a person if they appear in the same area in a similar pose within three seconds of their disappearance.
-These momentary loses were noted to occur several times in the study and were noted to be the potential cause of the device incorrectly identifying gestures.
-However, for the majority of occasions where the Kinect stopped tracking the teacher, the loss was permanent and required the teacher to recalibrate.
+This meant that if the teacher did not establish their teacher status on re-emerging into the Kinect's view then their subsequent gestures were not recognised.
+Improving the field of vision of the system could rectify this.
 
 Even when the teacher stayed within the Kinect's field of view, technical issues relating to the device's range caused errors.
 If the teacher was positioned close to the limits of the Kinect's range performing gestures, the device's limb and joint tracking became inaccurate.
 The device would often lose track of the teacher's limbs and joints, seeing them either move erratically or appear at rest when in fact the teacher was moving them to perform a gesture.
 When a limb was obscured the Kinect would attempt to position it, often resulting in an inaccurate placement.
 This also led to the limb positions moving erratically which caused several of the errors in the gesture recognition system.
+Again, this could be corrected with an improvement to the field of vision of the system.
 
 A number of the errors that occurred when the Kinect was used were established to be caused by the design and implementation of the control sequence.
 The majority of these relate to the movement of hands immediately after obtaining the Kinect's attention.
@@ -812,40 +755,9 @@ In addition to this, the Kinect often interpreted the movement of hands to posit
 These errors could be corrected with the implementation of a pause in the control sequence after the Kinect's attention is gained.
 The pause would allow the Kinect to ignore any unintentional gestures performed in the transition between the completion of the wave gesture and the command gesture.
 
-The number of false positives which occurred during the use of the system outweighed that of false negatives.
-In total, ten errors committed while issuing commands with the Kinect could be categorised as false positives throughout the study.
-Though the attention-toggling approach used in the command sequence was intended to reduce false positives there are still scenarios in which they can occur.
-Movement between gestures and the teacher pausing while the Kinect's attention was active was the cause of these false positives.
-The suggested improvements to the control sequence of adding pauses may reduce the number of these false positives.
-
-In relation to false positives, relatively few false negatives were observed during the study.
-All three instances of errors which could be categorised as false negatives occurred as a consequence of the teacher failing to follow the control sequence.
-Improvements to the training a teacher receives prior to using the system could reduce the occurrences of these errors in the future.
-
-Efforts were made to ensure the software interfaces for the three control technologies used were similar.
-The controls for the board and tablet used the same set of control components but different layouts.
-Though the technical capabilities of these two interfaces were the same, the differences in their appearances could have been a confounding factor.
-In addition to this, both the interfaces differ from control sequence used for the gesture controls.
-The use of a new set of controls with the same appearance on both the tablet and board interfaces which resemble the control sequence may improve cohesion between the technologies.
-
-After the study, the participating teacher was asked to discuss their preferences regarding the devices used.
-The teacher stated that they favoured the use of the Kinect.
-This was because it was quick and didn't require them to hunt through the interface to find the relevant controls.
-However, they were disappointed in the number of errors it produced.
-The teacher stated that the tablet device was the least preferred device due to the complexity of the web interface.
-This is the reason why the teacher did not use it during task 4.
-Despite the board being the most used device with the least amount of errors throughout the study, the teacher had no preference for or against its use.
-The teacher stated that during task 4 the board was used as a fall-back when issuing commands through the Kinect continued to produce errors.
-
-The high error-rate observed in the study indicates the need for improvements.
-The study was originally intended to involve more than a single teacher and class but once the error-rate became apparent it was decided that studies should be postponed until improvements were implemented.
-The improvements proved to be significant enough to warrant being discussed separately in future work alongside the studies using them.
-% From Discussion 1 ===========================================================================
-
-
 % From Conclusion 1 ===========================================================================
 
-% // TODO Trim down.
+% // TODO Trim down and make appropriate to section - focus on how the Kinect's poor range and tracking of movement were hugely problematic and needed to be corrected for any further phases.
 
 % // TODO Remove paper summaries.
 

@@ -646,82 +646,45 @@ This allowed for timing of intention to execution and would allow for identifica
 \subsection{Pilot Study Results}
 \label{subsec:pilotStudyResults}
 
-% // TODO Trim down and make appropriate to section - focus on just the kinect.
-
-The teacher was able to meet the minimum training need relating to the use of the Kinect, outlined in Section~\ref{subsec:gatheringGestures}, of being able to recall all gestures and their associated commands.
-To assess this the teacher performed a dry run of a mysteries task with the study organisers acting as students.
-Throughout this dry run the teacher was able to correctly recall and invoke all five of the commands with each of the control devices.
-
-\begin{figure*}[t]
+\begin{figure}[h]
 	\centering
-	\begin{subfigure}[t]{0.3\textwidth}
-		\centering
-		\includegraphics[width=\textwidth]{figures/study_board.png}
-		\caption{The board interface.}
-		\label{fig:studyBoard}
-	\end{subfigure}
-	\begin{subfigure}[t]{0.3\textwidth}
-		\centering
-		\includegraphics[width=\textwidth]{figures/study_tablet.png}
-		\caption{The tablet interface.}
-		\label{fig:studyTablet}
-	\end{subfigure}
-	\begin{subfigure}[t]{0.3\textwidth}
-		\centering
-		\includegraphics[width=\textwidth]{figures/study_kinect.png}
-		\caption{The Kinect device.}
-		\label{fig:studyKinect}
-	\end{subfigure}
-   	\caption{The use of interfaces and devices during the study to control instances of SynergyNet.}
-   	\label{fig:studyDevices}
-\end{figure*} 
+   \includegraphics[width=0.45\textwidth]{figures/study_kinect.png}
+   \caption{The Kinect device in use during the pilot study.}
+   \label{fig:studyKinect}
+\end{figure} 
 
-\subsubsection{Task 1: Board Only}
-\label{subsubsec:pilotStudyResultsTask1}
+From the mysteries tasks carried out using traditional SynergyNet control devices the following was measured:
+\begin{itemize}
+   \item For commands issued with the large interactive board:
+   \begin{itemize}
+      \item The average time taken to issue a command was 12.5 seconds with a standard deviation of 6.36 seconds.
+      \item 1/10 of the commands issued was erroneous.
+   \end{itemize}
+   \item For commands issued with the web interface through a tablet:
+   \begin{itemize}
+      \item The average time taken to issue a command was 13.6 seconds with a standard deviation of 11.7 seconds.
+      \item 1/9 of the commands issued was erroneous.
+   \end{itemize}
+\end{itemize}
 
-Ten commands were issued by the teacher during task 1's 25 minute and 46 second duration.
-All these commands were issued through the interactive whiteboard as shown in Figure~\ref{fig:studyBoard}.
-Out of these ten commands, one was issued incorrectly.
-This was where the teacher intended to clear the board of content but instead cleared a student interface.
-This false positive is likely due to the controls for orchestrating board content being positioned alongside the student-centric interface controls.
-This led to the teacher confusing the two similarly worded command buttons.
-The average time taken to issue a command with the board was 12.5 seconds with a standard deviation of 6.36 seconds.
-
-\subsubsection{Task 2: Tablet Only}
-\label{subsubsec:pilotStudyResultsTask2}
-
-Nine commands were observed to be issued by the teacher in task 2's 18 minute duration.
-All these commands were issued through the tablet interface as shown in Figure~\ref{fig:studyTablet}.
-Of these nine commands, one was issued incorrectly.
-This error was committed when the teacher intended to issue a command to a specific interface to show content on the board but instead showed content from all the student interfaces.
-This false positive was likely due to the teacher leaving the \lq select all\rq\ option checked on the web-based controls from a previous command.
-
-The average time taken to issue a command with the tablet was 13.6 seconds with a standard deviation of 11.7 seconds.
-It was noted that the teacher would become preoccupied with the interface when issuing commands through the tablet and break interaction with the students to concentrate on using the device.
-
-\subsubsection{Task 3: Kinect Only}
-\label{subsubsec:pilotStudyResultsTask3}
-
-Twenty one commands were observed to be issued by the teacher during task 3 in its 11 minute and 26 second duration.
-All these commands were issued through the Kinect as shown in Figure~\ref{fig:studyKinect}.
-The average time taken to issue a command with the Kinect was 6.6 seconds with a standard deviation of 5.59 seconds.
+The average time taken to issue a command with the Kinect, as shown in Figure~\ref{fig:studyKinect}, was 6.6 seconds with a standard deviation of 5.59 seconds.
 Of the twenty one commands issued during this task with the Kinect, eighteen were erroneous.
 
 Six of these errors were caused by the teacher waving too many times.
 This resulted in their third wave being interpreted as a command gesture.
 The third wave was frequently interpreted as a pull gesture, which informs all the student-centric interfaces to show content on the board.
-These false positives are technically the result of the teacher's failure to follow the command sequence but could be corrected by making the sequence more lenient for these types of mistakes.
+These false positives are the result of the control sequence being too easy to deviate from since in its implementation in the pilot it would expect specifically two waves.
 
 Four of the errors were caused by the Kinect losing track of one of the teacher's hand.
 Due to this, only one hand is identified as being above the teacher's head when in fact both are in the air.
 This results in the gesture for the freeze command being interpreted as the gesture for sending content to the board.
 These errors are the result of technical failures, caused by the limitations of the Kinect.
 
-Two of the errors observed during task 3 were caused by the teacher trying to send contents to the tables when there was no content on the board to send.
-These errors are the result of the teacher failing to follow instructions given during the training session and could have happened when using any of the control technologies.
+Two of the errors observed when using the Kinect were caused by the teacher trying to send contents to the tables when there was no content on the board to send.
+These errors are attributed to user-error.
 
 Two of the errors were caused by the teacher performing a gesture before getting the Kinect's attention.
-These false negatives were caused by the teacher not following the control sequence.
+These false negatives were caused by the teacher forgetting the control sequence.
 
 A teacher pausing for a relatively long time between getting the Kinect's attention and performing a gesture was the cause of one of the errors observed during this task.
 The Kinect's attention is configured to expire if a teacher takes too long to perform a gesture.
@@ -746,10 +709,9 @@ Repeating the first part of the control sequence; waving, may have led to them c
 The Kinect was noted to have experienced several issues which may account for the observed errors in the command sequence.
 The Kinect lost track of the teacher's calibration three times.
 In addition to this, the teacher presence was lost entirely by the Kinect three times.
-It was also noted that the Kinect could not allow the teacher to calibrate when they were stood in specific places despite being within the range of its view.
 This was potentially due to the Kinect's view of the teacher being partially obscured by students moving about the tabletop interfaces.
 
-The teacher spent the majority of the task trying to unfreeze the tables.
+The teacher spent a significant amount of time trying to unfreeze the tables.
 The repeated errors prolonged this process which would usually require a single command.
 Due to the high number of errors caused by the Kinect, students became frustrated.
 There appeared to be two causes of the majority of the errors:
@@ -759,36 +721,12 @@ There appeared to be two causes of the majority of the errors:
 \item The Kinect repeatedly lost track of the teacher and their limbs. 
 \end{itemize}
 
-The high frequency of commands compared to the previous tasks was partially due to attempts to correct errors.
-The teacher had to repeat gestures which failed or issue additional commands to amend undesirable consequences from the erroneous gestures.
-
 Three of the errors noted during this task could be categorised as false negatives whereas eight of the errors were false positives.
 
-\subsubsection{Task 4: All Devices}
-\label{subsubsec:pilotStudyResultsTask4}
-
-For task 4, where the teacher had the option of using any of the three control devices, five commands were observed to be issued by the teacher in its 11 minute and 38 second duration.
-Three of these commands were issued through the board control and two through the Kinect.
-The tablet was used for issuing no commands, despite being available to the teacher.
-Out of these five commands, two were issued incorrectly.
-These two erroneous commands were both issued using the Kinect.
-The first of these erroneous commands was caused by the Kinect confusing gestures.
-After waving the teacher moved their hands together intending to perform the gesture for the screenshot command.
-However, the Kinect saw the hands moving from the wave gesture used to get attention towards the torso and interpreted it as the gesture for pulling content from the board.
-This is a problem in the control sequence.
-The Kinect sees the movement of the teacher's hands between waving and the command gestures.
-The Kinect node then interprets this movement as a different command gesture.
-The second erroneous command was caused by the teacher waving too many times to retrieve the Kinect's attention.
-The teacher's third wave is interpreted as a command gesture rather than ignored after the Kinect focuses on the teacher.
-Both of these errors can be categorised as false positives.
-
-During this task the average time taken to issue a command with the board was 12.1 seconds with a standard deviation of 4.05 seconds.
-The average time taken to issue a command with the Kinect was 6.5 seconds with a standard deviation of 1.38 seconds.
-
-\subsection{Observations}
+\subsection{Pilot Study Observations}
 \label{subsec:pilotdiscussion}
 
-% // TODO Note how the Kinect's poor range and tracking of movement were hugely problematic and needed to be corrected for any further phases.
+% // TODO Trim down and make appropriate to section - focus on how the Kinect's poor range and tracking of movement were hugely problematic and needed to be corrected for any further phases.
 
 
 % From Discussion 1 ===========================================================================

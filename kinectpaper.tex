@@ -743,6 +743,7 @@ Improving the field of vision of the system could rectify this.
 
 Even when the teacher stayed within the Kinect's field of view, technical issues relating to the device's range caused errors.
 If the teacher was positioned close to the limits of the Kinect's range performing gestures, the device's limb and joint tracking became inaccurate.
+This is a known limitation of the device~\cite{Mehrotra2011}.
 The device would often lose track of the teacher's limbs and joints, seeing them either move erratically or appear at rest when in fact the teacher was moving them to perform a gesture.
 When a limb was obscured the Kinect would attempt to position it, often resulting in an inaccurate placement.
 This also led to the limb positions moving erratically which caused several of the errors in the gesture recognition system.
@@ -757,6 +758,7 @@ The pause would allow the Kinect to ignore any unintentional gestures performed 
 
 The pilot study made it apparent that augmentations to the SynergyNet framework would be required to overcome the limitations of the Kinect.
 One such augmentation identified to be beneficial would be the use of multiple Kinect devices to accurately monitor a larger area.
+It is important to note that the Kinect's range is limited to three and a half metres~\cite{Maimone2011} and a sixty degree viewing angle~\cite{Stone2011}, this covers most of the area in the lab used in the pilot study (which is designed to be the same size as an average classroom) but not all.
 If the area accurately monitored by the Kinect was to be expanded to cover the entirety of a classroom, the teacher would then be capable of issuing commands through upper-body gestures anywhere in the environment.
 Though there are many issues with the use of multiple Kinects~\cite{Maimone2012,Schroder2011} there are several potential methods which allow them to work together~\cite{Wang2012}.
 
@@ -776,68 +778,22 @@ The intuitiveness of the gesture set as a whole may be impeded by this sub-set o
 One such non-metaphoric gesture is the raised single hand pose used to send content on student-centric interfaces to a board.
 Changes to make the gesture set more cohesive could improve the gestures' intuitiveness and reduce the error rate of their use.
 
-% // TODO Trim down and make appropriate to section - focus on how the Kinect's poor range and tracking of movement were hugely problematic and needed to be corrected for any further phases.
-
-% // TODO Remove paper summaries.
-
-% // TODO Remove discussions of what to do next.
-
-% From Background 2 ===========================================================================
-
-% // TODO Trim down - can remove most of this section as its just summarising the first half of the paper.
-
-\subsubsection{Issues with Initial Upper-body Gesture Controls}
-\label{subsubsec:pilotdiscussionIssues}
-
-Previous studies involving the use of SynergyNet's upper-body gesture controls revealed several shortcomings.
-To assess the existing implementation a set of criteria for upper-body gestures was derived from the requirements for hand gestures outlined by Wachs et al.~\cite{Wachs2011}.
-These criteria assessed the system's cost, adaptability, accuracy, un-encumbering nature, responsiveness, lexicon size, intuitiveness, comfort, mental load, interaction space requirement and ubiquity.
-
-The previous study has revealed four criteria in which SynergyNet's upper-body gesture controls needs improvement; 
+The pilot study has revealed four criteria~\cite{Wachs2011} in which SynergyNet's upper-body gesture controls needs improvement; 
 \textit{accuracy}, \textit{interaction space}, \textit{intuitiveness} and \textit{mental load}.
-Using observations from the previous study it is possible to identify several issues which resulted in the system being incapable of meeting these three criteria.
+It is possible to summarise the issues which resulted in the system being incapable of meeting these three criteria as so:
 
 \begin{itemize}
-
-\item \textbf{Issue 1: Losing Track of Users, Limbs and Joints}\\
-For SynergyNet, issues relating to accuracy and interaction space originated from the Kinect device.
-The device was noted to lose track of users which had the result of any persons carrying teacher status to lose their ability to issue commands.
-This would require the teacher to repeat designating their teacher status and performing the calibration pose.
-This was problematic due to its time consuming nature and was noted to occur when a teacher left the Kinect's field of vision.
-The Kinect's range is limited to three and a half metres~\cite{Maimone2011} and a sixty degree viewing angle~\cite{Stone2011}.
-This is too small to monitor an entire typical classroom environment.
-In addition to this the Kinect often lost track of teacher's limbs and joints.
-It was noted this occurred towards the limits of the Kinect's field of view.
-This was because the Kinect's accuracy decreases in proximity to the limits of its view~\cite{Mehrotra2011}.
-Gestures would either be interpreted incorrectly as other gestures or were totally ignored by the system due to this lack of accuracy.
-
-\item \textbf{Issue 2: Gesture Confusion}\\
-SynergyNet's failure to meet the criterion for intuitiveness in the previous study was, in part, caused by repeated errors committed by the teacher performing the wrong gestures when intending to instigate specific commands.
-The teacher stated that they would often forget which gestures related to which command.
-This indicated that the gestures were not intuitive enough.
-In addition to this the teacher's confusion of gestures also attributed to the system's failure to meet the criterion for mental load.
-The teacher stated in an interview after the previous study that they forgot the gestures needed for specific commands on a number of occasions.
-
-\item \textbf{Issue 3: Stringent Control Sequence Requirements}\\
-The numerous steps in the control sequence that the teacher is required to repeat on various occasions, such as calibration and establishing their identity, is a contributing factor to the system's failure to meet the criterion for mental load.
-SynergyNet's failure to meet the criterion for a low mental load was identified during previous use of the system where teachers would often pause during the command sequence.
-The control sequence required teachers to execute the command sequence without any pauses.
-This resulted in a number of errors where the Kinect's attention would time-out or the system would interpret the pose the teacher paused in as a command gesture.
-The teacher stated that they paused because they were concentrating on recalling the appropriate gesture for the command they intended to execute.
-This indicates that the mental load required by the current system implementation is too large.
-In addition to this the unexpected results of the system wrongfully interpreting gestures due to teacher's failing to meet the control sequence's stringent requirements are detrimental to its intuitiveness.
-
-\item \textbf{Issue 4: Reduced Functionality}\\
-There may be circumstances where the teacher wishes their action to affect only a specific subset of the student's interfaces.
-The results of the guessability study performed to generate the initial upper-body gesture set and control sequence to be used by SynergyNet indicated a pattern in participant's preferences towards selection.
-It was noted that participants would prefer to point at specific interfaces if wishing a command to only affect them.
-A pointing gesture was proposed but not implemented due to the issue of a teacher's body potentially obscuring the interfaces being pointed when a single Kinect is used.
-Without an interface selection method, the Kinect controls offer less functionality than the alternative static and mobile interfaces.
-Because any command issued with the Kinect must influence all interfaces, teachers must put additional thought into its use.
-The lack of cohesion between the Kinect controls and alternatives may exacerbate the identified problems concerning intuitiveness and mental load.
-
+\item \textbf{Issue 1: Losing Track of Users, Limbs and Joints:}
+This refers to errors caused by the teacher's leaving the accurately observable area of the Kinect devices.
+\item \textbf{Issue 2: Gesture Confusion:}
+This issue encompasses all errors caused by the teacher in the pilot study making mistakes by confusing or forgetting gestures.
+\item \textbf{Issue 3: Stringent Control Sequence Requirements:}
+This issue refers to errors encountered when the teacher accidentally deviated from the defined control sequence.
+\item \textbf{Issue 4: Reduced Functionality:}
+This relates to how the limitations of a single Kinect meant that a part of the control sequence defined in Section~\ref{subsec:userGeneratedGestures} could not be implemented.
 \end{itemize}
-% From Background 2 ===========================================================================
+
+The pilot study made it clear that these identified issues would need to be resolved as part of the implementation of the study.
 
 \section{Study}
 \label{sec:study}
@@ -849,7 +805,7 @@ The lack of cohesion between the Kinect controls and alternatives may exacerbate
 
 % // TODO Trim down and make suitable.
 
-The issues outlined in Section~\ref{subsubsec:pilotdiscussionIssues} were noted in the previous phase of the study to make the use of the system counter-productive.
+The issues outlined in Section~\ref{subsec:pilotdiscussion} were noted in the previous phase of the study to make the use of the system counter-productive.
 The benefits afforded by the system of non-intrusive and quick command execution were made irrelevant due to the high number of errors caused by the identified issues.
 Resolving these issues could allow the system to function as intended and would allow the potential benefits of the upper-body gesture controls to be evaluated and employed.
 
@@ -1026,7 +982,7 @@ This approach allows for interface selection without diminishing the system's in
 \subsection{Software Implementation}
 \label{subsec:studyImplementation}
 
-With clear definitions of the issues in Section~\ref{subsubsec:pilotdiscussionIssues} and their potential solutions in Section~\ref{subsec:studyResolvingIssues}, improvements can be implemented in SynergyNet.
+With clear definitions of the issues in Section~\ref{subsec:pilotdiscussion} and their potential solutions in Section~\ref{subsec:studyResolvingIssues}, improvements can be implemented in SynergyNet.
 Four key improvements were selected for implementation.
 These implemented improvements were; support for multiple Kinect devices, creation of a more cohesive gesture set, changes to the control sequence to make it less severe on teachers, automatic calibration and support for interface selection through a pointing gesture.
 
@@ -1849,7 +1805,7 @@ If the errors relating to accuracy had not occurred during the study the error r
 Because the remaining errors were deemed to be minor because of their minimal negative consequences the system could be considered fit for purpose.
 It is apparent that a method of improving the accuracy of the system's joint tracking is required.
 
-In Section~\ref{subsubsec:pilotdiscussionIssues} the possibility of the Kinect device having difficulty tracking fast moving joints was raised.
+The observed errors discussed in Section~\ref{subsec:pilotdiscussion} highlight the possibility of the Kinect device having difficulty tracking fast moving joints.
 Winkler et al.~\cite{Winkler2012} briefly discuss this limitation of the device stating that when the PrimeSense framework is employed, as it is within SynergyNet, fast movement can cause instability.
 Replacing all gestures which use movement, i.e. those which consist of pose sequences, were replaced with single poses the potential issues caused by this possibility would be resolved.
 This could reduce the errors originating from accuracy issues but would require another changing of the gesture set.

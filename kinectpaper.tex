@@ -238,8 +238,6 @@ If implementing this into the design of a gesture set it is important to ensure 
 \section{Designing a Solution for Gesture-Driven Classroom Orchestration} 
 \label{sec:solutionDesign}
 
-% // TODO Some repetition in here so can be cut down.
-
 With all the requirements for using gestures in the classroom and the limitations of the most suitable technologies outlined in Section~\ref{sec:issues} an important question becomes apparent:
 \emph{Are gestures a viable method for controlling technology in the classroom?}
 
@@ -731,7 +729,6 @@ Several shortcomings of the Kinect became evident throughout the pilot study.
 The first potentially stemmed from the training of the teacher participating.
 The one hour training may not have been enough time to allow the teacher to gain familiarity with the control devices.
 This may have contributed a number of failures to follow the command sequences, especially with the Kinect.
-This could be rectified with more in-depth training in sub-sequent studies.
 
 The Kinect encountered several technical issues throughout the pilot study which prevented it from accurately tracking the teacher, their limbs and their joints.
 This inability to track could have been caused by the teacher leaving the Kinect's field of view.
@@ -739,7 +736,7 @@ The classroom environment set up in the lab was larger than the Kinect's range.
 Due to this, the teacher often wandered beyond the Kinect's range to monitor and talk to students positioned around the distant tabletop interfaces.
 Whenever the teacher travelled outside the Kinect's field of view for more than several seconds the Kinect would lose track of their calibration and identity.
 This meant that if the teacher did not establish their teacher status on re-emerging into the Kinect's view then their subsequent gestures were not recognised.
-Improving the field of vision of the system could rectify this.
+It is important to note that the Kinect's range is limited to three and a half metres~\cite{Maimone2011} and a sixty degree viewing angle~\cite{Stone2011}, this covers most of the area in the lab used in the pilot study (which is designed to be the same size as an average classroom) but not all.
 
 Even when the teacher stayed within the Kinect's field of view, technical issues relating to the device's range caused errors.
 If the teacher was positioned close to the limits of the Kinect's range performing gestures, the device's limb and joint tracking became inaccurate.
@@ -747,36 +744,11 @@ This is a known limitation of the device~\cite{Mehrotra2011}.
 The device would often lose track of the teacher's limbs and joints, seeing them either move erratically or appear at rest when in fact the teacher was moving them to perform a gesture.
 When a limb was obscured the Kinect would attempt to position it, often resulting in an inaccurate placement.
 This also led to the limb positions moving erratically which caused several of the errors in the gesture recognition system.
-Again, this could be corrected with an improvement to the field of vision of the system.
 
 A number of the errors that occurred when using the Kinect were established to be caused by the design and implementation of the control sequence.
 The majority of these relate to the movement of hands immediately after obtaining the Kinect's attention.
 The movement of the teacher's hands when finishing the attention-grabbing wave gesture were on occasion interpreted as a separate command gesture.
 In addition to this, the Kinect often interpreted the movement of hands to positions needed to perform a command gesture as the command gesture itself.
-These errors could be corrected with the implementation of a pause in the control sequence after the Kinect's attention is gained.
-The pause would allow the Kinect to ignore any unintentional gestures performed in the transition between the completion of the wave gesture and the command gesture.
-
-The pilot study made it apparent that augmentations to the SynergyNet framework would be required to overcome the limitations of the Kinect.
-One such augmentation identified to be beneficial would be the use of multiple Kinect devices to accurately monitor a larger area.
-It is important to note that the Kinect's range is limited to three and a half metres~\cite{Maimone2011} and a sixty degree viewing angle~\cite{Stone2011}, this covers most of the area in the lab used in the pilot study (which is designed to be the same size as an average classroom) but not all.
-If the area accurately monitored by the Kinect was to be expanded to cover the entirety of a classroom, the teacher would then be capable of issuing commands through upper-body gestures anywhere in the environment.
-Though there are many issues with the use of multiple Kinects~\cite{Maimone2012,Schroder2011} there are several potential methods which allow them to work together~\cite{Wang2012}.
-
-As discussed in Section~\ref{subsec:pilotStudyImplementation}, the decision was made not to implement a method of interface selection.
-This was due to the fact that the most popular method of interface selection in the focus group would be problematic when implemented into a system with only a single light-coding device.
-With the use of multiple Kinect devices this issue would potentially be overcome.
-
-To limit the errors caused by the Kinect losing track of the teacher's limbs and joints, it was decided that automatic calibration should be implemented~\cite{Bellmore2011}.
-This would allow the teacher to issue commands through the upper-body gesture control sequence without performing the calibration pose beforehand which simplifies use of the system and allows for quicker recovery when the devices lose track of a user.
-
-Despite the majority of errors relating to the gesture set originating from issues with the technology, a number of the errors were observed to originate from the design of the gesture set and its control sequence.
-These errors indicate that some of the gestures are not intuitive despite their user-generated nature.
-Therefore, to reduce the number of errors, it was decided that improvements to the gesture set should be made.
-As identified in Section~\ref{subsec:userGeneratedGestures}, there is a trend for most of the gestures to conform to a metaphor.
-However, a number of gestures do not conform to this trend.
-The intuitiveness of the gesture set as a whole may be impeded by this sub-set of non-metaphor based gestures.
-One such non-metaphoric gesture is the raised single hand pose used to send content on student-centric interfaces to a board.
-Changes to make the gesture set more cohesive could improve the gestures' intuitiveness and reduce the error rate of their use.
 
 The pilot study has revealed four criteria~\cite{Wachs2011} in which SynergyNet's upper-body gesture controls needs improvement; 
 \textit{accuracy}, \textit{interaction space}, \textit{intuitiveness} and \textit{mental load}.
@@ -805,11 +777,11 @@ Section~\ref{subsec:pilotdiscussion} several issues were identified that would n
 \subsection{Resolving Issues}
 \label{subsec:studyResolvingIssues}
 
-% // TODO Trim down and make suitable.
-
-The issues outlined in Section~\ref{subsec:pilotdiscussion} were noted in the previous phase of the study to make the use of the system counter-productive.
+The issues outlined in the pilot study were noted to make the use of the system counter-productive.
 The benefits afforded by the system of non-intrusive and quick command execution were made irrelevant due to the high number of errors caused by the identified issues.
 Resolving these issues could allow the system to function as intended and would allow the potential benefits of the upper-body gesture controls to be evaluated and employed.
+
+% // TODO Trim down and make suitable.
 
 \subsubsection{Resolving Issue 1: Improving the System's Tracking}
 \label{subsubsec:studyResolvingIssues1}

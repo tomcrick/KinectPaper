@@ -767,26 +767,17 @@ This relates to how the limitations of a single Kinect meant that a part of the 
 
 The pilot study made it clear that these identified issues would need to be resolved as part of the implementation of the study.
 
-\section{Study}
-\label{sec:study}
-
-To assess the usage of the upper-body gesture control sequence derived in Section~\ref{subsec:userGeneratedGestures} it was a decided that a study should be carried out to compare their usage with more traditional methods of orchestrating technology in the classroom.
-It was decided that the implementation created for the pilot study discussed in Section~\ref{sec:pilotStudy} could be built upon for the study. 
-Section~\ref{subsec:pilotdiscussion} several issues were identified that would need to be resolved in the design of study.
-
-\subsection{Resolving Issues}
-\label{subsec:studyResolvingIssues}
+\section{Resolving Issues Observed in Pilot Study}
+\label{sec:resolvingIssuesObserved}
 
 The issues outlined in the pilot study were noted to make the use of the system counter-productive.
 The benefits afforded by the system of non-intrusive and quick command execution were made irrelevant due to the high number of errors caused by the identified issues.
 Resolving these issues could allow the system to function as intended and would allow the potential benefits of the upper-body gesture controls to be evaluated and employed.
 
-% // TODO Trim down and make suitable.
+\subsection{Resolving Issue 1: Improving the System's Tracking}
+\label{subsec:resolvingIssuesObserved1}
 
-\subsubsection{Resolving Issue 1: Improving the System's Tracking}
-\label{subsubsec:studyResolvingIssues1}
-
-To improve the accuracy and interaction space of the sensing technology used with the system, multiple Kinects could be employed.
+To improve the accuracy and monitored area of the sensing technology used with the system, multiple Kinects could be employed.
 With more Kinect devices in the environment, more of the classroom would be monitored.
 A larger monitored area reduces the chance of the teacher losing their calibrated status by wandering out of the Kinects' view.
 This saves time by reducing how often the teacher needs to repeat the calibration process.
@@ -802,7 +793,7 @@ Through a form of user recognition the system presented is able to track a perso
 The system tracks the movement of persons across their viewed areas.
 On the Kinect identifying a person the system determines their unique visual and geometric features.
 Whenever a new person is identified on a Kinect the system checks to see if they have been seen before on another Kinect by comparing their features.
-If so the system can then establish the movement of persons across multiple fields of view.
+If so, then the system can then establish the movement of persons across multiple fields of view.
 This allows for a person's movement to be tracked across a larger area.
 
 Overlapping the views of the Kinects would eliminate the need for teacher's to perform gestures towards the limits of a single Kinect's view.
@@ -832,6 +823,8 @@ However, a Kinect will not be collecting any usable depth information while anot
 Due to this,  the technique causes a reduction in the frame-rate of the depth image collected from the devices.
 The accuracy of the devices afforded by removing interference is traded-off for a reduction in responsiveness.
 Therefore, the adoption of this technique, while resolving the issue of accuracy may result in the system being unable to meet the criteria for responsiveness.
+
+% // TODO Trim down and make suitable.
 
 Another potential technique of reducing the interference caused by overlapping light patterns is the movement of the sensing devices~\cite{Maimone2012}.
 By moving a Kinect, the device's projected pattern is moved along with its camera.
@@ -870,8 +863,8 @@ Because the devices use the same structured light technique as the Kinect the sa
 Oblong's Mezzanine~\cite{kramer2011} uses custom built depth cameras to observe user's movement in a meeting room environment.
 The system's range is greater than that of a single Kinect but its cost far exceeds that of several of Microsoft's devices.
 
-\subsubsection{Resolving Issue 2: Improving Gestures}
-\label{subsubsec:studyResolvingIssues2}
+\subsection{Resolving Issue 2: Improving Gestures}
+\label{subsec:resolvingIssuesObserved2}
 
 To improve the intuitiveness of the SynergyNet upper-body gesture system it is possible that a number of the gestures may need to be changed.
 The previous study indicated that there was a subset of gestures which caused more problems than the rest.
@@ -890,8 +883,8 @@ The training session took place immediately before the previous study.
 The teacher may not have had enough time to memorise how to orchestrate using the three control technologies, specifically the Kinect.
 Giving the teacher time after the training session to reflect on and memorise what they've learnt may allow their use of the system in the future to be less error-prone.
 
-\subsubsection{Resolving Issue 3: Improving the Control Sequence}
-\label{subsubsec:studyResolvingIssues3}
+\subsection{Resolving Issue 3: Improving the Control Sequence}
+\label{subsec:resolvingIssuesObserved3}
 
 In the previous study, the teacher participating often committed errors issuing commands with the Kinect due to them following the command sequence incorrectly.
 These errors were often caused by the teacher stopping to think about the next gesture to perform in the command sequence.
@@ -923,8 +916,8 @@ User recognition coupled with automatic calibration would allow the system to ca
 This would allow the teacher to leave and re-enter the system's monitored environment on numerous occasions without needing to repeat any calibration steps.
 This would reduce the amount of user intervention required by the control sequence which would reduce the mental load required for its use.
 
-\subsubsection{Resolving Issue 4: Adding Functionality}
-\label{subsubsec:studyResolvingIssues4}
+\subsection{Resolving Issue 4: Adding Functionality}
+\label{subsec:resolvingIssuesObserved4}
 
 In the original control sequence design built on the guessability study results, teachers were intended to select the tables they wished to affect through pointing at them.
 However, the issue of constant obstruction of the pointing arm resulted in this not being implemented.
@@ -947,16 +940,23 @@ Teacher touches can be used during the control sequence to select which interfac
 This approach does facilitate interface selection but requires the teacher to travel to the interfaces they wish a gesture to affect.
 Travelling between interfaces reduces the system's intuitiveness and speed of use.
 
-The use of multiple sensing devices, as proposed for the resolution of issue 1 in Section~\ref{subsubsec:studyResolvingIssues1}, could allow the originally proposed pointing gesture to be implemented into the control sequence.
+The use of multiple sensing devices, as proposed for the resolution of issue 1 in Section~\ref{subsec:resolvingIssuesObserved1}, could allow the originally proposed pointing gesture to be implemented into the control sequence.
 With multiple Kinects when the teacher's body obscures the view of a Kinect when pointing, another of the devices should be able to see the obscured area and identify which interface is being pointed at.
 When a teacher points at an interface it becomes selected.
 Using this approach the teacher can select multiple interfaces at once without the need to travel about the classroom.
 This approach allows for interface selection without diminishing the system's intuitiveness or speed of use.
 
+\section{Study}
+\label{sec:study}
+
+With the potential solutions outlined in Section~\ref{sec:resolvingIssuesObserved} for the issues observed in the pilot study, a study could be carried out to assess the usage of the upper-body gesture control sequence derived in Section~\ref{subsec:userGeneratedGestures}.
+It was a decided that the study should investigate how the control sequences compares with the use of more traditional methods of orchestrating technology in the classroom.
+It was decided that the implementation created for the pilot study discussed in Section~\ref{sec:pilotStudy} could be built upon for this study utilising the suggested solutions to the pilot study issues.
+
 \subsection{Software Implementation}
 \label{subsec:studyImplementation}
 
-With clear definitions of the issues in Section~\ref{subsec:pilotdiscussion} and their potential solutions in Section~\ref{subsec:studyResolvingIssues}, improvements can be implemented in SynergyNet.
+With clear definitions of the issues in Section~\ref{subsec:pilotdiscussion} and their potential solutions in Section~\ref{sec:resolvingIssuesObserved}, improvements can be implemented in SynergyNet.
 Four key improvements were selected for implementation.
 These implemented improvements were; support for multiple Kinect devices, creation of a more cohesive gesture set, changes to the control sequence to make it less severe on teachers, automatic calibration and support for interface selection through a pointing gesture.
 
@@ -992,7 +992,7 @@ This reduces the issue of obstruction and as a consequence, improves the system'
 This is due to the teacher being made able to perform gestures at any location in the environment while facing any direction.
 The use of multiple Kinects also reduces mental load since the teacher will not need to put as much forethought into positioning themselves so that they are visible to a sensing device.
 
-To avoid the issue of interference, noted in Section~\ref{subsubsec:studyResolvingIssues1} to occur when multiple Kinects are used together, the strategy of placing the devices perpendicular was adopted.
+To avoid the issue of interference, noted in Section~\ref{subsec:resolvingIssuesObserved1} to occur when multiple Kinects are used together, the strategy of placing the devices perpendicular was adopted.
 This reduces interference and does not incur any additional cost.
 This does, however, reduce the maximum number of Kinect devices which can be used together to two.
 This is enough to cover the entire SynergyNet lab but could be problematic for larger classroom.
@@ -1056,7 +1056,7 @@ With multiple perspectives the teacher's torso cannot obscure where they are poi
 \label{subsubsec:studyImplementationGestureSet}
 
 To improve the cohesion of the gesture set it was decided that all the upper-body gestures used in the control sequence should conform to an overarching pattern.
-As noted in Section~\ref{subsubsec:studyResolvingIssues2}, the most obvious pattern amongst the existing gestures was their similarities to related real-world actions.
+As noted in Section~\ref{subsec:resolvingIssuesObserved2}, the most obvious pattern amongst the existing gestures was their similarities to related real-world actions.
 It was also noted that several of the gestures in the set did not follow this pattern.
 Changing these gestures to ones which bare similarities to related real-world actions may make the gesture set more cohesive.
 This should reduce the mental load required by the control sequence since teachers will not need to remember the specific gestures for each command.

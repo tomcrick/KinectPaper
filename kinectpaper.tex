@@ -835,14 +835,11 @@ Vibration of the Kinect could be used to minimise the movement required to diffe
 However, to add any motion to the Kinect devices, extra cost must be spent to implement the motors needed to automate this movement.
 The adoption of this technique, while resolving the issues relating to accuracy and interaction space, may result in the system being unable to meet the criteria for cost.
 
-% // TODO Trim down and make suitable.
-
 To differentiate the infra-red light produced and received by the Kinect devices, filters could be employed.
 Multiple depth-cameras using the same structured light setup as the Kinect have been made capable of working together through filtering the infra-red used~\cite{Kim2008}.
 However, the Kinect is not capable of this~\cite{Kainz2012}.
 The Kinect produces and views a very small range of infra-red frequencies.
 Filtering this would reduce the range of frequencies visible to each Kinect further and would likely result in the depth image becoming more inaccurate.
-This is due to further loss of reflected light through its frequency shifting beyond the device's range.
 
 The techniques discussed so far for allowing multiple Kinect devices to work together involve providing methods of differentiating the devices' projected light patterns.
 Wang et al.~\cite{Wang2012} present a potential technique which reduces the influence of interference caused by multiple Kinects not through prevention but correction.
@@ -855,8 +852,7 @@ The time and processing power required by the algorithm could reduce the system'
 Alternative depth sensing technologies could be used to track the movements of the teacher in a classroom.
 These alternatives may resolve the issues relating to accuracy and interaction space but could incur other issues.
 The Primesense~\cite{Wilson2010} depth camera performs the same function as the Kinect and could be used with SynergyNet.
-However, the device has a similar range to the Kinect and would therefore require several to be used together to increase their observed area.
-Because the devices use the same structured light technique as the Kinect the same issue of interference would still be present.
+However, the device uses the same structured light technique as the Kinect meaning the same issue of interference would likely still be present.
 Oblong's Mezzanine~\cite{kramer2011} uses custom built depth cameras to observe user's movement in a meeting room environment.
 The system's range is greater than that of a single Kinect but its cost far exceeds that of several of Microsoft's devices.
 
@@ -864,84 +860,47 @@ The system's range is greater than that of a single Kinect but its cost far exce
 \label{subsec:resolvingIssuesObserved2}
 
 To improve the intuitiveness of the SynergyNet upper-body gesture system it is possible that a number of the gestures may need to be changed.
-The previous study indicated that there was a subset of gestures which caused more problems than the rest.
-Waving to get the Kinect's attention and holding one hand up to send content to the board were both noted to be problematic.
-As noted in the previous study, both these gestures do not conform to a pattern common to the others where the gestures relate to related real-world actions.
-For example, the gesture of pulling to retrieve content from a display to the classroom tabletops relates to the real-world of pulling items towards a location.
-Where a gesture acts as a metaphor for a real-world action its intuitiveness is enhanced~\cite{Wang2008}.
-Because the real-world action and the context of its use are already known to users, a similar gesture requires minimal additional training.
-Both waving and holding one hand up are the only gestures in the set which bear no relation to related real-world actions.
+The pilot study highlighted the issue with gestures that do not relate to real-world actions. 
+The waving and holding of one hand up are the only gestures in the set which bear no relation to related real-world actions.
 Changing these gestures to ones resembling related real-world actions may improve their intuitiveness.
 
-It is possible that many of the errors committed in the previous study may have been avoided if the teacher participating had better training with the system.
-In the previous study the teacher had a single hour to learn how to use SynergyNet, including the static, mobile and Kinect controls.
+It is possible that many of the errors committed in the pilot study may have been avoided if the teacher participating had better training with the system.
+In the pilot study the teacher had a single hour to learn how to use SynergyNet.
 It is possible that this may not have been enough time for the teacher to gain sufficient confidence with using the system.
-The training session took place immediately before the previous study.
-The teacher may not have had enough time to memorise how to orchestrate using the three control technologies, specifically the Kinect.
-Giving the teacher time after the training session to reflect on and memorise what they've learnt may allow their use of the system in the future to be less error-prone.
+Giving the teacher more time for training may make their use of the system less error-prone.
 
 \subsection{Resolving Issue 3: Improving the Control Sequence}
 \label{subsec:resolvingIssuesObserved3}
 
-In the previous study, the teacher participating often committed errors issuing commands with the Kinect due to them following the command sequence incorrectly.
-These errors were often caused by the teacher stopping to think about the next gesture to perform in the command sequence.
-The command sequence would often interpret these pauses as poses which would then trigger an incorrect response from the system.
-Reducing the time teachers need to figure out the next gesture they wish to perform in a control sequence would minimise the potential false positives generated by the system.
-A more cohesive gesture set may reduce mental load and decrease the time taken for teachers to work out the next gesture they need to perform in the control sequence.
-If there is a clear pattern and co-ordination between the gestures teachers may be aided in executing the controlling sequence.
+In the pilot study, the teacher participating often committed errors due to following the command sequence incorrectly.
+Many of these errors were due to the teacher stopping to think about the next gesture to perform in the command sequence.
+One solution to this issue could be to reduce the time teachers spend recalling the next gesture they need to perform.
+A more cohesive gesture set may reduce mental load and decrease the time taken for this.
 
 The issues caused by the teacher pausing to think could also be resolved by making the control sequence more tolerant.
-By allowing the control sequence to anticipate the user pausing, if the teacher stops to think the system will not interpret this as a gesture.
+By allowing the control sequence to anticipate the user pausing the pauses will not necessarily be interpreted as a gesture.
 In addition to this, enabling the system to anticipate and ignore movement between gestures during the control sequence will eliminate errors relating to the wrongful identification of unintended gestures.
 
-Due to the issues with accuracy and interaction space, the Kinect often lost track of the teacher and their limbs in the previous study.
+Due to the issues with accuracy and interaction space, the Kinect often lost track of the teacher and their limbs in the pilot study.
 This required the teacher to repeat the calibration pose several times and subsequently complicated the control sequence.
-By repeating the calibration section of the control sequence, which should ideally only need to be performed once, the mental load required by the execution of commands through the Kinect was increased.
 Improvements to the sensing system's accuracy and interaction space may also resolve issues related to mental load by reducing the number of times the calibration process needs to be repeated.
-
-Automation of the calibration process may simplify the control sequence and as a consequence reduce the mental load it requires for successful use.
-Several Kinect-supporting frameworks, such as OpenNI~\cite{Organisation2011}, have developed support for pose-less calibration.
-This is where the Kinect is able to identify the joints and limbs of a person without the need for them to maintain a specific pose.
-This would allow for the teacher to be calibrated without the need for them to perform a pose which would reduce their required mental load.
+Automation of the calibration process may also simplify the control sequence.
+Several Kinect-supporting frameworks, such as OpenNI~\cite{Organisation2011}, have developed support for pose-less calibration where the Kinect is able to identify the joints and limbs of a person without the need for them to maintain a specific calibration pose.
 
 User recognition may resolve issues related to mental load by reducing the amount of user intervention required for calibration.
 The Kinect is capable of collecting biometric information on users it monitors from their appearance~\cite{Leyvand2011}.
 Facial recognition, clothing colour tracking and height estimation can be used to distinguish monitored users.
 This information can be stored and used when persons are viewed in the future to establish their identity.
-
-User recognition coupled with automatic calibration would allow the system to calibrate the teacher with no user intervention after the teacher's identity is established.
+User recognition, coupled with automatic calibration, would allow the system to calibrate the teacher with no user intervention after the teacher's identity is established.
 This would allow the teacher to leave and re-enter the system's monitored environment on numerous occasions without needing to repeat any calibration steps.
-This would reduce the amount of user intervention required by the control sequence which would reduce the mental load required for its use.
+This would reduce the amount of user intervention required by the control sequence.
 
 \subsection{Resolving Issue 4: Adding Functionality}
 \label{subsec:resolvingIssuesObserved4}
 
-In the original control sequence design built on the guessability study results, teachers were intended to select the tables they wished to affect through pointing at them.
-However, the issue of constant obstruction of the pointing arm resulted in this not being implemented.
-Due to this, teachers could only execute commands affecting all interfaces.
-This reduced the functionality which the system offered when used with the Kinect controls.
-A method of allowing teachers to select interfaces when using Kinect controls would reinstate this functionality.
-
-A possible method of allowing interface selection would be to use the teacher's proximity to an interface.
-When a teacher performs a gesture, the resulting command could be issued to the interface they are closest to.
-This approach trades off the ability to issue commands to individual interfaces with the ability to issue commands to multiple interfaces at once.
-Repeating a gesture for issuing a command to multiple interfaces may have a negative effect on the system's intuitiveness and speed of use.
-In addition to this, the teacher is then required to travel to and from the interfaces they wish to issue commands to.
-This also diminishes the system's intuitiveness and speed of use.
-
-An alternative to this method is to use the teacher's touch on the interfaces.
-Using knowledge of where a teacher is in the room from the Kinect it is possible for an interface to return a probability of a detected touch belonging to the teacher.
-The proximity of a teacher to a touch event determines the probability of a teacher being responsible for the event, i.e. the closer a teacher is, the greater the likelihood of the touch belonging to the teacher.
-Touches with a probability over a certain threshold can be designated as teacher touches.
-Teacher touches can be used during the control sequence to select which interfaces a gesture should affect.
-This approach does facilitate interface selection but requires the teacher to travel to the interfaces they wish a gesture to affect.
-Travelling between interfaces reduces the system's intuitiveness and speed of use.
-
+In the pilot study a method of selecting interfaces for a command to affect was not implemented.
 The use of multiple sensing devices, as proposed for the resolution of issue 1 in Section~\ref{subsec:resolvingIssuesObserved1}, could allow the originally proposed pointing gesture to be implemented into the control sequence.
-With multiple Kinects when the teacher's body obscures the view of a Kinect when pointing, another of the devices should be able to see the obscured area and identify which interface is being pointed at.
-When a teacher points at an interface it becomes selected.
-Using this approach the teacher can select multiple interfaces at once without the need to travel about the classroom.
-This approach allows for interface selection without diminishing the system's intuitiveness or speed of use.
+With multiple Kinects, when the teacher's body obscures the view of a Kinect when pointing, another of the devices should be able to see the obscured area and identify which interface is being pointed at.
 
 \section{Study}
 \label{sec:study}
@@ -952,6 +911,8 @@ It was decided that the implementation created for the pilot study discussed in 
 
 \subsection{Software Implementation}
 \label{subsec:studyImplementation}
+
+% // TODO Trim down and make suitable.
 
 With clear definitions of the issues in Section~\ref{subsec:pilotdiscussion} and their potential solutions in Section~\ref{sec:resolvingIssuesObserved}, improvements can be implemented in SynergyNet.
 Four key improvements were selected for implementation.
@@ -1187,8 +1148,8 @@ Figure~\ref{fig:kinectSetup} shows the positioning of the Kinect devices during 
 The devices were place facing perpendicular to each other.
 This setup allowed for the entirety of the SynergyNet lab to be observed between the devices.
 
-The primary objective of this study was to assess whether the implemented improvements resolved the issues observed in the previous study.
-The study's hypothesis was that the error rate of the Kinects' use would be significantly smaller than the error rate of the Kinect controls in the previous study.
+The primary objective of this study was to assess whether the implemented improvements resolved the issues observed in the pilot study.
+The study's hypothesis was that the error rate of the Kinects' use would be significantly smaller than the error rate of the Kinect controls in the pilot study.
 
 \subsubsection{Data Analysis}
 \label{subsec:studyAnalysis}
@@ -1228,7 +1189,7 @@ The frequency of each device's use and their error rates can also be identified 
 % --------------------------------
 
 
-The criteria used in the previous study, generated from Wachs et al.~\cite{Wachs2011} requirements for hand gestures, was employed to assess the improved upper-body gesture control system.
+The criteria used in the pilot study, generated from Wachs et al.~\cite{Wachs2011} requirements for hand gestures, was employed to assess the improved upper-body gesture control system.
 The success of improvements could be observed through whether previously unmet criteria were fulfilled.
 
 Timing information was collected from the session recordings.
@@ -1282,7 +1243,7 @@ When this error was made obvious to the teacher by the wrong content appearing o
 The teacher confirmed this in the post-session interview.
 It is apparent that the teacher had left other instances of SynergyNet selected when issuing an earlier command.
 The controls accessed through the tablet don't reset the set of selected interfaces when a command is issued unlike the other two control technologies.
-The teacher assumed that the tablet controls would behave like the board controls used in the previous study and did not modify their usage accordingly.
+The teacher assumed that the tablet controls would behave like the board controls used in the pilot study and did not modify their usage accordingly.
 This error can be attributed to the tablet's differing behaviour from the board and Kinect controls in regards to interface selection.
 
 \item One of the erroneous commands observed during task 2 occurred when the teacher wished to issue a command to freeze all instances of SynergyNet on the student interfaces.
@@ -1425,17 +1386,17 @@ Kinect 					&26					&13			&2.63 seconds				\\
 \end{table}
 
 The results show that the Kinect was the much faster control technology for issuing commands but also had the highest error rate.
-Though the error rate is smaller than that in present in the previous study, its magnitude indicates that not all the issues intended to be countered by the implemented improvement have been resolved.
+Though the error rate is smaller than that in present in the pilot study, its magnitude indicates that not all the issues intended to be countered by the implemented improvement have been resolved.
 
 \section{Discussion}
 \label{sec:discussion}
 
 % // TODO Trim down.
 
-In the previous study the Kinect controls had an overall error rate of 86.96\meaning that twenty in twenty three commands were erroneous.
+In the pilot study the Kinect controls had an overall error rate of 86.96\meaning that twenty in twenty three commands were erroneous.
 As Figure~\ref{fig:controlDevicesErrors} shows, the error rate for the Kinect controls in this study was 50\%.
 This equates to one in two commands being erroneous.
-This is a great improvement over the previous study's error rate and indicates that the hypothesis of a significantly reduced error rate given in Section~\ref{sec:results} was correct.
+This is a great improvement over the pilot study's error rate and indicates that the hypothesis of a significantly reduced error rate given in Section~\ref{sec:results} was correct.
 
 \begin{figure}[h]
   \centering
@@ -1456,7 +1417,7 @@ The 50\% error rate indicates that there are still issues with the system and th
 
 The implementation of multiple Kinect increased the monitored range of the system.
 Throughout the entire study, the teacher never needed to re-establish their teacher status after the initial setup.
-This saved a great amount of time in comparison to the previous study where the teacher needed to repeatedly re-establish their teacher identity and perform the calibration pose.
+This saved a great amount of time in comparison to the pilot study where the teacher needed to repeatedly re-establish their teacher identity and perform the calibration pose.
 In addition to this, the reduction in teacher input required by the Kinect control indicates a simpler control sequence which aids intuitiveness and mental load.
 
 Despite these improvements, the majority of errors observed in the study originated from the Kinect devices themselves.
@@ -1478,7 +1439,7 @@ The more cohesive gesture set seems to have been successful as no errors relatin
 \label{subsubsec:discussionSuccessPauseTolerance}
 
 Enabling pause tolerance in the control sequence appears to have improved the system.
-The frequency of errors caused through the system wrongly identifying the movement of teachers between stages of the control sequence as command gestures appears was reduced in comparison to the previous study.
+The frequency of errors caused through the system wrongly identifying the movement of teachers between stages of the control sequence as command gestures appears was reduced in comparison to the pilot study.
 Only one erroneous command resulted from a teacher's movements between stages of the control sequence.
 This was when the teacher paused while trying to recall the command gesture after getting the Kinect devices' attention.
 This pause was much longer than the system anticipated and its attention timed out.
@@ -1522,7 +1483,7 @@ The results demonstrate that the interface selection implementation was successf
 \subsection{Resolution of the Issues}
 \label{subsec:discussionResolution}
 
-The distribution of erroneous commands across the improvements indicates that implemented improvements have been successful in resolving the majority of issues noted in the previous study.
+The distribution of erroneous commands across the improvements indicates that implemented improvements have been successful in resolving the majority of issues noted in the pilot study.
 The Kinect controls' 50\% error rate observed during this study are therefore caused by the minority of issues that remain unresolved.
 
 \subsubsection{Losing Track of Users, Limbs and Joints}
@@ -1563,7 +1524,7 @@ The implementation of multiple Kinects is not capable of resolving this issue.
 \subsubsection{Gesture Confusion}
 \label{subsubsec:discussionResolutionGestureConfusion}
 
-The results imply that the issue of gesture confusion observed during the previous study have been resolved.
+The results imply that the issue of gesture confusion observed during the pilot study have been resolved.
 No instances of erroneous commands due to the teacher performing the wrong gesture were present in the new study.
 This indicates that the implemented improvement of a more cohesive gesture set has been successful.
 
@@ -1577,7 +1538,7 @@ The impact of both these erroneous commands was small since both errors were imm
 
 Only two of the thirteen erroneous commands were caused by the issues of stringent control sequence requirements
 This means that 15\% of the errors committed with the Kinect resulted from this issue.
-This is a much lower share of the erroneous commands than in the previous study where the stringent control sequence requirements accounted for 55\% of the errors committed with the Kinect.
+This is a much lower share of the erroneous commands than in the pilot study where the stringent control sequence requirements accounted for 55\% of the errors committed with the Kinect.
 This implies that the use of multiple Kinects, pause tolerance and automatic calibration have succeeded in improving the system's resolving of this issue.
 However, the results also show that further improvements could be made to help resolve this issue more effectively, such as allowing for longer pauses.
 
@@ -1623,14 +1584,14 @@ Therefore, the criterion of accuracy remains unfulfilled by the system.
 
 Though the implementation of multiple Kinects failed to fulfil the criterion for accuracy, their implementation has been successful in giving the system sufficient interaction space.
 None of the erroneous commands which occurred in the study were noted to have been caused by the teacher's limbs or joints leaving the devices' monitored areas.
-This indicates that the system's interaction space was improved vastly in comparison to the previous study where the movement of teacher limbs outside the observed area caused many gestures to fail.
+This indicates that the system's interaction space was improved vastly in comparison to the pilot study where the movement of teacher limbs outside the observed area caused many gestures to fail.
 
 \subsubsection{Intuitiveness}
 \label{subsubsec:discussionResolutionIntuitiveness}
 
 The teacher was noted in the training session to quickly understand the Kinect control system's use.
 During the study the teacher was able to correctly recall the correct gestures and steps of the control sequence quickly and with little forethought for the majority of commands issued.
-This indicates that the system's intuitiveness was improved in comparison to the previous study where the teacher's execution of commands was slower and more error-prone.
+This indicates that the system's intuitiveness was improved in comparison to the pilot study where the teacher's execution of commands was slower and more error-prone.
 
 No major errors relating to intuitiveness appeared during the study.
 The two erroneous commands caused by the issues of the stringent control sequence requirements could be said to be related to intuitiveness.
@@ -1641,12 +1602,12 @@ With no majors errors emanating from any of these issues the criterion of intuit
 \subsubsection{Mental Load}
 \label{subsubsec:discussionResolutionMentalLoad}
 
-The required amount of mental load appeared to be alleviated with the improvements in comparison to the previous study.
+The required amount of mental load appeared to be alleviated with the improvements in comparison to the pilot study.
 
-In the previous study six erroneous commands were caused by the teacher pausing during the command sequence to think.
+In the pilot study six erroneous commands were caused by the teacher pausing during the command sequence to think.
 In the new study only one error was identified to have occurred due to the teacher pausing.
 However, the reduction of these types of errors may be due to the system being made more tolerant of pauses.
-Teachers issued commands with the Kinect 60\% faster than in the previous study.
+Teachers issued commands with the Kinect 60\% faster than in the pilot study.
 This indicates thinking time was reduced implying a reduction of mental load.
 
 The simplification of the control sequence reduced the amount of input required from the teacher.
@@ -1655,7 +1616,7 @@ This was in part due to less frequent repeating of gestures to correct an errone
 In addition to this, there was no need to perform calibration or repeatedly establish teacher status thanks to the improvements.
 This reduction in required user input simplifies the user of the Kinect controls and aids in alleviating the mental load required by the system.
 
-The system failing to meet the criterion for mental load in the previous study was caused by the issues of gesture confusion, stringent control sequence requirement and reduced functionality.
+The system failing to meet the criterion for mental load in the pilot study was caused by the issues of gesture confusion, stringent control sequence requirement and reduced functionality.
 The criterion of mental load could now be said to be fulfilled by the system with no major errors emanating from any of these issues.
 
 \section{Conclusions}
@@ -1751,7 +1712,7 @@ This does not mean that the improvements intended to resolve the issues relating
 The accuracy of the system did improve but not enough for the errors it caused to be deemed minor.
 In addition to this the use of multiple Kinects intended primarily to improve accuracy aided the resolution of other errors such as the lack of interface selection and simplifying of the control sequence.
 
-The error rate of 50\% was observed to be an improvement on that found in the previous study, 86.96\%.
+The error rate of 50\% was observed to be an improvement on that found in the pilot study, 86.96\%.
 However, this rate of error is still too high to be considered acceptable.
 
 \begin{figure}[h]
@@ -1798,7 +1759,7 @@ The use of more Kinects could reduce the inaccurate area noted to occupy the edg
 
 The reduction in error rate appears to be the result of the implemented improvements.
 However, a threat to the validity of this claim is the day long training session the teacher required.
-The teacher in the previous study only had an hour long session.
+The teacher in the pilot study only had an hour long session.
 The longer training session may have prevented errors which would have still occurred with the improvements.
 Future research should entail using teachers with various amounts of training to gauge its influence on the error rate.
 Ideally the system should be proved to need a minimal amount of training or else its use could be considered unintuitive.

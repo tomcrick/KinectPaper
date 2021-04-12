@@ -912,30 +912,13 @@ It was decided that the implementation created for the pilot study discussed in 
 \subsection{Software Implementation}
 \label{subsec:studyImplementation}
 
-% // TODO Trim down and make suitable.
-
 With clear definitions of the issues in Section~\ref{subsec:pilotdiscussion} and their potential solutions in Section~\ref{sec:resolvingIssuesObserved}, improvements can be implemented in SynergyNet.
-Four key improvements were selected for implementation.
-These implemented improvements were; support for multiple Kinect devices, creation of a more cohesive gesture set, changes to the control sequence to make it less severe on teachers, automatic calibration and support for interface selection through a pointing gesture.
-
-\begin{figure}[h]
-  \centering
-  \includegraphics[width=0.5\textwidth]{figures/issue_flow_diagram.png}
-  \caption{The connections between failed criteria, observed issues and implemented improvements.}
-  \label{fig:issueFlow}
-\end{figure}
-
-Figure~\ref{fig:issueFlow} outlines what issues cause the failure of various criteria and the implemented solutions intended to resolve them.
+Five improvements were selected for implementation for the study.
 
 \subsubsection{Multiple Kinects} 
 \label{subsubsec:studyImplementationMultipleKinects}
 
-\begin{figure*}[t]
-  \centering
-  \includegraphics[width=1\textwidth]{figures/multiplexing_flow_diagram.png}
-  \caption{The comparison between stitching depth images and multiplexing locational information from multiple Kinect devices.}
-  \label{fig:multiplexing}
-\end{figure*}
+% // TODO Trim down and make suitable.
 
 It was decided that the SynergyNet system should be modified to allow for the use of multiple Kinects.
 This was the most cost-effective way to improve the system's accuracy.
@@ -981,6 +964,13 @@ The multiplexer can then distribute the locational information to the relevant n
 The multiplexer node can also share information on which points of locational information from the Kinect devices are the same.
 This allows the Kinect nodes to correctly establish identities.
 Despite the limitation of only two Kinects devices due to interference, the SynergyNet framework is setup to allow any number of Kinect nodes.
+
+\begin{figure*}[t]
+  \centering
+  \includegraphics[width=1\textwidth]{figures/multiplexing_flow_diagram.png}
+  \caption{The comparison between stitching depth images and multiplexing locational information from multiple Kinect devices.}
+  \label{fig:multiplexing}
+\end{figure*}
 
 This multiplexing approach was chosen over alternatives, such as stitching the visual and depth views from the devices~\cite{Dubois2011}, due to its minimal processing costs.
 The stitching and multiplexing approaches are both similar since they entail identifying information common to multiple devices and using that overlapping data to merge their outputs.

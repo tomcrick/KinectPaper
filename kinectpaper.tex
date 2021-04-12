@@ -824,21 +824,18 @@ Due to this,  the technique causes a reduction in the frame-rate of the depth im
 The accuracy of the devices afforded by removing interference is traded-off for a reduction in responsiveness.
 Therefore, the adoption of this technique, while resolving the issue of accuracy may result in the system being unable to meet the criteria for responsiveness.
 
-% // TODO Trim down and make suitable.
-
-Another potential technique of reducing the interference caused by overlapping light patterns is the movement of the sensing devices~\cite{Maimone2012}.
+Another potential technique for reducing the interference caused by overlapping light patterns is the movement of the sensing devices~\cite{Maimone2012}.
 By moving a Kinect, the device's projected pattern is moved along with its camera.
 If no other device is currently performing the same motion the system should be capable of identifying the reflected light from a unique Kinect.
 This has been shown to reduce interference when multiple Kinects are used together~\cite{Maimone2012} but does have the requisite that the devices are constantly in motion.
 Large movements which change the Kinects' locations may complicate any calculations which utilise the positional information provided by the devices.
-Positional information derived by the Kinect is relative to its cameras.
-Therefore, when information between multiple Kinects must be used together, knowledge of the Kinect's positions relative to each other must be known.
-This allows the positional information to be made relative to the physical environment the Kinects occupy.
 Constant movement of the devices would require additional calculations to transform the relative positional information output from a Kinect to their real-world locations.
 This additional calculation could reduce the system's responsiveness.
 Vibration of the Kinect could be used to minimise the movement required to differentiate the devices' projected patterns~\cite{Kainz2012}.
 However, to add any motion to the Kinect devices, extra cost must be spent to implement the motors needed to automate this movement.
 The adoption of this technique, while resolving the issues relating to accuracy and interaction space, may result in the system being unable to meet the criteria for cost.
+
+% // TODO Trim down and make suitable.
 
 To differentiate the infra-red light produced and received by the Kinect devices, filters could be employed.
 Multiple depth-cameras using the same structured light setup as the Kinect have been made capable of working together through filtering the infra-red used~\cite{Kim2008}.

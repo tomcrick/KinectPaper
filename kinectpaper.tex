@@ -848,12 +848,14 @@ The algorithm uses the existing depth data from all the Kinect devices to calcul
 The initial results shown from Wang et al.'s~\cite{Wang2012} simulations are promising but there may be issues with using this technique in a real-world scenario.
 The time and processing power required by the algorithm could reduce the system's responsiveness.
 
-Alternative depth sensing technologies could be used to track the movements of the teacher in a classroom.
+It should be possible to use the gesture control sequence devised in the guessability study with an alternative depth sensing technology~\cite{Kean2011}.
 These alternatives may resolve the issues relating to accuracy and interaction space but could incur other issues.
 The Primesense~\cite{Wilson2010} depth camera performs the same function as the Kinect and could be used with SynergyNet.
 However, the device uses the same structured light technique as the Kinect meaning the same issue of interference would likely still be present.
 Oblong's Mezzanine~\cite{kramer2011} uses custom built depth cameras to observe user's movement in a meeting room environment.
 The system's range is greater than that of a single Kinect but its cost far exceeds that of several of Microsoft's devices.
+Wearable devices could be used for tracking gestures more accurately than the Kinect~\cite{Rekimotoa,Zhu2011}.
+However, improved accuracy these device may not outweigh the un-encumbering benefits of a technology like the Kinect.
 
 \subsection{Resolving Issue 2: Improving Gestures}
 \label{subsec:resolvingIssuesObserved2}
@@ -1321,84 +1323,6 @@ These observations on the failings of the Kinect to track the teacher's arms tha
 The implementation of multiple Kinects is not capable of resolving this issue.
 
 % ------------------------
-
-
-% ---- From original conclusion -----
-There are several possibilities which could be considered for overcoming the limitations of the Kinect device.
-The most obvious of these is to use an alternative sensing technology capable of tracking a user's upper-body.
-The set of gestures used in the current system could be reused with a different depth sensing device~\cite{Kean2011}.
-
-When considering alternative technologies for use in detecting upper-body gestures, the reasons for the Kinect's original adoption should be kept in mind; cost, adaptability, accuracy, un-encumbering nature and responsiveness.
-Any alternative device providing gesture recognition for teachers should conform to these criteria.
-Despite one of the benefits of the Kinect being its un-encumbering nature, an alternative technology which requires a wearable device could be feasible~\cite{Rekimotoa,Zhu2011}.
-If the device is un-intrusive enough to allow the teacher to freely move about the classroom and interact with students while issuing commands it could be used with SynergyNet and the criterion relating to un-encumbering nature could be disregarded. 
-% --------
-
-% ----- Also from original conclusion ------
-\begin{table}[h]
-   \begin{tabular}{!{\vrule width 1.5pt}c|c!{\vrule width 1.5pt}}
-   \noalign{\hrule height 1.5pt}
-   \multicolumn{1}{!{\vrule width 1.5pt}c!{\vrule width 1.5pt}}{\textbf{Criterion}}	
-   &\textbf{Determined by} 	\\
-   \noalign{\hrule height 1.5pt}
-   Cost 					& 					\\
-   \cline{1-1}
-   Adaptability 				&Sensing 			\\
-   \cline{1-1}
-   Accuracy 				&Device 				\\
-   \cline{1-1}
-   Un-encumbering Nature	&(Kinect) 			\\
-   \cline{1-1}
-   Responsiveness 			& 					\\
-   \cline{1-2}
-   Lexicon Size 				&Control Sequence 	\\
-   \cline{1-2}
-   Intuitiveness 			& 					\\
-   \cline{1-1}
-   Comfort 					& 					\\
-   \cline{1-1}
-   Low Mental Load 			&Gesture Set 		\\
-   \cline{1-1}
-   Interaction Space 		& 					\\
-   \cline{1-1}
-   Ubiquity 				& 					\\
-   \noalign{\hrule height 1.5pt}
-   \end{tabular}
-   \caption{The adhesion of the gesture set's implementation to the upper-body gesture criteria.}
-   \label{table:criteria}
-   \end{table}
-   
-   Table~\ref{table:criteria} summarises criteria outlined for evaluating an upper-body gesture system outlined in Section~\ref{subsec:gatheringGestures} which was derived from the requirements defined by Waches et al.~\citeyearpar{Wachs2011}.
-   The table shows which elements of upper-body gesture system the criteria apply to.
-   
-   As discussed in Section~\ref{subsec:gatheringGestures}, the criteria relating to the capabilities of a sensing technology for upper-body gestures are; cost, responsiveness, adaptability, accuracy and un-encumbering nature.
-   The implemented system used in the study's adherence to these criteria was determined by the technical specifications of the Kinect device.
-   Though low-cost, responsive, adaptable and un-encumbering, concerns about the device's accuracy during the user study were raised.
-   A better trade-off between accuracy and the other device-determined criteria may be found through an alternative.
-   The suggested improvements of using a different light-coding device or multiple Kinects could aid the system in meeting the criterion of acceptable accuracy.
-   
-   The criterion relating to the lexicon size can be said to be met by the gesture-set produced in this paper.
-   This is because the gesture set is the same size as the minimum typical short-term memory limit as discussed in Section~\ref{subsec:gatheringGestures}.
-   
-   The user-study provides evidence that the implemented gesture set, despite conforming to some of the effective gestures criteria, needs improving:
-   
-   \begin{itemize}
-   \item \textit{{Intuitiveness:}}  The teacher was able to remember and naturally perform the majority of gestures in the correct sequence for issuing their desired commands.
-   However, the teacher did occasionally fail to follow the gesture sequence.
-   This could be improved through more intensive training before use or creation of a more cohesive gesture set.
-   \item \textit{{Comfort:}}  No issues concerning discomfort caused through the performance of upper-body gestures were identified during the study.
-   It is possible that prolonged use of the device could cause fatigue.
-   This should be investigated in future studies.
-   \item \textit{{Low mental load:}}  The teacher was often able to quickly execute the issuing of commands through upper-body gestures.
-   However, the teacher on several occasions paused during the control sequence, causing some of the issues discussed in Section~\ref{subsec:pilotStudyResults}.
-   In the post-study interview the teacher explained the pauses were caused by their concentration on remembering which gesture should be performed next.
-   This indicates that improvements could be made to the gesture set and the control sequence to reduce mental load.
-   \item \textit{{Interaction Space:}} The failure of the Kinect to recognise many of the gestures performed occurred due to the device losing track of joints which left its accurately monitored area.
-   This implies that the gestures and classroom environment require more interaction space than the device is capable of.
-   The use of a different light-coding device or multiple Kinects could increase the device's range to accommodate for the system's required interaction space.
-   \item \textit{{Ubiquity:}} In the post-study interview the teacher discussed how all the gestures used were similar enough to typical classroom actions performed by teachers that they did not feel out of place.\\ 
-   \end{itemize}
-   % ---------------
 
 The study was designed to identify whether the implemented improvements detailed in this paper resolved the issues noted to cause the previous implementation of the system to fail to meet certain criteria.
 The results of the study reveal that all but one of the criteria were filled by the improvements.

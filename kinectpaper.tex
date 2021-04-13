@@ -9,7 +9,6 @@
 \usepackage[printonlyused]{acronym}
 \usepackage{paralist}
 \usepackage{enumitem}
-\usepackage{subcaption} 
 \usepackage[ruled]{algorithm2e}
 %\usepackage{algorithmic}
 
@@ -1005,34 +1004,12 @@ The updated control sequence with new gestures and interface selection is summar
 \subsection{Design}
 \label{subsec:studyDesign}
 
-% // TODO Trim down
-
-% // TODO Split into two separate figures and position accordingly (will we need the subfigure package anymore?)
-\begin{figure}[h]
-	\centering
-	\begin{subfigure}[h]{0.23\textwidth}
-		\centering
-		\includegraphics[width=\textwidth]{figures/control_board.png}
-		\caption{The multi-touch board showing teacher controls.}
-		\label{fig:controlBoard}
-	\end{subfigure}
-	\begin{subfigure}[h]{0.23\textwidth}
-		\centering
-		\includegraphics[width=\textwidth]{figures/control_tablet.png}
-		\caption{The web interface via an iPad tablet.}
-		\label{fig:controlTablet}
-	\end{subfigure}
-   	\caption{The interfaces used to control SynergyNet.}
-   	\label{fig:controlDevices}
-\end{figure} 
-
-A study was organised to assess the impact of the implemented improvements on the system's use.
-The study followed a similar structure to that carried out in previous work.
+A study was organised to assess whether gestures are a viable method for controlling technology in the classroom.
 A primary-school level teacher took part in the study with sixteen of their students.
-The teacher was asked to orchestrate four \textit{mysteries} tasks~\cite{AlAgha2010} where students must use clues displayed on the interfaces to answer a question.
-For the first three tasks the teacher would use a single control technology; the interactive whiteboard, the tablet or the Kinect, for issuing commands to the student interfaces.
+The teacher was asked to orchestrate four \textit{mysteries} tasks~\cite{AlAgha2010} similar to those used in the pilot study.
+For the first three tasks the teacher would use a single control technology; a large interactive whiteboard, a tablet or the Kinect, for issuing commands to the student interfaces.
 For the final task teachers had all three technologies made available for their use.
-The session was recorded using fourteen separate cameras for later data analysis.
+The session was recorded for later data analysis.
 
 The participating teacher was invited into the lab for a day in the week preceding their session.
 On this day the teacher was introduced to the control technologies, given a chance to review the tasks to be performed and was allowed to carry out a dry-run of the session.
@@ -1046,17 +1023,14 @@ Following the session the teacher was interviewed by the study organisers.
   \label{fig:kinectSetup}
 \end{figure}
 
-Figure~\ref{fig:kinectSetup} shows the positioning of the Kinect devices during the study.
-The devices were place facing perpendicular to each other.
+Figure~\ref{fig:kinectSetup} shows the positioning of the Kinect devices perpendicular to each other during the study.
 This setup allowed for the entirety of the SynergyNet lab to be observed between the devices.
 
-The primary objective of this study was to assess whether the implemented improvements resolved the issues observed in the pilot study.
-The study's hypothesis was that the error rate of the Kinects' use would be significantly smaller than the error rate of the Kinect controls in the pilot study.
+The study's primary hypothesis was that the use of the Kinects would allow for quicker and more frequent issuing of commands than the other two control technologies.
+The secondary hypothesis was that the error rate of the Kinects would be similar to the error rates of the other two control technologies used in the study.
 
 \subsubsection{Data Analysis}
 \label{subsec:studyAnalysis}
-
-% ------------ From prior paper ---------
 
 The ordering of the tasks could have influenced the teacher's use of the system.
 Gaining experience with the system commands during the earlier tasks may afford the teacher more confidence later in the study, theoretically reducing their error rate and improving their interaction times.
@@ -1072,34 +1046,13 @@ The annotations note:
 \begin{itemize}
 \item The command the teacher wished to issue.
 \item The control device used.
-\item How long it took the teacher to issue the command.
-\begin{itemize}
-\item This was measured as the time from the teacher stating their intention for their next action to the time when the command was submitted.
-\end{itemize}
-\item If the command was issued successfully.
-\begin{itemize}
-\item If not the annotation then notes:
-\begin{itemize}
-\item Whether the failure to issue the command was due to a technical fault or teacher-error.
-\item Whether the command was a false positive (i.e. an unintentionally executed gesture acted upon by the system) or a false negative (i.e. a correctly executed gesture ignored by the system) where applicable.\\
-\end{itemize}
-\end{itemize}
+\item How long it took the teacher to issue the command (measured as the time from the teacher stating their intention for their next action to the time when the command was submitted).
+\item Whether the command was issued successfully.
+\item If unsuccessful whether the failure to issue the command was due to a technical fault or teacher-error.
+\item If unsuccessful whether the command was a false positive (i.e. an unintentionally executed gesture acted upon by the system) or a false negative (i.e. a correctly executed gesture ignored by the system) where applicable.
 \end{itemize}
 With these annotations the average time taken to issue commands with each of the control devices can be calculated.
 The frequency of each device's use and their error rates can also be identified through the video annotations.
-
-% --------------------------------
-
-
-The criteria used in the pilot study, generated from Wachs et al.~\cite{Wachs2011} requirements for hand gestures, was employed to assess the improved upper-body gesture control system.
-The success of improvements could be observed through whether previously unmet criteria were fulfilled.
-
-Timing information was collected from the session recordings.
-The time from the teacher first announcing their intention to issue a command to the command's broadcast from the controlling technology is classified as the execution time.
-The teacher's announcement of their intentions can also be used to identify when the result of the command differs from their intended effect, indicating an error has occurred.
-
-Times taken to perform similar actions with each classroom technology were compared.
-In addition to this, the number of errors committed with each technology and quality of communication between the teacher and students were also noted from the recordings.
 
 \section{Results}
 \label{sec:results}

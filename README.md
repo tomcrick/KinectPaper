@@ -1,2 +1,2 @@
 # KinectPaper
-Paper for ACM Transactions on Computer-Human Interaction (TOCHI)
+Paper for Interacting with Computers journal

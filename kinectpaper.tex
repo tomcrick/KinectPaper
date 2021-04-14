@@ -19,6 +19,8 @@
 \newcommand{\tickYes}{\checkmark}
 \newcommand{\crossNo}{$\times$}
 
+\renewcommand{\newblock}{}
+
 \copyrightyear{2021}
 
 \DOI{xxxxxx}
@@ -540,7 +542,7 @@ Several commands facilitated by these controls involve sharing materials between
 These commands have been observed in previous studies of SynergyNet to be essential for orchestrating tasks across the system.
 
 To support the implementation of the gesture control sequence a light-coding device was required.
-The Microsoft Kinect was chosen due to its low cost and availability.
+The Microsoft Kinect (1st generation) light-coding device was chosen due to its low cost and availability.
 
 \begin{figure}[h]
    \centering
@@ -549,7 +551,7 @@ The Microsoft Kinect was chosen due to its low cost and availability.
    \label{fig:kinectNode}
 \end{figure}
 
-To integrate the Kinect with SynergyNet, the SensorKinect driver~\cite{Avin2011}, OpenNI library and NITE framework~\cite{Organisation2011} were used together~\cite{Davison2012}.
+To integrate the Kinect with SynergyNet, the SensorKinect driver~\cite{Avin2011}, OpenNI library and NITE framework~\cite{OpenNi2021} were used together~\cite{Davison2012}.
 Instances of SynergyNet running on the same network act as nodes which communicate through Hazelcast~\cite{Hazelcast2009}.
 There are several different types of node used by SynergyNet defined by what device they as used on such as student-centric touch-screens or teacher control consoles.
 For the implementation of the Kinect a new type of node was created which would manage tracking users, identifing gestures and displaying its current output, as shown in Figure~\ref{fig:kinectNode}.
@@ -855,7 +857,7 @@ Due to the issues with accuracy and interaction space, the Kinect often lost tra
 This required the teacher to repeat the calibration pose several times and subsequently complicated the control sequence.
 Improvements to the sensing system's accuracy and interaction space may also resolve issues related to mental load by reducing the number of times the calibration process needs to be repeated.
 Automation of the calibration process may also simplify the control sequence.
-Several Kinect-supporting frameworks, such as OpenNI~\cite{Organisation2011}, have developed support for pose-less calibration where the Kinect is able to identify the joints and limbs of a person without the need for them to maintain a specific calibration pose.
+Several Kinect-supporting frameworks, such as OpenNI~\cite{OpenNi2021}, have developed support for pose-less calibration where the Kinect is able to identify the joints and limbs of a person without the need for them to maintain a specific calibration pose.
 
 User recognition may resolve issues related to mental load by reducing the amount of user intervention required for calibration.
 The Kinect is capable of collecting biometric information on users it monitors from their appearance~\cite{Leyvand2011}.

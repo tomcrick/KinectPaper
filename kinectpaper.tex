@@ -61,12 +61,12 @@ $^{3}$The University of Newcastle, University Drive, Newcastle NSW 2308, Austral
 \label{sec:intro}
 
 The uses of technology in the classroom are
-growing~\cite{Schrum2008,Lloyd2011,Robertson2012},
-further stimulated by significant reforms of digital skills and computer science education in various nations, especially across the UK~\cite{brown-et-al:toce2014}.
-With this growth, the need for teachers to be able to control the deployed technologies increases~\cite{Apple1990,Selwyn2010,Selwyn2011}.
-Without the ability to influence or control classroom technology, teachers may be unable to manage learning interaction or intervene when students start to lose focus on their current task~\cite{Chen2005,Karabenick2011}.
+growing~\citep{Schrum2008,Lloyd2011,Robertson2012},
+further stimulated by significant reforms of digital skills and computer science education in various nations, especially across the UK~\citep{brown-et-al:toce2014}.
+With this growth, the need for teachers to be able to control the deployed technologies increases~\citep{Apple1990,Selwyn2010,Selwyn2011}.
+Without the ability to influence or control classroom technology, teachers may be unable to manage learning interaction or intervene when students start to lose focus on their current task~\citep{Chen2005,Karabenick2011}.
 
-Many current systems that allow teachers to control technology in the classroom require the use of a teacher-centric interface~\cite{Dagdag2011,Kuhn2005,Vila2013,Zhou2010}.
+Many current systems that allow teachers to control technology in the classroom require the use of a teacher-centric interface~\citep{Dagdag2011,Kuhn2005,Vila2013,Zhou2010}.
 Whether static, where the interface remains stationary during its use, or mobile, where the interface can be carried to new locations during its use, these interfaces require the teacher to momentarily take their attention away from the students.
 This division of attention caused by the distraction of an interface could have a detrimental effect on the quality of a teacher's interaction with their students.
 The disruption in communication between the students and the teacher this causes can be undesirable in many circumstances.
@@ -75,21 +75,21 @@ One such possible method is to make use of physical gestures, where a user perfo
 
 The use of gestures, rather than a more standard interface, could allow teachers to issue commands in a more effective manner.
 Time is saved by not requiring the teacher to travel to their control interface.
-Even when there is no travel time, such as when mobile interfaces are used, gestures have the potential to be executed quicker than alternative input and control methods~\cite{Dulberg1999,Moyle2001}.
+Even when there is no travel time, such as when mobile interfaces are used, gestures have the potential to be executed quicker than alternative input and control methods~\citep{Dulberg1999,Moyle2001}.
 Quicker execution of the commands should afford the teacher more time to observe and aid students.
 In addition, physical gestures should be less intrusive on the interaction between students and the teacher. 
-Many interfaces, specifically touch-screen mobile devices such as tablets, do not facilitate eyes-free interaction~\cite{Brewster2003}.
+Many interfaces, specifically touch-screen mobile devices such as tablets, do not facilitate eyes-free interaction~\citep{Brewster2003}.
 This means that teachers using a static or mobile interface which utilises a visual output are required to dedicate a portion of their attention to its use.
 This division of attention can interrupt interaction between teachers and students.
 The use of physical gestures should allow teachers to continue interacting with students while issuing commands to a classroom technology's control system.
 
-Teachers in technology enhanced classrooms also acquire additional administration responsibilities~\cite{Kuhn2005} such as managing the consequence of faults with the devices used.
+Teachers in technology enhanced classrooms also acquire additional administration responsibilities~\citep{Kuhn2005} such as managing the consequence of faults with the devices used.
 A physical gesture interface may reduce the overheads of such additional responsibilities by allowing teachers to quickly execute administrative tasks from any location in the classroom.
 The potential benefits of physical gestures make its implementation into a classroom software framework desirable.
 
-This paper investigates the implementation of physical gestures for use by teachers by utilising SynergyNet~\cite{HatchA.HigginsSMercier2009}, a multi-touch software platform intended for use in the classroom.
+This paper investigates the implementation of physical gestures for use by teachers by utilising SynergyNet~\citep{HatchA.HigginsSMercier2009}, a multi-touch software platform intended for use in the classroom.
 The platform is built to support applications intended for use by students through multi-touch interfaces.
-SynergyNet contains a number of advanced networking features which support the sharing of materials~\cite{mcnaughton-et-al:jce2017} and the ability to issue commands to student devices through a network.
+SynergyNet contains a number of advanced networking features which support the sharing of materials~\citep{mcnaughton-et-al:jce2017} and the ability to issue commands to student devices through a network.
 
 This paper documents the steps taken to augment the SynergyNet platform to use upper-body gestures, a subset of open-air gestures, to allow teachers to control classroom interfaces.
 The paper also details the further steps taken to improve the experience of using the gestures in light of feedback.
@@ -110,19 +110,19 @@ Overall conclusions and potential future developments based on the findings from
 
 To allow a system to identify physical gestures a method of tracking the movements of users is required.
 Light-coding is a technique which can achieve this through detecting deformations in a projected pattern of light (usually infra-red) and using them to work out depth information.
-There are several devices which support this technique such as the Canesta~\cite{Yang2007}, 3DV~\cite{Wilson2007a}, the Primesense sensor~\cite{Wilson2010} and the first generation of Microsoft Kinect.
-These devices are not be confused with Time-of-flight cameras which use the time it takes for light shone by a device to be returned to build a depth-image ~\cite{Lange2001} such as the second generation of the Microsoft Kinect.
+There are several devices which support this technique such as the Canesta~\citep{Yang2007}, 3DV~\citep{Wilson2007a}, the Primesense sensor~\citep{Wilson2010} and the first generation of Microsoft Kinect.
+These devices are not be confused with Time-of-flight cameras which use the time it takes for light shone by a device to be returned to build a depth-image ~\citep{Lange2001} such as the second generation of the Microsoft Kinect.
 
 The firmware of devices which utilise light-coding offer several features relating to the tracking of a user.
 These devices can outline any persons in front of the device and differentiate between them using their distances from the camera.
 The device can then identify and give positional information on specific parts of a person's body, such as their limbs and joints if a calibration technique is executed.
-This is usually a pose assumed by a person which allows the device to view a specific human outline from which it can identify joints and limbs~\cite{Xia2011}.
+This is usually a pose assumed by a person which allows the device to view a specific human outline from which it can identify joints and limbs~\citep{Xia2011}.
 Using the difference between frames from the depth camera, the device's firmware can track the movement of people in its field of view.
 
 The information a light-coding device can give concerning the positions of a person and their limbs offers a wealth of possibilities regarding computer interaction.
 Specifically, the ability to obtain the positional information of people may be of use for co-located interfaces where interaction may require knowledge of the position of the user.
 The ability to track and differentiate between users comes in useful for interaction technologies which allow users to share interfaces.
-Dietz and Leigh~\cite{Dietz2001} note how the ability to track a user can be important.
+Dietz and Leigh~\citeyearpar{Dietz2001} note how the ability to track a user can be important.
 Their research also identifies how existing techniques for tracking user positions which entail encumbering the user with extra devices are undesirable.
 Light-coding devices offer the opportunity to track people without the need for users to wear additional devices.
 
@@ -132,7 +132,7 @@ There are alternatives to physical gesture sensing technologies which also affor
 Voice control is one such alternative where the teacher could issue commands to a technological framework in the classroom through a series of spoken instructions.
 Using physical gestures alongside the voice commands could be beneficial as shown in the work of Bolt~\citeyearpar{Bolt1980}.
 Allowing the user to gesture at where they want a specific command to influence reduces the need for additional spoken instructions.
-However, the ambient noise in a typical classroom is likely to be too loud for voice recognition technologies~\cite{Cavalier1996,Goette1998,OHare1999}.
+However, the ambient noise in a typical classroom is likely to be too loud for voice recognition technologies~\citep{Cavalier1996,Goette1998,OHare1999}.
 In addition to this caveat, the issuing of voice commands also will require teachers to interrupt their conversations with their students.
 
 The use of physical gestures monitored via a light-coding device appears to be the most suitable approach to creating a system which allows teachers to control classroom technologies without the requirement for a distracting interface.
@@ -141,15 +141,15 @@ The use of physical gestures monitored via a light-coding device appears to be t
 \label{sec:issues}
 
 Light-coding devices could allow teachers to control technology in the classroom without the need for a physical interface.
-Since physical gestures would permit eyes-free interaction~\cite{Brewster2003} with a control system, teachers could interact with students without losing control of the technology.
+Since physical gestures would permit eyes-free interaction~\citep{Brewster2003} with a control system, teachers could interact with students without losing control of the technology.
 Due to a light-coding device's ability to track people in an environment, once a teacher is identified their movement around the classroom can be followed.
 As a result of this, teachers could potentially issue commands through gestures from anywhere in the classroom.
 
-Light-coding devices have high availability and relatively low cost in comparison to alternative depth sensing devices such as those used in Oblong's Mezzanine~\cite{kramer2011}.
+Light-coding devices have high availability and relatively low cost in comparison to alternative depth sensing devices such as those used in Oblong's Mezzanine~\citep{kramer2011}.
 Despite these potential benefits of light-coding device, there are several limitations that must be considered.
 One limitation is their accuracy.
 Light-coding devices are capable of tracking users and the position of their limbs.
-However, for a light-coding device to track anything more precise, such as fingers, additional constraints on their abilities will need to be imposed \cite{Clark2011}.
+However, for a light-coding device to track anything more precise, such as fingers, additional constraints on their abilities will need to be imposed \citep{Clark2011}.
 These additional limitations potentially include a reduction in range, a reduced limit on the number of tracked users and the use of encumbering devices.
 All these limitations are undesirable for the use of the device in the classroom.
 Therefore, in the work discussed here, light-coding device will be assumed not be augmented to track anything more precise than user limbs.
@@ -226,13 +226,13 @@ With the potential set of suitable gestures already reduced to the upper-body by
 \subsection{Gathering User Generated Gestures} 
 \label{subsec:gatheringGestures}
 
-It is important that the gestures selected for use in the study are intuitive~\cite{Cohen2002,Wachs2011} to allow teachers to easily remember gestures and perform them with minimal forethought.
-Its also important that the number of gestures is kept small to avoid difficulties with requiring users to remember too much so that frustration with using the system can be minimised~\cite{Mendoza2005}.
-The typical adult can remember seven items in a list, give or take two, in their short term memory~\cite{mil56}.
+It is important that the gestures selected for use in the study are intuitive~\citep{Cohen2002,Wachs2011} to allow teachers to easily remember gestures and perform them with minimal forethought.
+Its also important that the number of gestures is kept small to avoid difficulties with requiring users to remember too much so that frustration with using the system can be minimised~\citep{Mendoza2005}.
+The typical adult can remember seven items in a list, give or take two, in their short term memory~\citep{mil56}.
 Relying on committing a greater number of commands to long term memory is undesirable since it counters the benefit that intuitive gestures offer of being quick to learn and use.
 
 A framework for assessing potential gesture sets for the study must be decided upon.
-An exhaustive literature survey utilising a structured protocol~\cite{kitchenham04} revealed that no framework currently exists for the evaluation of gestures meeting the requirements of classroom orchestration with upper-body gestures as outlined in Section~\ref{sec:issues}.
+An exhaustive literature survey utilising a structured protocol~\citep{kitchenham04} revealed that no framework currently exists for the evaluation of gestures meeting the requirements of classroom orchestration with upper-body gestures as outlined in Section~\ref{sec:issues}.
 Therefore, an evaluation framework used for a similar set of gestures was required to be identified and adapted.
 
 Nielsen et al.~\citeyearpar{Nielsen2004}'s work on procuring suitable sets of gestures for ergonomic interfaces entails the assessment of gestures using a framework of characteristics.
@@ -246,11 +246,11 @@ The more technical requirements and how a typical light-coding device adheres to
 
 \begin{itemize}
 \item  \textit{\textbf{Cost:}} As detailed in Section~\ref{sec:issues}, light-coding devices are relatively low cost.
-\item \textit{\textbf{Responsiveness:}} The Kinect, a light-coding device, has a frame rate of 30Hz~\cite{Livingston2012} which is enough to be considered adequately responsive for tracking the movement of users.
-\item \textit{\textbf{Adaptability:}} A typical light-coding device has the ability to be used by various supporting software frameworks which each allow accessing of the device's collected data and functions~\cite{Goth2011}.
+\item \textit{\textbf{Responsiveness:}} The Kinect, a light-coding device, has a frame rate of 30Hz~\citep{Livingston2012} which is enough to be considered adequately responsive for tracking the movement of users.
+\item \textit{\textbf{Adaptability:}} A typical light-coding device has the ability to be used by various supporting software frameworks which each allow accessing of the device's collected data and functions~\citep{Goth2011}.
 This allows light-coding devices to be easily adapted for changes in use.
 The scalability of a single light-coding device to track the joints and limbs of multiple persons is a demonstration of its ability to adapt to different numbers of users.
-\item \textit{\textbf{Accuracy:}} The Kinect, a light-coding device, is noted to track user's limb and joints to 20mm when in range~\cite{Marquardt2011}.
+\item \textit{\textbf{Accuracy:}} The Kinect, a light-coding device, is noted to track user's limb and joints to 20mm when in range~\citep{Marquardt2011}.
 \item \textit{\textbf{Un-encumbering nature:}} When a user is required to wear a device for some purpose, the affiliated system is considered to be encumbering.
 This can be undesirable as it detracts from a system's ubiquity and may impede use. 
 Since a light-coding device can track users through a single static device which does not need to be worn it is considered to be un-encumbering.\\ 
@@ -284,8 +284,8 @@ Using these criteria, any suggested gesture sets and their suitability can be as
 To discover gestures which conform to the criteria outlined in Section~\ref{subsec:gatheringGestures} a user-centred design process was adopted.
 As part of this process a user study in the form of a focus group was organised.
 Through the focus group a user-generated set of viable upper-body gestures for use with a light-coding device was discovered.
-The focus groups acted as a form of guessability study~\cite{Ruiz2011,Wobbrock2009} which would generate gestures which are natural to the user~\cite{Grandhi2011}.
-User-generated gestures for surface computing are noted to be intuitive, comfortable, memorable and ubiquitous~\cite{Bjorneseth2012}.
+The focus groups acted as a form of guessability study~\citep{Ruiz2011,Wobbrock2009} which would generate gestures which are natural to the user~\citep{Grandhi2011}.
+User-generated gestures for surface computing are noted to be intuitive, comfortable, memorable and ubiquitous~\citep{Bjorneseth2012}.
 These potential benefits of user-generated gestures adhere to the criteria relating to the definition of effective upper-body gestures.
 
 The primary objective of this study was to find the quickest, most intuitive and least intrusive upper-body gestures which can be performed in the classroom to execute the most important control commands.
@@ -304,12 +304,12 @@ The commands used were those for:
 \item Clearing the student interfaces.\\
 \end{itemize}
 
-These commands were decided upon based on observations on which were the most frequently issued during previous studies~\cite{Hatch2011}.
+These commands were decided upon based on observations on which were the most frequently issued during previous studies~\citep{Hatch2011}.
 It was decided to adhere the lower bound of short term memory, discussed in Section~\ref{subsec:gatheringGestures}, of five.
 This relatively small gesture set conforms to the Wachs et al.'s~\citeyearpar{Wachs2011} requirement for a small lexicon size.
 
 For each command participants were asked to perform the first gesture that they thought of which related to it meaning  that the gestures performed were likely to be natural to the participant.This is beneficial for finding gestures which conform to the criteria outlined in Section~\ref{subsec:gatheringGestures}.
-Spontaneous and frequently repeated gestures are assumed to be natural to the user and therefore are \textit{\textbf{intuitive}}~\cite{Grandhi2011}.
+Spontaneous and frequently repeated gestures are assumed to be natural to the user and therefore are \textit{\textbf{intuitive}}~\citep{Grandhi2011}.
 The intuitive nature of the gestures also implies that they are \textit{\textbf{comfortable}} for participants to perform.
 Since participants were asked to put little thought into their motions, the gestures can also be said to have a \textit{\textbf{low mental load}}.
 Participants were placed closely side-by-side helping ensure that the gestures used would utilise a restrained \textit{\textbf{interaction space}}.
@@ -327,7 +327,7 @@ Using video recordings of the focus group sessions all participants' movements f
 This allowed the participants' actions to be formalised as gestures.
 These gestures could then be compared, allowing similar actions to be identified as being separate instances of the same gesture.
 The gestures which were used most frequently for specific commands could then be identified.
-The most frequently occurring gesture for a command is likely to be the most intuitive since they will match the intended users' mental model of how the system should be used~\cite{Nielsen2004,Ruiz2011,Wobbrock2009}.
+The most frequently occurring gesture for a command is likely to be the most intuitive since they will match the intended users' mental model of how the system should be used~\citep{Nielsen2004,Ruiz2011,Wobbrock2009}.
 
 Each unique gesture identified was first evaluated against the limitations of a typical light-coding device.
 Any gestures which did not conform to these limitations, such as those which used finger motions, were discounted.
@@ -335,11 +335,11 @@ Following this, the criteria outlined in Section~\ref{subsec:gatheringGestures} 
 Any gesture which did not meet the criteria was also discounted.
 The viable gestures observed for a command across all the sessions were then ranked by frequency to identify those to be considered most intuitive.
 
-If more than one command had the same gesture with the highest frequency, the gesture would be assigned to the command with the highest usage observed in past studies~\cite{HatchA.HigginsSMercier2009}.
+If more than one command had the same gesture with the highest frequency, the gesture would be assigned to the command with the highest usage observed in past studies~\citep{HatchA.HigginsSMercier2009}.
 The less used commands would then be assigned their gesture with the next highest frequency.
 
 It was decided that the attention toggling method of managing false positives, discussed in Section~\ref{subsubsec:falsePositives}, would be adopted due to its ability to reduce errors without placing constraints on where in an environment gestures can be performed.
-Every effort was made to ensure participants' minds were kept clear of any assumptions about the system to aid the performance of intuitive gestures~\cite{Nielsen2004}.
+Every effort was made to ensure participants' minds were kept clear of any assumptions about the system to aid the performance of intuitive gestures~\citep{Nielsen2004}.
 As part of this effort it was decided that the participants should not be made aware of the toggle mechanic.
 Since this gesture potentially needs to be performed prior to any other command gesture, it will be the most frequently used in the system.
 Therefore, the most frequently occurring gesture throughout the entire study was chosen for this mechanic to ensure that is is intuitive and natural.
@@ -429,7 +429,7 @@ Thirty three unique gestures which conform to the criteria outlined in Section~\
 These gestures are shown and described in Figure~\ref{fig:allGestures}.  
 
 After reviewing the videos and attaining the number of occurrences for each gesture per command over all the studies, the most frequently used gestures for each command could be identified.
-Popularity refers to the gestures frequency of occurrences and was used as it often indicates intuitiveness~\cite{Grandhi2011}.
+Popularity refers to the gestures frequency of occurrences and was used as it often indicates intuitiveness~\citep{Grandhi2011}.
 The results are as follows: \\
 
 \begin{itemize}
@@ -473,7 +473,7 @@ With this set of gestures compiled, a gesture recognition system can be implemen
 
 The results from the focus group discussed in Section~\ref{subsec:focusGroupResults} indicated that the gestures which were the most popular were those that bore a metaphorical relationship to their corresponding commands.
 If a command could be interpreted as a physical task, participants would often use a gesture which mimicked an action carried out to complete that task.
-This re-iterates the importance of metaphor when designing intuitive systems \cite{Wang2008}.
+This re-iterates the importance of metaphor when designing intuitive systems \citep{Wang2008}.
 All of the metaphoric gestures observed in the study were pantomimic, where the user mimics a related real-world action.
 As shown in the work of Grandhi et al. \citeyearpar{Grandhi2011}, gestures which are pantomimic have a greater chance of being intuitive.
 In addition to being a familiar and natural action, a metaphor-based gesture is easier for a user to remember due to its connection to the task it represents.
@@ -524,16 +524,16 @@ This pilot study would allow for any short-comings in the technology or gesture-
 \subsection{Software Implementation}
 \label{subsec:pilotStudyImplementation}
 
-The SynergyNet framework~\cite{Higgins2011} was selected for implementing the control sequence defined in Section~\ref{sec:background} into.
+The SynergyNet framework~\citep{Higgins2011} was selected for implementing the control sequence defined in Section~\ref{sec:background} into.
 SynergyNet is a software framework which supports education based activities that are intended to be interacted with through multi-touch table interfaces.
 The framework offers a wide range of supporting features such as communication between multiple interfaces via a network and is capable of displaying several forms of media.
-SynergyNet accepts inputs from a range of multi-touch protocols, such as TUIO~\cite{Kaltenbrunner2009}.
-Though initially intended for use with diffused illumination multi-touch technology~\cite{Matsushita1997}, the support of multiple protocols allows the framework to be used with a wide range of natural user input interfaces including interactive whiteboards and multi-touch tables.
+SynergyNet accepts inputs from a range of multi-touch protocols, such as TUIO~\citep{Kaltenbrunner2009}.
+Though initially intended for use with diffused illumination multi-touch technology~\citep{Matsushita1997}, the support of multiple protocols allows the framework to be used with a wide range of natural user input interfaces including interactive whiteboards and multi-touch tables.
 
 Applications for SynergyNet often utilise the network functionality of the framework to allow teachers to orchestrate classroom activities.
-Previously, teachers have been able to do this through a static multi-touch device~\cite{AlAgha2010}.
-Teachers can also orchestrate SynergyNet through a web interface which can be accessed through a mobile touch device, such as a phone or tablet~\cite{Mercier2013}.
-In previous studies using the SynergyNet framework it was noted that the use of both the static teacher console and mobile devices to issue commands distracted the teacher from the students whenever used~\cite{Hatch2011,Mercier2013}.
+Previously, teachers have been able to do this through a static multi-touch device~\citep{AlAgha2010}.
+Teachers can also orchestrate SynergyNet through a web interface which can be accessed through a mobile touch device, such as a phone or tablet~\citep{Mercier2013}.
+In previous studies using the SynergyNet framework it was noted that the use of both the static teacher console and mobile devices to issue commands distracted the teacher from the students whenever used~\citep{Hatch2011,Mercier2013}.
 This often disrupted conversations between the teacher and students.
 
 The SynergyNet framework may benefit greatly from the use of upper-body gestures. 
@@ -551,8 +551,8 @@ The Microsoft Kinect (1st generation) light-coding device was chosen due to its 
    \label{fig:kinectNode}
 \end{figure}
 
-To integrate the Kinect with SynergyNet, the SensorKinect driver~\cite{Avin2011}, OpenNI library and NITE framework~\cite{OpenNi2021} were used together~\cite{Davison2012}.
-Instances of SynergyNet running on the same network act as nodes which communicate through Hazelcast~\cite{Hazelcast2009}.
+To integrate the Kinect with SynergyNet, the SensorKinect driver~\citep{Avin2011}, OpenNI library and NITE framework~\citep{OpenNi2021} were used together~\citep{Davison2012}.
+Instances of SynergyNet running on the same network act as nodes which communicate through Hazelcast~\citep{Hazelcast2009}.
 There are several different types of node used by SynergyNet defined by what device they as used on such as student-centric touch-screens or teacher control consoles.
 For the implementation of the Kinect a new type of node was created which would manage tracking users, identifing gestures and displaying its current output, as shown in Figure~\ref{fig:kinectNode}.
 
@@ -564,7 +564,7 @@ The Kinect node is used to identify when specific gestures are performed by a te
 When a teacher is observed performing a gesture the corresponding command is sent through the network to the relevant SynergyNet nodes.
 The Kinect node has on-screen controls which allow identified persons to be designated as students or teachers, as shown in Figure~\ref{fig:kinectNode}.
 
-Support for multiple Kinect devices was not possible in this pilot due to issues surrounding how the device's depth-detection techniques would interfere with other Kinect devices nearby~\cite{Maimone2012,Schroder2011}.
+Support for multiple Kinect devices was not possible in this pilot due to issues surrounding how the device's depth-detection techniques would interfere with other Kinect devices nearby~\citep{Maimone2012,Schroder2011}.
 This meant that the use of the pointing gesture outlined in Section~\ref{subsec:userGeneratedGestures}'s defined control sequence used for selecting interfaces could not be implemented into SynergyNet.
 For the pilot study it was decided that any commands issued through gestures would have to affect all student interfaces.
 
@@ -602,10 +602,10 @@ The participating teacher was first given an hour long training session where th
 Following the training session, the teacher's class of students were introduced to the classroom.
 The students were given the chance to gain familiarity with the multi-touch tables through interacting with several simple SynergyNet applications.
 Following this the class then started the first \textit{mysteries} task.
-Mysteries are a pedagogic technique, designed to support collaborative problem solving~\cite{Leat2002}.
-The mysteries task gives groups of students a selection of clues relating to a particular scenario~\cite{Higgins2011b}.
+Mysteries are a pedagogic technique, designed to support collaborative problem solving~\citep{Leat2002}.
+The mysteries task gives groups of students a selection of clues relating to a particular scenario~\citep{Higgins2011b}.
 Students are then given a question which they must use the clues to answer.
-The task was chosen due to its requirement for the teacher to perform all the commands outlined in Section~\ref{subsec:userGeneratedGestures} throughout~\cite{Mercier2012}.
+The task was chosen due to its requirement for the teacher to perform all the commands outlined in Section~\ref{subsec:userGeneratedGestures} throughout~\citep{Mercier2012}.
 Before using the Kinect for orchestrating the classroom the teacher carried out several mysteries tasks with more traditional SynergyNet control devices, specifically the a large interactive board and a web interface on a tablet device.
 This was to provide a background of typical usage to compare the use of the Kinect with.
 Each of the mysteries tasks used different content but were of the same complexity.  
@@ -706,11 +706,11 @@ The classroom environment set up in the lab was larger than the Kinect's range.
 Due to this, the teacher often wandered beyond the Kinect's range to monitor and talk to students positioned around the distant tabletop interfaces.
 Whenever the teacher travelled outside the Kinect's field of view for more than several seconds the Kinect would lose track of their calibration and identity.
 This meant that if the teacher did not establish their teacher status on re-emerging into the Kinect's view then their subsequent gestures were not recognised.
-It is important to note that the Kinect's range is limited to three and a half metres~\cite{Maimone2011} and a sixty degree viewing angle~\cite{Stone2011}, this covers most of the area in the lab used in the pilot study (which is designed to be the same size as an average classroom) but not all.
+It is important to note that the Kinect's range is limited to three and a half metres~\citep{Maimone2011} and a sixty degree viewing angle~\citep{Stone2011}, this covers most of the area in the lab used in the pilot study (which is designed to be the same size as an average classroom) but not all.
 
 Even when the teacher stayed within the Kinect's field of view, technical issues relating to the device's range caused errors.
 If the teacher was positioned close to the limits of the Kinect's range performing gestures, the device's limb and joint tracking became inaccurate.
-This is a known limitation of the device~\cite{Mehrotra2011}.
+This is a known limitation of the device~\citep{Mehrotra2011}.
 The device would often lose track of the teacher's limbs and joints, seeing them either move erratically or appear at rest when in fact the teacher was moving them to perform a gesture.
 When a limb was obscured the Kinect would attempt to position it, often resulting in an inaccurate placement.
 This also led to the limb positions moving erratically which caused several of the errors in the gesture recognition system.
@@ -720,7 +720,7 @@ The majority of these relate to the movement of hands immediately after obtainin
 The movement of the teacher's hands when finishing the attention-grabbing wave gesture were on occasion interpreted as a separate command gesture.
 In addition to this, the Kinect often interpreted the movement of hands to positions needed to perform a command gesture as the command gesture itself.
 
-The pilot study has revealed four criteria~\cite{Wachs2011} in which SynergyNet's upper-body gesture controls needs improvement; 
+The pilot study has revealed four criteria~\citep{Wachs2011} in which SynergyNet's upper-body gesture controls needs improvement; 
 \textit{accuracy}, \textit{interaction space}, \textit{intuitiveness} and \textit{mental load}.
 It is possible to summarise the issues which resulted in the system being incapable of meeting these three criteria as so:
 
@@ -752,13 +752,13 @@ With more Kinect devices in the environment, more of the classroom would be moni
 A larger monitored area reduces the chance of the teacher losing their calibrated status by wandering out of the Kinects' view.
 This saves time by reducing how often the teacher needs to repeat the calibration process.
 
-Dubois et al.~\cite{Dubois2011} track the movement of mobile objects through an apartment using two Kinects.
+Dubois et al.~\citep{Dubois2011} track the movement of mobile objects through an apartment using two Kinects.
 Using knowledge of the Kinects' positions relative to each other, their visual and depth information can be stitched together.
 Any processing applied to the information provided by the Kinect to track the movement of mobile objects can then be applied to the combined output.
 Stitching the information requires a large amount of processing power.
 However, once done it allows for the later process-intensive functions used to identify and track mobile objects to be applied just once, rather than having separate process-pipelines for each Kinect.
 
-Luber et al.~\cite{Luber2011} utilise multiple Kinects in their work to track persons across large environments.
+Luber et al.~\citep{Luber2011} utilise multiple Kinects in their work to track persons across large environments.
 Through a form of user recognition the system presented is able to track a person as they cross from one Kinect's field of view to another.
 The system tracks the movement of persons across their viewed areas.
 On the Kinect identifying a person the system determines their unique visual and geometric features.
@@ -768,25 +768,25 @@ This allows for a person's movement to be tracked across a larger area.
 
 Overlapping the views of the Kinects would eliminate the need for teacher's to perform gestures towards the limits of a single Kinect's view.
 This ensures that teachers stay within the areas of the Kinects' view which are more accurate.
-However, when the views of two or more Kinects overlap there is the potential issue of interference~\cite{Satyavolu2012}.
-The two multiple Kinect systems discussed so far~\cite{Dubois2011,Luber2011} avoid this issue by ensuring that the overlapping area of Kinect views is minimised.
+However, when the views of two or more Kinects overlap there is the potential issue of interference~\citep{Satyavolu2012}.
+The two multiple Kinect systems discussed so far~\citep{Dubois2011,Luber2011} avoid this issue by ensuring that the overlapping area of Kinect views is minimised.
 The Kinect functions by projecting a pattern of infra-red light.
 Because all Kinect devices produce, and look for, this light pattern at the same frequency it is possible for one Kinect device to see the pattern produced by another.
 The Kinects cannot distinguish the infra-red light patterns and will interpret the pattern from another Kinect as its own.
 The Kinect uses deformations in their projected pattern to detect the placement of objects.
 If two patterns overlap the Kinect will not be capable of accurately identifying these deformations and their implications.
-This interference can significantly reduce the accuracy of Kinect devices~\cite{Satyavolu2012}.
+This interference can significantly reduce the accuracy of Kinect devices~\citep{Satyavolu2012}.
 
-To avoid multiple Kinects viewing each other's patterns, the sensing devices can be positioned in perpendicular planes~\cite{Caon2011,Kramer2012}.
+To avoid multiple Kinects viewing each other's patterns, the sensing devices can be positioned in perpendicular planes~\citep{Caon2011,Kramer2012}.
 Positioned ninety degrees from another Kinect ensures that it will not view any of the infra-red light projected direct from the other device.
 This positioning will also minimise the amount of infra-red light the Kinect sees from the surfaces the other device's pattern is projected onto.
-This reduces interference to a level where the Kinect is capable of accurately tracking persons' limbs and joints~\cite{Caon2011}.
-The setup used by Dubois et al.~\cite{Dubois2011} also entails positioning the two Kinects used perpendicular to each other so that either Kinect cannot see the other's projected pattern.
+This reduces interference to a level where the Kinect is capable of accurately tracking persons' limbs and joints~\citep{Caon2011}.
+The setup used by Dubois et al.~\citep{Dubois2011} also entails positioning the two Kinects used perpendicular to each other so that either Kinect cannot see the other's projected pattern.
 This approach does increase the accurately monitored area of a system of Kinect devices but does have a restriction; only two Kinects can have overlapping views.
 If more than two Kinects are positioned perpendicular to its neighbours then at least two of the devices will be in parallel.
 This means that the two parallel devices' will interfere with each other, reducing their accuracy.
 
-A potential technique of using multiple Kinects together without their projected patterns interfering with each other is time division~\cite{Schroder2011}.
+A potential technique of using multiple Kinects together without their projected patterns interfering with each other is time division~\citep{Schroder2011}.
 This is where the Kinects in a system will take it in turns to project and view their patterns.
 Any pairing of Kinects which cause interference can be set up so that they never project at the same time.
 However, a Kinect will not be collecting any usable depth information while another Kinect which could interfere with it is projecting.
@@ -794,38 +794,38 @@ Due to this,  the technique causes a reduction in the frame-rate of the depth im
 The accuracy of the devices afforded by removing interference is traded-off for a reduction in responsiveness.
 Therefore, the adoption of this technique, while resolving the issue of accuracy may result in the system being unable to meet the criteria for responsiveness.
 
-Another potential technique for reducing the interference caused by overlapping light patterns is the movement of the sensing devices~\cite{Maimone2012}.
+Another potential technique for reducing the interference caused by overlapping light patterns is the movement of the sensing devices~\citep{Maimone2012}.
 By moving a Kinect, the device's projected pattern is moved along with its camera.
 If no other device is currently performing the same motion the system should be capable of identifying the reflected light from a unique Kinect.
-This has been shown to reduce interference when multiple Kinects are used together~\cite{Maimone2012} but does have the requisite that the devices are constantly in motion.
+This has been shown to reduce interference when multiple Kinects are used together~\citep{Maimone2012} but does have the requisite that the devices are constantly in motion.
 Large movements which change the Kinects' locations may complicate any calculations which utilise the positional information provided by the devices.
 Constant movement of the devices would require additional calculations to transform the relative positional information output from a Kinect to their real-world locations.
 This additional calculation could reduce the system's responsiveness.
-Vibration of the Kinect could be used to minimise the movement required to differentiate the devices' projected patterns~\cite{Kainz2012}.
+Vibration of the Kinect could be used to minimise the movement required to differentiate the devices' projected patterns~\citep{Kainz2012}.
 However, to add any motion to the Kinect devices, extra cost must be spent to implement the motors needed to automate this movement.
 The adoption of this technique, while resolving the issues relating to accuracy and interaction space, may result in the system being unable to meet the criteria for cost.
 
 To differentiate the infra-red light produced and received by the Kinect devices, filters could be employed.
-Multiple depth-cameras using the same structured light setup as the Kinect have been made capable of working together through filtering the infra-red used~\cite{Kim2008}.
-However, the Kinect is not capable of this~\cite{Kainz2012}.
+Multiple depth-cameras using the same structured light setup as the Kinect have been made capable of working together through filtering the infra-red used~\citep{Kim2008}.
+However, the Kinect is not capable of this~\citep{Kainz2012}.
 The Kinect produces and views a very small range of infra-red frequencies.
 Filtering this would reduce the range of frequencies visible to each Kinect further and would likely result in the depth image becoming more inaccurate.
 
 The techniques discussed so far for allowing multiple Kinect devices to work together involve providing methods of differentiating the devices' projected light patterns.
-Wang et al.~\cite{Wang2012} present a potential technique which reduces the influence of interference caused by multiple Kinects not through prevention but correction.
+Wang et al.~\citep{Wang2012} present a potential technique which reduces the influence of interference caused by multiple Kinects not through prevention but correction.
 The technique uses the depth information collected from the devices to reconstruct the scene viewed.
 In areas where the depth information is missing due to interference, a plane-sweeping based algorithm is used to regenerate the lost information.
 The algorithm uses the existing depth data from all the Kinect devices to calculate the missing information.
-The initial results shown from Wang et al.'s~\cite{Wang2012} simulations are promising but there may be issues with using this technique in a real-world scenario.
+The initial results shown from Wang et al.'s~\citep{Wang2012} simulations are promising but there may be issues with using this technique in a real-world scenario.
 The time and processing power required by the algorithm could reduce the system's responsiveness.
 
-It should be possible to use the gesture control sequence devised in the guessability study with an alternative depth sensing technology~\cite{Kean2011}.
+It should be possible to use the gesture control sequence devised in the guessability study with an alternative depth sensing technology~\citep{Kean2011}.
 These alternatives may resolve the issues relating to accuracy and interaction space but could incur other issues.
-The Primesense~\cite{Wilson2010} depth camera performs the same function as the Kinect and could be used with SynergyNet.
+The Primesense~\citep{Wilson2010} depth camera performs the same function as the Kinect and could be used with SynergyNet.
 However, the device uses the same structured light technique as the Kinect meaning the same issue of interference would likely still be present.
-Oblong's Mezzanine~\cite{kramer2011} uses custom built depth cameras to observe user's movement in a meeting room environment.
+Oblong's Mezzanine~\citep{kramer2011} uses custom built depth cameras to observe user's movement in a meeting room environment.
 The system's range is greater than that of a single Kinect but its cost far exceeds that of several of Microsoft's devices.
-Wearable devices could be used for tracking gestures more accurately than the Kinect~\cite{Rekimotoa,Zhu2011}.
+Wearable devices could be used for tracking gestures more accurately than the Kinect~\citep{Rekimotoa,Zhu2011}.
 However, improved accuracy these device may not outweigh the un-encumbering benefits of a technology like the Kinect.
 
 \subsection{Resolving Issue 2: Improving Gestures}
@@ -857,10 +857,10 @@ Due to the issues with accuracy and interaction space, the Kinect often lost tra
 This required the teacher to repeat the calibration pose several times and subsequently complicated the control sequence.
 Improvements to the sensing system's accuracy and interaction space may also resolve issues related to mental load by reducing the number of times the calibration process needs to be repeated.
 Automation of the calibration process may also simplify the control sequence.
-Several Kinect-supporting frameworks, such as OpenNI~\cite{OpenNi2021}, have developed support for pose-less calibration where the Kinect is able to identify the joints and limbs of a person without the need for them to maintain a specific calibration pose.
+Several Kinect-supporting frameworks, such as OpenNI~\citep{OpenNi2021}, have developed support for pose-less calibration where the Kinect is able to identify the joints and limbs of a person without the need for them to maintain a specific calibration pose.
 
 User recognition may resolve issues related to mental load by reducing the amount of user intervention required for calibration.
-The Kinect is capable of collecting biometric information on users it monitors from their appearance~\cite{Leyvand2011}.
+The Kinect is capable of collecting biometric information on users it monitors from their appearance~\citep{Leyvand2011}.
 Facial recognition, clothing colour tracking and height estimation can be used to distinguish monitored users.
 This information can be stored and used when persons are viewed in the future to establish their identity.
 User recognition, coupled with automatic calibration, would allow the system to calibrate the teacher with no user intervention after the teacher's identity is established.
@@ -904,7 +904,7 @@ To combine the information collected from the Kinect devices a multiplexing appr
 This was done through taking the user and joint location information from the devices and transforming them to be relative to the environment they exist within.
 If two or more locational points supplied by different devices are noted to inhabit the same space the system determines that they are the same user or joint viewed by multiple devices.
 This ensures that no duplication of locational information takes place and allows the system to identify when the same entity is seen by multiple devices.
-This is similar to how touch information from multiple sources can be multiplexed together using the TUIO protocol~\cite{Kaltenbrunner2009}.
+This is similar to how touch information from multiple sources can be multiplexed together using the TUIO protocol~\citep{Kaltenbrunner2009}.
 Through the use of multiplexing, SynergyNet is capable of tracking a user across the view of multiple Kinects as long as there is some overlap in the areas they monitor.
 Therefore, a teacher should not need to re-establish their identity when moving about the environment.
 
@@ -913,14 +913,14 @@ A single instance of this node, referred to as a multiplexer, is intended to run
 The multiplexer can then distribute the locational information to other nodes.
 The multiplexer node can identify which points of locational information from separate Kinect nodes are the same entity.
 
-This multiplexing approach was chosen over alternatives, such as stitching the visual and depth views from the devices~\cite{Dubois2011}, due to its minimal processing costs.
+This multiplexing approach was chosen over alternatives, such as stitching the visual and depth views from the devices~\citep{Dubois2011}, due to its minimal processing costs.
 
 \subsubsection{Gesture Set Cohesion} 
 \label{subsubsec:studyImplementationGestureSet}
 
 To improve the cohesion of the gesture set it was decided that all the upper-body gestures used in the control sequence should relate real-world actions as discussed in Section~\ref{subsec:resolvingIssuesObserved2}.
 It was also noted that several of the gestures in the set did not follow this pattern.
-Changing the gestures that did not relate to real-world actions to be more intuitive could reduce the mental load required by the control sequence as they act as metaphors~\cite{Wang2008}.
+Changing the gestures that did not relate to real-world actions to be more intuitive could reduce the mental load required by the control sequence as they act as metaphors~\citep{Wang2008}.
 
 To identify the most suitable gestures to change the results from the original guessability study were revisited.
 When ranking gestures by popularity amongst participants in the study this time, any gestures which do not resemble a related real-world action were discounted.
@@ -979,7 +979,7 @@ The updated control sequence with new gestures and interface selection is summar
 
 A study was organised to assess whether gestures are a viable method for controlling technology in the classroom.
 A primary-school level teacher took part in the study with sixteen of their students.
-The teacher was asked to orchestrate four \textit{mysteries} tasks~\cite{AlAgha2010} similar to those used in the pilot study.
+The teacher was asked to orchestrate four \textit{mysteries} tasks~\citep{AlAgha2010} similar to those used in the pilot study.
 For the first three tasks the teacher would use a single control technology; a large interactive whiteboard, a tablet or the Kinect, for issuing commands to the student interfaces.
 For the final task teachers had all three technologies made available for their use.
 The session was recorded for later data analysis.
@@ -1013,7 +1013,7 @@ This may reduce the number of commands executed in the later tasks.
 For these reasons the results focus on the times and errors per command rather than per task.
 
 From the recordings the teacher's interactions with the various devices could be examined.
-A time-line analysis tool, SynergyView~\cite{Kyaw2011}, was employed to annotate various interactions in the videos.
+A time-line analysis tool, SynergyView~\citep{Kyaw2011}, was employed to annotate various interactions in the videos.
 Each time the teacher attempted to issue a command with a control device an annotation was made.
 The annotations note:
 \begin{itemize}
@@ -1263,11 +1263,11 @@ Of the thirteen erroneous commands issued with the Kinect observed to occur in t
 All of these occurrences observed to occur when the teacher's body was entirely within the device's range.
 This indicates that limited interaction space was not the cause of the tracking problems.
 It appears the Kinect has issues which tracking the movement of the teacher's arms during specific gestures.
-It is likely this may be caused by the speed at which the gesture is executed~\cite{Winkler2012}.
+It is likely this may be caused by the speed at which the gesture is executed~\citep{Winkler2012}.
 The majority of the gestures affected appeared to be those which required the movement of a hand.
 This indicates that the Kinect may have issues with tracking movement of limbs precisely enough for some of the gestures used in the control sequence, such as push and pull gestures.
 
-Another cause for the inaccurate tracking could be occlusion~\cite{Meng2012}.
+Another cause for the inaccurate tracking could be occlusion~\citep{Meng2012}.
 Movement by the teacher during a gesture may momentarily obscure the tracked joints from the Kinect's view.
 While a joint is momentarily obscured from view the Kinect may assume it has moved to a resting position.
 This was observed to occur several times during the study.

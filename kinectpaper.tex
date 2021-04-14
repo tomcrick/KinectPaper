@@ -130,7 +130,7 @@ Overall conclusions and potential future developments based on the findings from
 
 To allow a system to identify physical gestures a method of tracking the movements of users is required.
 Light-coding is a technique which can achieve this through detecting deformations in a projected pattern of light (usually infra-red) and using them to work out depth information.
-There are serveral devices which support this technique such as the Canesta~\cite{Yang2007}, 3DV~\cite{Wilson2007a}, the Primesense sensor~\cite{Wilson2010} and the first generation of Microsoft Kinect shown in Figure~\ref{fig:kinect}.
+There are several devices which support this technique such as the Canesta~\cite{Yang2007}, 3DV~\cite{Wilson2007a}, the Primesense sensor~\cite{Wilson2010} and the first generation of Microsoft Kinect shown in Figure~\ref{fig:kinect}.
 These devices are not be confused with Time-of-flight cameras which use the time it takes for light shone by a device to be returned to build a depth-image ~\cite{Lange2001} such as the second generation of the Microsoft Kinect.
 
 \begin{figure}[h]
@@ -1287,63 +1287,26 @@ This indicates that the improvements outlined in Section~\ref{sec:resolvingIssue
 
 The 50\% error rate indicates that there are still issues with the implementation which could be improved upon in the future.
 
-% // TODO Trim down and summarise the paper
-
-% ---- Reviewing Kinects -----
-The issue of the Kinect devices losing track of user's limbs and joints remains a significant source of errors despite the implemented improvements.
-Despite the use of multiple Kinects proving beneficial to other implemented improvements, such as interface selection, it has not improved the system's accuracy.
+The issue of the Kinect devices losing track of user's limbs and joints remains a significant source of errors despite the improvements made after the pilot study.
 Of the thirteen erroneous commands issued with the Kinect observed to occur in the study, the failure of eleven of these commands was attributed to the devices losing track of users' joints.
-
-All occurrences where the Kinect devices lost track of a user's limbs and joints were observed to occur when the teacher's body was entirely within the device's range.
+All of these occurrences observed to occur when the teacher's body was entirely within the device's range.
 This indicates that limited interaction space was not the cause of the tracking problems.
-No erroneous commands in the study were observed to occur due to the teacher's limbs and joints leaving the devices' observed area.
-This indicates that the system's interaction space is sufficient.
-
-Though the range of the system's observed area is greater the devices still appear to have issues with tracking the movement of user's limbs.
 It appears the Kinect has issues which tracking the movement of the teacher's arms during specific gestures.
+It is likely this may be caused by the speed at which the gesture is executed~\cite{Winkler2012}.
 The majority of the gestures affected appeared to be those which required the movement of a hand.
-This indicates that the Kinect may have issues with tracking movement of limbs.
-It is possible that the Kinect may not be responsive enough to accurately track the movement of teacher's hand performing gestures such as push and pull.
+This indicates that the Kinect may have issues with tracking movement of limbs precisely enough for some of the gestures used in the control sequence, such as push and pull gestures.
 
 Another cause for the inaccurate tracking could be occlusion~\cite{Meng2012}.
 Movement by the teacher during a gesture may momentarily obscure the tracked joints from the Kinect's view.
-While a joint is momentarily obscured from view the Kinect may assume it has taken to a resting position.
+While a joint is momentarily obscured from view the Kinect may assume it has moved to a resting position.
 This was observed to occur several times during the study.
 This movement of an arm mid gesture to a resting position changes the gesture's perceived movement in such a way that SynergyNet will not recognise the gesture.
 Though two Kinects observe each gesture, a brief occlusion of the tracked joints on both systems during the teacher's movement (not necessarily at the same time) will break their recognition of the gesture.
+Future improvements could involve an algorithm to smooth movement and ignore frames where limbs and joints are observed to be somewhere unexpected.
+The challenge of this proposed improvement will be implement it in such a way that it does not reduce the responsiveness of the system by too much.
 
-However, there were some gestures where the teacher holds a pose, such as holding two hands in the air to issue the freeze command, during which the Kinect lost track of a hand joint.
-It is possible that while the teacher moved their arms from the attention getting gesture to the command gesture that the Kinect's lost track of the arm joints due to the speed of the arms movement or momentary occlusion.
-Both the observing devices may not have been able to re-establish the location of the hands once they were held in place since the Kinect uses the movement of users to track their joints.
-Another possibility is that though the hand joints were within range of the Kinect they may have occupied the inaccurate regions near the edges of the devices' views~\cite{Mehrotra2011}.
-Since the hands were held in the air this could be due to their proximity to the top of both the Kinect device's views.
-This inaccurate area could account for why both the Kinects' lost track of one of the arms, observed from footage of the study to be the one held higher, and assumed it to be at rest.
-
-These observations on the failings of the Kinect to track the teacher's arms that despite the improvement, the device still has issues with accurately tracking joints.
-The implementation of multiple Kinects is not capable of resolving this issue.
-
-% ------------------------
-
-The study was designed to identify whether the implemented improvements detailed in this paper resolved the issues noted to cause the previous implementation of the system to fail to meet certain criteria.
-The results of the study reveal that all but one of the criteria were filled by the improvements.
-The previously unmet criteria fulfilled by the improvements were those for interaction space, intuitiveness and mental load.
-The unmet criterion was the accuracy of the tracking device.
-Despite the improvements intended to resolve issues relating to this criterion the accuracy of the tracking devices resulted in the system being unfit for purpose.
-This does not mean that the improvements intended to resolve the issues relating to accuracy, i.e. the use of multiple Kinects, were a complete failure.
-The accuracy of the system did improve but not enough for the errors it caused to be deemed minor.
-In addition to this the use of multiple Kinects intended primarily to improve accuracy aided the resolution of other errors such as the lack of interface selection and simplifying of the control sequence.
-
-The error rate of 50\% was observed to be an improvement on that found in the pilot study, 86.96\%.
-However, this rate of error is still too high to be considered acceptable.
-
-Figure~\ref{fig:controlDevicesTimes} demonstrates that the Kinect was the quickest control technology for issuing commands from.
-This applies to commands in general, commands intended for specific interfaces and commands intended for all interfaces.
-The time difference between issuing command intended for all interfaces and commands intended for a selection of specific interface was smallest for the Kinect.
-This indicates that the Kinect controls allows for a teacher to put less thought into planning a command since the time difference is less of a restraint.
-
-In the post session interview the teacher expressed a preference for the Kinect.
-The teacher stated they like the speed and freedom it offered.
-However, the teacher did admit that it could also have been the novelty of the device which drove their preference.
+The results of the study demonstrated that the Kinect was the quickest control technology for issuing commands from which shows it has potential as an orchestration tool in the classroom.
+In addition to this the teacher who participated in the study expressed a preference for the Kinect in the post session interview due to the speed and freedom it offered.
 
 85\% of the errors which occurred in the study were attributed to the Kinect devices' losing track of user limbs.
 If the issue of the Kinect losing track of joints was resolved, the error rate would be significantly reduced.
@@ -1351,38 +1314,14 @@ If the errors relating to accuracy had not occurred during the study the error r
 Because the remaining errors were deemed to be minor because of their minimal negative consequences the system could be considered fit for purpose.
 It is apparent that a method of improving the accuracy of the system's joint tracking is required.
 
-The observed errors discussed in Section~\ref{subsec:pilotdiscussion} highlight the possibility of the Kinect device having difficulty tracking fast moving joints.
-Winkler et al.~\cite{Winkler2012} briefly discuss this limitation of the device stating that when the PrimeSense framework is employed, as it is within SynergyNet, fast movement can cause instability.
-Replacing all gestures which use movement, i.e. those which consist of pose sequences, were replaced with single poses the potential issues caused by this possibility would be resolved.
-This could reduce the errors originating from accuracy issues but would require another changing of the gesture set.
-Since the gesture set has been changed already any benefits from the original guessablity would be lost.
-Repeating the guessability with the requirements for cohesive poses would be the most desirable approach to building a new gesture set.
-
-However, during the study similar issues were observed to occur when the gesture used to issue the freeze command was executed.
-Since this gesture (holding two hands in the air) is a single pose it is implied that the loss of tracking is not entirely due to fast moving joints.
-Therefore, other improvements to accuracy may be required.
-Alternative or improved technologies may be beneficial as long as they adhere to the other criteria relevant to the tracking device; cost, adaptability, un-encumbering nature and responsiveness.
-The Primesense~\cite{Wilson2010} depth camera and Oblong's Mezzanine~\cite{kramer2011} are two possible alternatives that may offer a great accuracy.
-In addition to these future versions of the Kinect could provide more accurate results.
-
-As an alternative to improving the accuracy of the system with alternative technologies, future work could entail utilising more Kinects.
-The improvements to SynergyNet allowed for any number of Kinects to be used with the framework.
-However, the issue of interference would not be resolved through perpendicular as it is with the current system set up.
-Therefore, at least one of the interference reducing methods discussed in Section~\ref{subsubsec:studyImplementationMultipleKinects} would be required.
-The use of more Kinects could reduce the inaccurate area noted to occupy the edges of the Kinects' view through overlapping the inaccurate region on one Kinect with the accurate centre region on another.
-
-The reduction in error rate appears to be the result of the implemented improvements.
-However, a threat to the validity of this claim is the day long training session the teacher required.
-The teacher in the pilot study only had an hour long session.
-The longer training session may have prevented errors which would have still occurred with the improvements.
-Future research should entail using teachers with various amounts of training to gauge its influence on the error rate.
-Ideally the system should be proved to need a minimal amount of training or else its use could be considered unintuitive.
+The other improvements implemented into SynergyNet after the pilot study appear to have been successful.
+Errors where the accuracy of the Kinects was not concerned which were observed during the pilot study were not observed to occur in the main study.
+These improvements could be considered in other open-air gesture systems which could potentially suffer from the same issues.
 
 The accuracy of the Kinect devices resulted in the system being made unfit for purpose.
 If this issue was resolved the system would be a viable classroom technology control system.
-Issues outlined in this work could be present in any open-air gesture system.
-The improvements implemented into SynergyNet were shown to be successful where the accuracy of the Kinects was not concerned.
-Therefore, these improvements can be considered suitable for any other open-air gesture system which could potentially suffer from the same issues.
+The speed of commands issued using gestures and lack of errors outside of those caused by the accuracy of the technology used compared to the more traditional orchestration technologies used show huge benefits in using a light-coding device like the Kinect.
+This indicates that gestures can be a viable method for controlling technology in the classroom if the appropriate improvements are made.
 
 \begin{ack}
 

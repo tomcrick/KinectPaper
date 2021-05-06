@@ -592,7 +592,7 @@ When the control sequence is finished the borders are removed from the Kinect no
 
 It was decided that the pilot study should be conducted as an observed lab-based experiment to discover what issues an full study might encounter with the implementation.
 The study took place in the SynergyNet lab used in the focus group discussed in Section~\ref{subsec:focusGroupDesign}.
-The objective of this pilot study was to find how usable the implementation of the upper-body gestures control system was.
+The objective of this pilot study was used to assess the efficacy of the upper-body gestures control system.
 
 The head teacher from a local school was chosen for participation in this study through convenience sampling.
 A class of 12 of teacher's students who the teacher had taught previously also participated.
@@ -610,7 +610,7 @@ Before using the Kinect for orchestrating the classroom the teacher carried out 
 This was to provide a background of typical usage to compare the use of the Kinect with.
 Each of the mysteries tasks used different content but were of the same complexity.  
 
-The teacher was asked to think aloud when possible and announce their intentions before executing a command.  
+The teacher was asked to think aloud~\cite{jaaskelainen2010think} when possible and announce their intentions before executing a command.  
 This allowed for timing of intention to execution and would allow for identification of unintended results.
 
 \subsection{Pilot Study Results}
@@ -623,22 +623,44 @@ This allowed for timing of intention to execution and would allow for identifica
    \label{fig:pilotStudyKinect}
 \end{figure} 
 
-For commands issued with the large interactive board:
-\begin{itemize}
-   \item The average time taken to issue a command was 12.5 seconds with a standard deviation of 6.36 seconds.
-   \item 1/10 of the commands issued was erroneous.
-\end{itemize}
+During the pilot three modes of input were examined.
+The first of these was a large interactive board which supported multi-touch.
+This board was positioned vertically at the front of the classroom.
+The second input examined was a web-interface made available through a tablet which the teacher could carry around the classroom.
+The final input examined was the gesture system using the Kinect as shown in Figure~\ref{fig:pilotStudyKinect}.
 
-For commands issued with the web interface through a tablet:
-\begin{itemize}
-   \item The average time taken to issue a command was 13.6 seconds with a standard deviation of 11.7 seconds.
-   \item 1/9 of the commands issued was erroneous.
-\end{itemize}
+\begin{table}[h]
+   \centering
+   \begin{tabular}{!{\vrule width 1.5pt}c|c|c|c!{\vrule width 1.5pt}}
+   \noalign{\hrule height 1.5pt}
+   \multicolumn{1}{!{\vrule width 1.5pt}c!{\vrule width 1.5pt}}{\textbf{}}	
+   &\textbf{Number}
+   &\multicolumn{1}{!{\vrule width 1.5pt}c!{\vrule width 1.5pt}}{\textbf{Number}}	
+   &\textbf{Avg. time}\\
+   \multicolumn{1}{!{\vrule width 1.5pt}c!{\vrule width 1.5pt}}{\textbf{}}	
+   &\textbf{of}
+   &\multicolumn{1}{!{\vrule width 1.5pt}c!{\vrule width 1.5pt}}{\textbf{of}}	
+   &\textbf{to issue}\\
+   \multicolumn{1}{!{\vrule width 1.5pt}c!{\vrule width 1.5pt}}{\textbf{Device}}	
+   &\textbf{commands}
+   &\multicolumn{1}{!{\vrule width 1.5pt}c!{\vrule width 1.5pt}}{\textbf{errors}}	
+   &\textbf{commands}\\
+   \noalign{\hrule height 1.5pt}
+   Board 					&10 					&1				&12.5 seconds				\\
+   \cline{1-4}
+   Tablet 					&9				   	&1				&13.6 seconds				\\
+   \cline{1-4}
+   Kinect 					&21					&18			&6.6 seconds				\\
+   \noalign{\hrule height 1.5pt}
+   \end{tabular}
+   \caption{The usage of the control devices in the pilot study.}
+   \label{table:pilotResults}
+\end{table}
 
-The average time taken to issue a command with the Kinect, as shown in Figure~\ref{fig:pilotStudyKinect}, was 6.6 seconds with a standard deviation of 5.59 seconds.
-Of the twenty one commands issued during this task with the Kinect, eighteen were erroneous.
+The results shown in Table~\ref{table:pilotResults} highlight the Kinect device's high-error rate.
+From the recordings made during the pilot it was possible to identify the nature and likely causes of each of the observed errors.
 
-Six of these errors were caused by the teacher waving too many times.
+Six of the errors were caused by the teacher waving too many times.
 This resulted in their third wave being interpreted as a command gesture.
 The third wave was frequently interpreted as a pull gesture, which informs all the student-centric interfaces to show content on the board.
 These false positives are the result of the control sequence being too easy to deviate from since in its implementation in the pilot it would expect specifically two waves.
